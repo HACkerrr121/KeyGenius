@@ -7,6 +7,7 @@ from CNN import CNN
 from Datasets import ImageDataset, NoteDataset
 from torch.utils.data import DataLoader
 import torchvision.transforms as transforms
+import os
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Using device: {device}")
@@ -20,7 +21,7 @@ img_width = 1653
 img_height = 2339
 out_cnn = (MAX_NOTES, 3)
 lr = 1e-3
-epochs = 6000
+epochs = 1
 
 
 image_transforms = transforms.Compose([                
@@ -102,7 +103,7 @@ for epoch in range(epochs):
        rnn_total_loss += loss.item()
 
 
-   if epoch % 100 == 0:
+   if epoch % 1 == 0:
        # Calculate average losses
        avg_cnn_loss = cnn_total_loss / len(dataset_CNN)
        avg_rnn_loss = rnn_total_loss / len(dataset_RNN)
@@ -115,7 +116,23 @@ for epoch in range(epochs):
 
    
 
+print('hello bello')
+torch.save({
+    'model_CNN_state_dict': model_CNN.state_dict(),
+    'model_RNN_state_dict': model_RNN.state_dict(),
+    'optim_CNN_state_dict': optim_CNN.state_dict(),
+    'optim_RNN_state_dict': optim_RNN.state_dict()
+}, "model_weights.pth")
+print('sdik')
+if os.path.exists("model_weights.pth") and os.path.getsize("model_weights.pth") > 0:
+    checkpoint = torch.load("model_weights.pth", map_location=device)
+    model_CNN.load_state_dict(checkpoint['model_CNN_state_dict'])
+    model_RNN.load_state_dict(checkpoint['model_RNN_state_dict'])
+    optim_CNN.load_state_dict(checkpoint['optim_CNN_state_dict'])
+    optim_RNN.load_state_dict(checkpoint['optim_RNN_state_dict'])
+    print("diiik")
+else:
+    print("not work")
 
-checkpoint = torch.load('model_checkpoint.pth')
-model_CNN.load_state_dict(checkpoint['model_CNN_state_dict'])
-model_RNN.load_state_dict(checkpoint['model_RNN_state_dict'])
+
+

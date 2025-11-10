@@ -34,7 +34,7 @@ class CNN(nn.Module):
            y = y.to(self.cnn[0].weight.device)
            
        features = self.cnn(x)
-       features = self.flatten(features)
+       #features = self.flatten(features)
        
        hand_logits = self.hand_classifier(features).view(-1, self.max_sequence, self.num_hand_classes)
        note_logits = self.note_classifier(features).view(-1, self.max_sequence, self.num_note_classes)

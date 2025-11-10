@@ -1,121 +1,134 @@
 import torch
-import torch.nn.functional as F
-import numpy as np
 import torch.nn as nn
-from RNN import RNN
-from CNN import CNN
-from Datasets import ImageDataset, NoteDataset
+import torch.nn.functional as F
 from torch.utils.data import DataLoader
 import torchvision.transforms as transforms
 
+from CNN_RNN import CNN_RNN
+from Datasets import ImageDataset, NoteDataset
+
+# ------------------------------
+# DEVICE
+# ------------------------------
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Using device: {device}")
 
-### HYPERPARAMETERS ###
+# ------------------------------
+# HYPERPARAMETERS
+# ------------------------------
 MAX_NOTES = 350
-h_layer = 64
-input_size = (MAX_NOTES, 3)
-output_size = 10 
-img_width = 1653
-img_height = 2339
-out_cnn = (MAX_NOTES, 3)
-lr = 1e-3
-epochs = 6000
+NUM_HAND_CLASSES = 11
+NUM_NOTE_CLASSES = 128
+IMG_WIDTH = 1653
+IMG_HEIGHT = 2339
+LR = 1e-3
+EPOCHS = 6000
+BATCH_SIZE = 16
 
+# RNN parameters
+RNN_HIDDEN_SIZE = 64
+RNN_LAYERS = 3
 
-image_transforms = transforms.Compose([                
-  transforms.RandomCrop((224, 224), padding=10),   
-  transforms.RandomRotation(degrees=2, fill=255), 
-  transforms.ColorJitter(brightness=0.3, contrast=0.3, saturation=0.1),  
-  transforms.GaussianBlur(kernel_size=3, sigma=(0.1, 0.5)), 
-  transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
-  transforms.RandomErasing(p=0.2, scale=(0.002, 0.01), value=0.5)
+# ------------------------------
+# IMAGE TRANSFORMS
+# ------------------------------
+image_transforms = transforms.Compose([
+    transforms.RandomCrop((224, 224), padding=10),
+    transforms.RandomRotation(degrees=2, fill=255),
+    transforms.ColorJitter(brightness=0.3, contrast=0.3, saturation=0.1),
+    transforms.GaussianBlur(kernel_size=3, sigma=(0.1, 0.5)),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                         std=[0.229, 0.224, 0.225]),
+    transforms.RandomErasing(p=0.2, scale=(0.002, 0.01), value=0.5)
 ])
 
-
-input_size = (MAX_NOTES, 3)
-output_size = 400
-h_layer = 64
-
-model_RNN = RNN(input_size, output_size, h_layer).to(device)
-optim_RNN = torch.optim.AdamW(model_RNN.named_parameters(), lr)
-
-num_hand_classes = 11  # or however many hand positions (0-9 from your data)
-num_note_classes = 128  # or len(unique) from your dataset preprocessing
-
-model_CNN = CNN(
-   input_channels=3,  # RGB images
-   max_sequence=MAX_NOTES,  # 350
-   num_hand_classes=num_hand_classes,
-   num_note_classes=num_note_classes,
-   note_weight=1.0,
-   time_stamp_weight=0.01,
-   hand_weight=1.0
-).to(device)
-optim_CNN = torch.optim.AdamW(model_CNN.named_parameters(), lr)
-
-
+# ------------------------------
+# DATASETS & LOADERS
+# ------------------------------
 dataset_CNN = DataLoader(
-   ImageDataset(transforms=image_transforms),
-   batch_size=16,
-   shuffle=True
+    ImageDataset(transforms=image_transforms),
+    batch_size=BATCH_SIZE,
+    shuffle=True
 )
 
 dataset_RNN = DataLoader(
-   NoteDataset(),
-   batch_size=16,
-   shuffle=True
+    NoteDataset(),
+    batch_size=BATCH_SIZE,
+    shuffle=True
 )
 
+# ------------------------------
+# MODEL & OPTIMIZER
+# ------------------------------
+cnn_params = {
+    "input_channels": 3,
+    "max_sequence": MAX_NOTES,
+    "num_hand_classes": NUM_HAND_CLASSES,
+    "num_note_classes": NUM_NOTE_CLASSES,
+    "note_weight": 1.0,
+    "time_stamp_weight": 0.01,
+    "hand_weight": 1.0,
+    "rnn_weight": 1.0
+}
 
-for epoch in range(epochs):
+rnn_params = {
+    "hidden_size": RNN_HIDDEN_SIZE,
+    "num_layers": RNN_LAYERS,
+    "output_size": NUM_NOTE_CLASSES
+}
 
+model = CNN_RNN(cnn_params=cnn_params, rnn_params=rnn_params).to(device)
+optimizer = torch.optim.AdamW(model.parameters(), lr=LR)
 
-   cnn_total_loss = 0
-   rnn_total_loss = 0
+# ------------------------------
+# TRAINING LOOP
+# ------------------------------
+for epoch in range(EPOCHS):
+    cnn_total_loss = 0.0
+    rnn_total_loss = 0.0
+    model.train()
 
+    # --- Train on images (CNN) ---
+    for batch_idx, (images, labels) in enumerate(dataset_CNN):
+        images = images.to(device)
+        labels = labels.to(device)
 
-   model_CNN.train()
+        optimizer.zero_grad()
+        loss, _ = model(images, labels)
+        loss.backward()
+        optimizer.step()
 
-   for batch_idx, (images, labels) in enumerate(dataset_CNN):
-       images = images.to(device)
-       labels = labels.to(device)
-       
-       optim_CNN.zero_grad()
-       loss,logits = model_CNN(images, labels)
-       loss.backward()
-       optim_CNN.step()
+        cnn_total_loss += loss.item()
 
-       cnn_total_loss += loss.item()
-   
-   model_RNN.train()
+    # --- Train on sequences (RNN) ---
+    for batch_idx, (seq_inputs, seq_labels) in enumerate(dataset_RNN):
+        seq_inputs = seq_inputs.to(device)
+        seq_labels = seq_labels.to(device)
 
-   for batch_idx, (x_train, labels) in enumerate(dataset_RNN):
-       x_train = x_train.to(device)
-       labels = labels.to(device)
+        optimizer.zero_grad()
+        loss, _ = model(seq_inputs, seq_labels)
+        loss.backward()
+        optimizer.step()
 
-       optim_RNN.zero_grad()
-       loss, logits = model_RNN(x_train, labels)
-       loss.backward()
-       optim_RNN.step()
+        rnn_total_loss += loss.item()
 
-       rnn_total_loss += loss.item()
+    # --- Logging ---
+    if epoch % 100 == 0:
+        avg_cnn_loss = cnn_total_loss / len(dataset_CNN)
+        avg_rnn_loss = rnn_total_loss / len(dataset_RNN)
 
+        print("=" * 80)
+        print(f"🎵 EPOCH {epoch:4d}/{EPOCHS} 🎵")
+        print(f"📊 CNN Loss: {avg_cnn_loss:.4f} | RNN Loss: {avg_rnn_loss:.4f}")
+        print(f"⚡ LR: {optimizer.param_groups[0]['lr']:.6f}")
+        print("=" * 80)
 
-   if epoch % 100 == 0:
-       # Calculate average losses
-       avg_cnn_loss = cnn_total_loss / len(dataset_CNN)
-       avg_rnn_loss = rnn_total_loss / len(dataset_RNN)
-       
-       print("=" * 80)
-       print(f"🎵 EPOCH {epoch:4d}/{epochs} 🎵")
-       print(f"📊 Losses → CNN: {avg_cnn_loss:.4f} | RNN: {avg_rnn_loss:.4f}")
-       print(f"⚡ Learning Rate: {optim_CNN.param_groups[0]['lr']:.6f}")
-       print("=" * 80)
+# ------------------------------
+# SAVE CHECKPOINT
+# ------------------------------
+torch.save({
+    'model_state_dict': model.state_dict(),
+    'optimizer_state_dict': optimizer.state_dict(),
+}, 'cnn_rnn_checkpoint.pth')
 
-   
-
-
-checkpoint = torch.load('model_checkpoint.pth')
-model_CNN.load_state_dict(checkpoint['model_CNN_state_dict'])
-model_RNN.load_state_dict(checkpoint['model_RNN_state_dict'])
+print("✅ Joint CNN+RNN checkpoint saved successfully!")

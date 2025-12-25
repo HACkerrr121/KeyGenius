@@ -18,27 +18,30 @@ class CNN_RNN(nn.Module):
 
         # --- CNN layers ---
         self.cnn = nn.Sequential(
-            nn.Conv2d(input_channels, 64, kernel_size=3, padding=1),
+            nn.Conv2d(input_channels, 16, kernel_size=3, padding=1),
             nn.ReLU(),
+            nn.Dropout(0.3),
             nn.MaxPool2d(2),
-            nn.Conv2d(64, 128, kernel_size=3, padding=1),
+            nn.Conv2d(16, 32, kernel_size=3, padding=1),
             nn.ReLU(),
+            nn.Dropout(0.2),
             nn.MaxPool2d(2),
-            nn.Conv2d(128, 256, kernel_size=3, padding=1),
+            nn.Conv2d(32, 32, kernel_size=3, padding=1),
             nn.ReLU(),
+            nn.Dropout(0.4),
             nn.AdaptiveAvgPool2d((7, 7))
         )
 
         # CNN classifiers
-        self.hand_classifier = nn.Linear(256*7*7, self.max_sequence * self.num_hand_classes)
-        self.note_classifier = nn.Linear(256*7*7, self.max_sequence * self.num_note_classes)
-        self.time_regressor = nn.Linear(256*7*7, self.max_sequence)
+        self.hand_classifier = nn.Linear(32*7*7, self.max_sequence * self.num_hand_classes)
+        self.note_classifier = nn.Linear(32*7*7, self.max_sequence * self.num_note_classes)
+        self.time_regressor = nn.Linear(32*7*7, self.max_sequence)
 
         # --- RNN parameters ---
         rnn_input_size = 3  # For sequences: hand, note, time
-        self.rnn_hidden_size = rnn_params.get("hidden_size", 64)
+        self.rnn_hidden_size = rnn_params.get("hidden_size", 32)
         rnn_output_size = rnn_params.get("output_size", self.num_note_classes)
-        rnn_layers = rnn_params.get("num_layers", 3)
+        rnn_layers = rnn_params.get("num_layers", 2)
 
         self.input_linear = nn.Linear(rnn_input_size, self.rnn_hidden_size)
         self.rnn = nn.LSTM(
@@ -46,7 +49,8 @@ class CNN_RNN(nn.Module):
             hidden_size=self.rnn_hidden_size,
             num_layers=rnn_layers,
             batch_first=True,
-            bidirectional=True
+            bidirectional=True,
+            dropout = 0.3
         )
         self.classifier = nn.Linear(self.rnn_hidden_size*2, rnn_output_size)
 
@@ -105,5 +109,6 @@ class CNN_RNN(nn.Module):
         seq_inputs = seq_inputs.float().to(next(self.parameters()).device)
         rnn_in = self.input_linear(seq_inputs)  # [B, seq_len, hidden]
         lstm_out, _ = self.rnn(rnn_in)
+        lstm_out = F.dropout(lstm_out, p=0.4, training=self.training)
         rnn_logits = self.classifier(lstm_out)
         return rnn_logits

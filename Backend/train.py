@@ -26,11 +26,11 @@ RNN_SEQ_LEN = 50
 NUM_HAND_CLASSES = 11
 NUM_NOTE_CLASSES = 128
 LR = 1e-3
-EPOCHS = 6000
+EPOCHS = 100
 BATCH_SIZE = 16
 VAL_SPLIT = 0.2
 
-# RNN parameters
+# RNN parameters 
 RNN_HIDDEN_SIZE = 64
 RNN_LAYERS = 3
 
@@ -95,7 +95,7 @@ rnn_params = {
 model = CNN_RNN(cnn_params=cnn_params, rnn_params=rnn_params).to(device)
 print(f"Model on device: {next(model.parameters()).device}")
 
-optimizer = torch.optim.AdamW(model.parameters(), lr=LR, weight_decay=1e-5)
+optimizer = torch.optim.AdamW(model.parameters(), lr=LR, weight_decay=1e-4)
 scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=10)
 
 # ------------------------------

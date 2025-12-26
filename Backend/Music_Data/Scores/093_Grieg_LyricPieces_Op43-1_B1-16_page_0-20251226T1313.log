@@ -1,0 +1,27 @@
+2025-12-26 13:13:53,679 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\093_Grieg_LyricPieces_Op43-1_B1-16_page_0.jpg
+2025-12-26 13:13:53,803 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:13:53,804 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\093_Grieg_LyricPieces_Op43-1_B1-16_page_0.omr
+2025-12-26 13:13:53,811 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 13:13:53,818 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 13:13:53,961 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\093_Grieg_LyricPieces_Op43-1_B1-16_page_0.jpg
+2025-12-26 13:13:53,965 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 13:13:54,085 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 13:13:54,318 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 13:13:54,354 WARN [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]            SheetStub.java:412  | 093_Grieg_LyricPieces_Op43-1_B1-16_page_0
+
+ With a too low interline value of 10 pixels,
+ either this sheet contains no multi-line staves,
+ or the picture resolution is too low (try 300 DPI).
+
+ This interline value is NOT RELIABLE!
+2025-12-26 13:13:54,355 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]                 Book.java:543  | Created scores: []
+2025-12-26 13:13:54,355 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]            SheetStub.java:1191 | Sheet 093_Grieg_LyricPieces_Op43-1_B1-16_page_0 flagged as invalid.
+2025-12-26 13:13:54,356 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]            SheetStub.java:1410 | StepException cause detected in [LOAD, BINARY, SCALE, GRID, HEADERS, STEM_SEEDS, BEAMS, LEDGERS, HEADS, STEMS, REDUCTION, CUE_BEAMS, TEXTS, MEASURES, CHORDS, CURVES, SYMBOLS, LINKS, RHYTHMS, PAGE]
+2025-12-26 13:13:54,358 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]                 Book.java:2596 | Book{093_Grieg_LyricPieces_Op43-1_B1-16_page_0} storing
+2025-12-26 13:13:54,372 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:13:54,450 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 13:13:54,650 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 13:13:54,651 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\093_Grieg_LyricPieces_Op43-1_B1-16_page_0.omr
+2025-12-26 13:13:54,658 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 13:13:54,673 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 13:13:54,673 INFO [093_Grieg_LyricPieces_Op43-1_B1-16_page_0]                 Book.java:2071 | Book processed.

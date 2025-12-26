@@ -1,0 +1,66 @@
+2025-12-26 13:23:58,802 INFO [136_Faure_Impromptu_No3_B1-27_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\136_Faure_Impromptu_No3_B1-27_page_0.jpg
+2025-12-26 13:23:58,925 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:23:58,926 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\136_Faure_Impromptu_No3_B1-27_page_0.omr
+2025-12-26 13:23:58,932 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 13:23:58,938 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 13:23:59,067 INFO [136_Faure_Impromptu_No3_B1-27_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\136_Faure_Impromptu_No3_B1-27_page_0.jpg
+2025-12-26 13:23:59,071 INFO [136_Faure_Impromptu_No3_B1-27_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 13:23:59,195 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 13:23:59,423 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 13:23:59,445 INFO [136_Faure_Impromptu_No3_B1-27_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  6 -- 0.50 of 11 interline
+2025-12-26 13:23:59,447 INFO [136_Faure_Impromptu_No3_B1-27_page_0]         ScaleBuilder.java:264  | Beam measured height:  7 -- 0.43 of [4..11] range at 833% of needed quorum
+2025-12-26 13:23:59,448 INFO [136_Faure_Impromptu_No3_B1-27_page_0]            ScaleStep.java:65   | Scale{ interline(12,13,13) line(1,1,3) beam(7)}
+2025-12-26 13:23:59,448 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 13:23:59,890 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 13:23:59,962 INFO [136_Faure_Impromptu_No3_B1-27_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 14 of sizes [5] with interline(12,13,13)
+2025-12-26 13:24:00,168 INFO [136_Faure_Impromptu_No3_B1-27_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10] #6[11, 12] #7[13, 14]
+2025-12-26 13:24:00,452 INFO [136_Faure_Impromptu_No3_B1-27_page_0]        SystemManager.java:134  | Indentation detected for system #1
+2025-12-26 13:24:00,453 INFO [136_Faure_Impromptu_No3_B1-27_page_0]        SystemManager.java:779  | 1 part along 7 systems
+2025-12-26 13:24:00,454 INFO [136_Faure_Impromptu_No3_B1-27_page_0]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 13:24:00,455 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 13:24:00,759 INFO []      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 13:24:00,765 INFO []   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 13:24:01,672 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 13:24:01,708 INFO [136_Faure_Impromptu_No3_B1-27_page_0]        StemSeedsStep.java:86   | stem(2 max:2)
+2025-12-26 13:24:01,758 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 13:24:03,023 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 13:24:03,299 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 13:24:05,511 INFO [136_Faure_Impromptu_No3_B1-27_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:0.1,R:0.5]}
+2025-12-26 13:24:05,512 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 13:24:05,781 INFO [136_Faure_Impromptu_No3_B1-27_page_0]           BeamLinker.java:1729 | Not linking shorter BeamInter#1700{(0.406) BEAM}
+2025-12-26 13:24:06,267 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 13:24:06,435 INFO [136_Faure_Impromptu_No3_B1-27_page_0]        ReductionStep.java:105  | Stems free length median value: 45 pixels, 3.5 interlines
+2025-12-26 13:24:06,441 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 13:24:06,442 INFO [136_Faure_Impromptu_No3_B1-27_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 13:24:06,442 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 13:24:06,544 WARN [136_Faure_Impromptu_No3_B1-27_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 13:24:06,546 INFO [136_Faure_Impromptu_No3_B1-27_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 13:24:06,559 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 13:24:06,573 INFO [136_Faure_Impromptu_No3_B1-27_page_0]                 Page.java:307  | 27 raw measures: [4 in system#1, 3 in system#2, 4 in system#3, 4 in system#4, 4 in system#5, 4 in system#6, 4 in system#7]
+2025-12-26 13:24:06,575 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 13:24:06,604 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 13:24:07,195 INFO [136_Faure_Impromptu_No3_B1-27_page_0]         SlursBuilder.java:240  | Slurs: 20
+2025-12-26 13:24:07,237 INFO [136_Faure_Impromptu_No3_B1-27_page_0]      SegmentsBuilder.java:155  | Segments: 20
+2025-12-26 13:24:07,246 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 13:24:07,705 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 13:24:07,782 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 13:24:07,816 INFO [136_Faure_Impromptu_No3_B1-27_page_0]                Voice.java:257  | Measure{#4} Voice{#5 excess:1/32} too long
+2025-12-26 13:24:07,816 INFO [136_Faure_Impromptu_No3_B1-27_page_0]                Voice.java:257  | Measure{#4} Voice{#2 excess:1/32} too long
+2025-12-26 13:24:07,817 INFO [136_Faure_Impromptu_No3_B1-27_page_0]          StackRhythm.java:224  | S1 MeasureStack#4 no correct rhythm
+2025-12-26 13:24:07,881 INFO [136_Faure_Impromptu_No3_B1-27_page_0]        MeasureRhythm.java:1045 | Measure{#26} No timeOffset for HeadChordInter#6018{(0.568/0.568) staff:14 slot#9 dur:1/2}
+2025-12-26 13:24:07,883 INFO [136_Faure_Impromptu_No3_B1-27_page_0]          StackRhythm.java:224  | S7 MeasureStack#26 no correct rhythm
+2025-12-26 13:24:07,885 INFO [136_Faure_Impromptu_No3_B1-27_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 13:24:07,918 INFO [136_Faure_Impromptu_No3_B1-27_page_0]                Voice.java:257  | Measure{#4} Voice{#2 excess:1/32} too long
+2025-12-26 13:24:07,918 INFO [136_Faure_Impromptu_No3_B1-27_page_0]                Voice.java:257  | Measure{#4} Voice{#5 excess:1/32} too long
+2025-12-26 13:24:07,924 INFO [136_Faure_Impromptu_No3_B1-27_page_0]                 Book.java:2596 | Book{136_Faure_Impromptu_No3_B1-27_page_0} storing
+2025-12-26 13:24:07,972 INFO [136_Faure_Impromptu_No3_B1-27_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:24:08,063 INFO [136_Faure_Impromptu_No3_B1-27_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 13:24:09,057 INFO [136_Faure_Impromptu_No3_B1-27_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 13:24:09,058 INFO [136_Faure_Impromptu_No3_B1-27_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\136_Faure_Impromptu_No3_B1-27_page_0.omr
+2025-12-26 13:24:09,062 INFO [136_Faure_Impromptu_No3_B1-27_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 13:24:09,096 INFO [136_Faure_Impromptu_No3_B1-27_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 13:24:09,097 INFO [136_Faure_Impromptu_No3_B1-27_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 13:24:09,587 INFO [136_Faure_Impromptu_No3_B1-27_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 13:24:09,986 INFO [136_Faure_Impromptu_No3_B1-27_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 13:24:10,112 INFO [136_Faure_Impromptu_No3_B1-27_page_0]        ScoreExporter.java:164  | Score 136_Faure_Impromptu_No3_B1-27_page_0 exported to C:\Users\Elliot\Downloads\Audiveris\scores\136_Faure_Impromptu_No3_B1-27_page_0.mxl
+2025-12-26 13:24:10,163 INFO [136_Faure_Impromptu_No3_B1-27_page_0]                Score.java:181  | Closing {Score 1}

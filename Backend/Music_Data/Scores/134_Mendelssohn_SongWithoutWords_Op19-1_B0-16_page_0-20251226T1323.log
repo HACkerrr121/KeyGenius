@@ -1,0 +1,71 @@
+2025-12-26 13:23:26,126 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0.jpg
+2025-12-26 13:23:26,240 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:23:26,241 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0.omr
+2025-12-26 13:23:26,251 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 13:23:26,253 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 13:23:26,352 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0.jpg
+2025-12-26 13:23:26,355 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 13:23:26,443 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 13:23:26,665 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 13:23:26,686 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  6 -- 0.50 of 11 interline
+2025-12-26 13:23:26,687 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]         ScaleBuilder.java:264  | Beam measured height:  7 -- 0.43 of [4..11] range at 787% of needed quorum
+2025-12-26 13:23:26,689 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]            ScaleStep.java:65   | Scale{ interline(12,13,13) line(1,1,2) beam(7)}
+2025-12-26 13:23:26,690 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 13:23:26,976 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 13:23:27,015 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 10 of sizes [5] with interline(12,13,13)
+2025-12-26 13:23:27,110 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10]
+2025-12-26 13:23:27,331 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]        SystemManager.java:779  | 1 part along 5 systems
+2025-12-26 13:23:27,332 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 13:23:27,332 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 13:23:27,701 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 13:23:27,705 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 13:23:28,414 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 13:23:28,453 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]        StemSeedsStep.java:86   | stem(2 max:3)
+2025-12-26 13:23:28,500 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 13:23:29,556 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 13:23:29,730 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 13:23:31,463 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.3,R:0.5]}
+2025-12-26 13:23:31,464 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 13:23:32,066 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 13:23:32,238 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]        ReductionStep.java:105  | Stems free length median value: 39 pixels, 3.0 interlines
+2025-12-26 13:23:32,246 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 13:23:32,247 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 13:23:32,247 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 13:23:32,332 WARN [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 13:23:32,332 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 13:23:32,342 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 13:23:32,352 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                 Page.java:307  | 10 raw measures: [2 in system#1, 2 in system#2, 2 in system#3, 2 in system#4, 2 in system#5]
+2025-12-26 13:23:32,353 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 13:23:32,377 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 13:23:32,903 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]         SlursBuilder.java:240  | Slurs: 4
+2025-12-26 13:23:32,913 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]      SegmentsBuilder.java:155  | Segments: 1
+2025-12-26 13:23:32,921 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 13:23:33,151 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 13:23:33,202 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 13:23:33,298 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]        MeasureRhythm.java:1277 | Measure{#5} Time inconsistency in {5/8=[HeadChordInter#4454{(0.961/0.961) staff:5 slot#11 off:5/8 dur:1/32}], 13/16=[HeadChordInter#4480{(0.950/0.950) staff:6 slot#11 off:13/16 dur:1/16}]}
+2025-12-26 13:23:33,303 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                Voice.java:257  | Measure{#5} Voice{#6 excess:1/16} too long
+2025-12-26 13:23:33,303 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                Voice.java:257  | Measure{#5} Voice{#3 excess:3/16} too long
+2025-12-26 13:23:33,304 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                Voice.java:257  | Measure{#5} Voice{#4 excess:1/16} too long
+2025-12-26 13:23:33,305 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                Voice.java:257  | Measure{#5} Voice{#7 excess:3/16} too long
+2025-12-26 13:23:33,305 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                Voice.java:257  | Measure{#5} Voice{#8 excess:3/16} too long
+2025-12-26 13:23:33,305 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                Voice.java:257  | Measure{#5} Voice{#9 excess:3/16} too long
+2025-12-26 13:23:33,306 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]          StackRhythm.java:224  | S3 MeasureStack#5 no correct rhythm
+2025-12-26 13:23:33,377 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 13:23:33,384 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                Voice.java:257  | Measure{#5} Voice{#3 excess:3/16} too long
+2025-12-26 13:23:33,385 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                Voice.java:257  | Measure{#5} Voice{#4 excess:1/16} too long
+2025-12-26 13:23:33,385 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                Voice.java:257  | Measure{#5} Voice{#5 excess:3/16} too long
+2025-12-26 13:23:33,385 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                Voice.java:257  | Measure{#5} Voice{#6 excess:1/16} too long
+2025-12-26 13:23:33,385 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                Voice.java:257  | Measure{#5} Voice{#7 excess:3/16} too long
+2025-12-26 13:23:33,385 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                Voice.java:257  | Measure{#5} Voice{#8 excess:3/16} too long
+2025-12-26 13:23:33,391 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                 Book.java:2596 | Book{134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0} storing
+2025-12-26 13:23:33,431 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:23:33,505 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 13:23:34,212 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 13:23:34,212 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0.omr
+2025-12-26 13:23:34,220 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 13:23:34,259 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 13:23:34,260 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 13:23:34,715 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 13:23:35,121 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 13:23:35,243 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]        ScoreExporter.java:164  | Score 134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0 exported to C:\Users\Elliot\Downloads\Audiveris\scores\134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0.mxl
+2025-12-26 13:23:35,293 INFO [134_Mendelssohn_SongWithoutWords_Op19-1_B0-16_page_0]                Score.java:181  | Closing {Score 1}

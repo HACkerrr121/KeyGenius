@@ -1,0 +1,60 @@
+2025-12-26 12:47:58,787 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\006_Bach_Partita_No6_Corrente_B1-38_page_0.jpg
+2025-12-26 12:47:58,938 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 12:47:58,939 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\006_Bach_Partita_No6_Corrente_B1-38_page_0.omr
+2025-12-26 12:47:58,944 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 12:47:58,948 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 12:47:59,080 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\006_Bach_Partita_No6_Corrente_B1-38_page_0.jpg
+2025-12-26 12:47:59,085 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 12:47:59,227 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 12:47:59,502 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 12:47:59,527 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  6 -- 0.50 of 12 interline
+2025-12-26 12:47:59,528 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]         ScaleBuilder.java:264  | Beam measured height:  8 -- 0.50 of [4..12] range at 703% of needed quorum
+2025-12-26 12:47:59,529 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]            ScaleStep.java:65   | Scale{ interline(13,14,14) line(1,1,2) beam(8)}
+2025-12-26 12:47:59,529 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 12:47:59,878 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 12:47:59,924 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 10 of sizes [5] with interline(13,14,14)
+2025-12-26 12:48:00,078 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10]
+2025-12-26 12:48:00,295 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]        SystemManager.java:779  | 1 part along 5 systems
+2025-12-26 12:48:00,296 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 12:48:00,297 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 12:48:00,640 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 12:48:00,643 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 12:48:01,401 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 12:48:01,450 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]        StemSeedsStep.java:86   | stem(2 max:2)
+2025-12-26 12:48:01,493 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 12:48:02,851 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 12:48:02,969 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 12:48:05,146 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:0.1,R:0.5]}
+2025-12-26 12:48:05,148 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 12:48:05,796 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 12:48:05,956 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]        ReductionStep.java:105  | Stems free length median value: 50 pixels, 3.6 interlines
+2025-12-26 12:48:05,962 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 12:48:05,962 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 12:48:05,963 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 12:48:06,059 WARN [006_Bach_Partita_No6_Corrente_B1-38_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 12:48:06,060 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 12:48:06,070 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 12:48:06,083 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]                 Page.java:307  | 25 raw measures: [6 in system#1, 5 in system#2, 5 in system#3, 5 in system#4, 4 in system#5]
+2025-12-26 12:48:06,084 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 12:48:06,106 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 12:48:06,650 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]         SlursBuilder.java:240  | Slurs: 21
+2025-12-26 12:48:06,661 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]      SegmentsBuilder.java:155  | Segments: 5
+2025-12-26 12:48:06,667 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 12:48:06,941 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 12:48:06,999 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 12:48:07,050 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]                Voice.java:257  | Measure{#6} Voice{#1 excess:1/16} too long
+2025-12-26 12:48:07,051 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]          StackRhythm.java:224  | S1 MeasureStack#6 no correct rhythm
+2025-12-26 12:48:07,098 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 12:48:07,103 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]                Voice.java:257  | Measure{#6} Voice{#1 excess:1/16} too long
+2025-12-26 12:48:07,108 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]                 Book.java:2596 | Book{006_Bach_Partita_No6_Corrente_B1-38_page_0} storing
+2025-12-26 12:48:07,142 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 12:48:07,205 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 12:48:08,078 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 12:48:08,078 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\006_Bach_Partita_No6_Corrente_B1-38_page_0.omr
+2025-12-26 12:48:08,083 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 12:48:08,124 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 12:48:08,126 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 12:48:08,453 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 12:48:08,874 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 12:48:08,984 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]        ScoreExporter.java:164  | Score 006_Bach_Partita_No6_Corrente_B1-38_page_0 exported to C:\Users\Elliot\Downloads\Audiveris\scores\006_Bach_Partita_No6_Corrente_B1-38_page_0.mxl
+2025-12-26 12:48:09,027 INFO [006_Bach_Partita_No6_Corrente_B1-38_page_0]                Score.java:181  | Closing {Score 1}

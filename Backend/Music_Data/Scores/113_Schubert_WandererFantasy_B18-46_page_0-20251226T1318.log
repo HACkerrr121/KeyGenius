@@ -1,0 +1,69 @@
+2025-12-26 13:18:49,876 INFO [113_Schubert_WandererFantasy_B18-46_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\113_Schubert_WandererFantasy_B18-46_page_0.jpg
+2025-12-26 13:18:50,022 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:18:50,023 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\113_Schubert_WandererFantasy_B18-46_page_0.omr
+2025-12-26 13:18:50,028 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 13:18:50,033 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 13:18:50,135 INFO [113_Schubert_WandererFantasy_B18-46_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\113_Schubert_WandererFantasy_B18-46_page_0.jpg
+2025-12-26 13:18:50,138 INFO [113_Schubert_WandererFantasy_B18-46_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 13:18:50,250 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 13:18:50,481 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 13:18:50,506 INFO [113_Schubert_WandererFantasy_B18-46_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  4 -- 0.50 of 9 interline
+2025-12-26 13:18:50,509 INFO [113_Schubert_WandererFantasy_B18-46_page_0]         ScaleBuilder.java:264  | Beam measured height:  6 -- 0.50 of [3..9] range at 661% of needed quorum
+2025-12-26 13:18:50,510 INFO [113_Schubert_WandererFantasy_B18-46_page_0]            ScaleStep.java:65   | Scale{ interline(10,11,11) line(1,1,2) beam(6)}
+2025-12-26 13:18:50,511 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 13:18:51,156 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 13:18:51,233 INFO [113_Schubert_WandererFantasy_B18-46_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 12 of sizes [5] with interline(10,11,11)
+2025-12-26 13:18:51,455 INFO [113_Schubert_WandererFantasy_B18-46_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10] #6[11, 12]
+2025-12-26 13:18:51,784 INFO [113_Schubert_WandererFantasy_B18-46_page_0]        SystemManager.java:779  | 1 part along 6 systems
+2025-12-26 13:18:51,785 INFO [113_Schubert_WandererFantasy_B18-46_page_0]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 13:18:51,786 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 13:18:52,146 INFO [113_Schubert_WandererFantasy_B18-46_page_0]      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 13:18:52,150 INFO [113_Schubert_WandererFantasy_B18-46_page_0]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 13:18:53,012 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 13:18:53,052 INFO [113_Schubert_WandererFantasy_B18-46_page_0]        StemSeedsStep.java:86   | stem(1 max:2)
+2025-12-26 13:18:53,107 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 13:18:54,167 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 13:18:54,378 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 13:18:56,545 INFO [113_Schubert_WandererFantasy_B18-46_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:-0.1,R:-0.1] NOTEHEAD_BLACK[L:-0.2,R:0.4]}
+2025-12-26 13:18:56,546 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 13:18:57,945 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 13:18:58,312 INFO [113_Schubert_WandererFantasy_B18-46_page_0]        ReductionStep.java:105  | Stems free length median value: 37 pixels, 3.4 interlines
+2025-12-26 13:18:58,321 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 13:18:58,322 INFO [113_Schubert_WandererFantasy_B18-46_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 13:18:58,322 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 13:18:58,433 WARN [113_Schubert_WandererFantasy_B18-46_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 13:18:58,434 INFO [113_Schubert_WandererFantasy_B18-46_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 13:18:58,443 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 13:18:58,457 INFO [113_Schubert_WandererFantasy_B18-46_page_0]                 Page.java:307  | 23 raw measures: [4 in system#1, 5 in system#2, 5 in system#3, 3 in system#4, 3 in system#5, 3 in system#6]
+2025-12-26 13:18:58,457 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 13:18:58,488 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 13:18:59,223 INFO [113_Schubert_WandererFantasy_B18-46_page_0]         SlursBuilder.java:240  | Slurs: 27
+2025-12-26 13:18:59,296 INFO [113_Schubert_WandererFantasy_B18-46_page_0]      SegmentsBuilder.java:155  | Segments: 38
+2025-12-26 13:18:59,319 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 13:18:59,984 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 13:19:00,132 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 13:19:00,219 INFO [113_Schubert_WandererFantasy_B18-46_page_0]        MeasureRhythm.java:1277 | Measure{#17} Time inconsistency in {13/16=[HeadChordInter#10406{(0.935/0.935) staff:7 slot#14 off:13/16 dur:1/16}], 7/8=[HeadChordInter#10444{(0.933/0.933) staff:8 slot#14 off:7/8 dur:1/8}]}
+2025-12-26 13:19:00,219 INFO [113_Schubert_WandererFantasy_B18-46_page_0]        MeasureRhythm.java:1277 | Measure{#17} Time inconsistency in {7/8=[HeadChordInter#10407{(0.944/0.944) staff:7 slot#15 off:7/8 dur:1/16}], 1=[HeadChordInter#10445{(0.947/0.947) staff:8 slot#15 off:1 dur:1/8}]}
+2025-12-26 13:19:00,220 INFO [113_Schubert_WandererFantasy_B18-46_page_0]        MeasureRhythm.java:1277 | Measure{#17} Time inconsistency in {15/16=[HeadChordInter#10408{(0.962/0.962) staff:7 slot#16 off:15/16 dur:1/16}], 9/8=[HeadChordInter#10446{(0.959/0.959) staff:8 slot#16 off:9/8 dur:3/16}]}
+2025-12-26 13:19:00,221 INFO [113_Schubert_WandererFantasy_B18-46_page_0]                Voice.java:257  | Measure{#17} Voice{#5 excess:5/16} too long
+2025-12-26 13:19:00,221 INFO [113_Schubert_WandererFantasy_B18-46_page_0]          StackRhythm.java:224  | S4 MeasureStack#17 no correct rhythm
+2025-12-26 13:19:00,258 INFO [113_Schubert_WandererFantasy_B18-46_page_0]        MeasureRhythm.java:1277 | Measure{#23} Time inconsistency in {13/16=[HeadChordInter#10619{(0.935/0.935) staff:12 slot#14 off:13/16 dur:1/16}], 7/8=[HeadChordInter#10580{(0.933/0.933) staff:11 slot#14 off:7/8 dur:1/8}]}
+2025-12-26 13:19:00,260 INFO [113_Schubert_WandererFantasy_B18-46_page_0]        MeasureRhythm.java:1277 | Measure{#23} Time inconsistency in {7/8=[HeadChordInter#10620{(0.947/0.947) staff:12 slot#15 off:7/8 dur:1/16}], 1=[HeadChordInter#10581{(0.946/0.946) staff:11 slot#15 off:1 dur:1/8}]}
+2025-12-26 13:19:00,261 INFO [113_Schubert_WandererFantasy_B18-46_page_0]        MeasureRhythm.java:1277 | Measure{#23} Time inconsistency in {15/16=[HeadChordInter#10621{(0.964/0.964) staff:12 slot#16 off:15/16 dur:1/16}], 9/8=[HeadChordInter#10582{(0.959/0.959) staff:11 slot#16 off:9/8 dur:1/8}]}
+2025-12-26 13:19:00,261 INFO [113_Schubert_WandererFantasy_B18-46_page_0]                Voice.java:257  | Measure{#23} Voice{#1 excess:1/4} too long
+2025-12-26 13:19:00,263 INFO [113_Schubert_WandererFantasy_B18-46_page_0]          StackRhythm.java:224  | S6 MeasureStack#23 no correct rhythm
+2025-12-26 13:19:00,264 INFO [113_Schubert_WandererFantasy_B18-46_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 13:19:00,273 INFO [113_Schubert_WandererFantasy_B18-46_page_0]                Voice.java:257  | Measure{#17} Voice{#5 excess:5/16} too long
+2025-12-26 13:19:00,274 INFO [113_Schubert_WandererFantasy_B18-46_page_0]                Voice.java:257  | Measure{#23} Voice{#1 excess:1/4} too long
+2025-12-26 13:19:00,279 INFO [113_Schubert_WandererFantasy_B18-46_page_0]                 Book.java:2596 | Book{113_Schubert_WandererFantasy_B18-46_page_0} storing
+2025-12-26 13:19:00,340 INFO [113_Schubert_WandererFantasy_B18-46_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:19:00,423 INFO [113_Schubert_WandererFantasy_B18-46_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 13:19:01,514 INFO [113_Schubert_WandererFantasy_B18-46_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 13:19:01,514 INFO [113_Schubert_WandererFantasy_B18-46_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\113_Schubert_WandererFantasy_B18-46_page_0.omr
+2025-12-26 13:19:01,520 INFO [113_Schubert_WandererFantasy_B18-46_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 13:19:01,553 INFO [113_Schubert_WandererFantasy_B18-46_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 13:19:01,554 INFO [113_Schubert_WandererFantasy_B18-46_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 13:19:02,016 INFO [113_Schubert_WandererFantasy_B18-46_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 13:19:02,484 INFO [113_Schubert_WandererFantasy_B18-46_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 13:19:02,681 INFO [113_Schubert_WandererFantasy_B18-46_page_0]        ScoreExporter.java:164  | Score 113_Schubert_WandererFantasy_B18-46_page_0 exported to C:\Users\Elliot\Downloads\Audiveris\scores\113_Schubert_WandererFantasy_B18-46_page_0.mxl
+2025-12-26 13:19:02,737 INFO [113_Schubert_WandererFantasy_B18-46_page_0]                Score.java:181  | Closing {Score 1}

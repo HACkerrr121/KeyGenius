@@ -1,0 +1,65 @@
+2025-12-26 12:47:44,542 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0.jpg
+2025-12-26 12:47:44,657 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 12:47:44,658 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0.omr
+2025-12-26 12:47:44,664 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 12:47:44,668 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 12:47:44,755 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0.jpg
+2025-12-26 12:47:44,757 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 12:47:44,867 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 12:47:45,181 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 12:47:45,240 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  6 -- 0.50 of 11 interline
+2025-12-26 12:47:45,242 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]         ScaleBuilder.java:264  | Beam measured height:  7 -- 0.43 of [4..11] range at 881% of needed quorum
+2025-12-26 12:47:45,243 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]            ScaleStep.java:65   | Scale{ interline(13,13,14) line(1,1,3) beam(7)}
+2025-12-26 12:47:45,245 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 12:47:45,813 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 12:47:45,896 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 12 of sizes [5] with interline(13,13,14)
+2025-12-26 12:47:46,056 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10] #6[11, 12]
+2025-12-26 12:47:46,339 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]        SystemManager.java:779  | 1 part along 6 systems
+2025-12-26 12:47:46,340 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 12:47:46,341 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 12:47:46,685 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 12:47:46,689 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 12:47:47,534 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 12:47:47,587 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]        StemSeedsStep.java:86   | stem(2 max:2)
+2025-12-26 12:47:47,647 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 12:47:49,073 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 12:47:49,255 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 12:47:52,057 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.3,R:0.2]}
+2025-12-26 12:47:52,058 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 12:47:52,910 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 12:47:53,150 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]        ReductionStep.java:105  | Stems free length median value: 46 pixels, 3.5 interlines
+2025-12-26 12:47:53,159 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 12:47:53,160 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 12:47:53,160 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 12:47:53,267 WARN [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 12:47:53,267 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 12:47:53,278 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 12:47:53,290 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]                 Page.java:307  | 14 raw measures: [3 in system#1, 3 in system#2, 2 in system#3, 2 in system#4, 2 in system#5, 2 in system#6]
+2025-12-26 12:47:53,291 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 12:47:53,319 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 12:47:53,993 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]         SlursBuilder.java:240  | Slurs: 31
+2025-12-26 12:47:54,025 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]      SegmentsBuilder.java:155  | Segments: 13
+2025-12-26 12:47:54,032 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 12:47:54,386 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 12:47:54,470 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 12:47:54,501 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]                Voice.java:257  | Measure{#2} Voice{#1 excess:1/8} too long
+2025-12-26 12:47:54,503 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]          StackRhythm.java:224  | S1 MeasureStack#2 no correct rhythm
+2025-12-26 12:47:54,539 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]        MeasureRhythm.java:1277 | Measure{#5} Time inconsistency in {3/8=[HeadChordInter#7459{(0.948/0.948) staff:4 slot#8 off:3/8 dur:1/16}], 7/16=[HeadChordInter#7413{(0.956/0.956) staff:3 slot#8 off:7/16 dur:1/16}]}
+2025-12-26 12:47:54,542 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]        MeasureRhythm.java:1277 | Measure{#5} Time inconsistency in {9/16=[HeadChordInter#7417{(0.954/0.954) staff:3 slot#11 off:9/16 dur:1/8}], 5/8=[HeadChordInter#7418{(0.953/0.953) staff:3 slot#11 off:5/8 dur:1/16}, HeadChordInter#7461{(0.952/0.952) staff:4 slot#11 off:5/8 dur:1/16}]}
+2025-12-26 12:47:54,544 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]        MeasureRhythm.java:1277 | Measure{#5} Time inconsistency in {13/16=[HeadChordInter#7422{(0.950/0.950) staff:3 slot#14 off:13/16 dur:1/8}, HeadChordInter#7423{(0.956/0.956) staff:3 slot#14 off:13/16 dur:1/16}], 7/8=[HeadChordInter#7463{(0.968/0.968) staff:4 slot#14 off:7/8 dur:1/16}]}
+2025-12-26 12:47:54,568 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]        MeasureRhythm.java:1277 | Measure{#8} Time inconsistency in {3/8=[HeadChordInter#7496{(0.960/0.960) staff:5 slot#8 off:3/8 dur:1/16}], 7/16=[HeadChordInter#7523{(0.959/0.959) staff:6 slot#8 off:7/16 dur:1/16}]}
+2025-12-26 12:47:54,570 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]        MeasureRhythm.java:1277 | Measure{#8} Time inconsistency in {5/8=[HeadChordInter#7499{(0.946/0.946) staff:5 slot#12 off:5/8 dur:1/16}], 11/16=[HeadChordInter#7527{(0.957/0.957) staff:6 slot#12 off:11/16 dur:1/16}]}
+2025-12-26 12:47:54,614 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 12:47:54,623 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]                Voice.java:257  | Measure{#2} Voice{#1 excess:1/8} too long
+2025-12-26 12:47:54,628 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]                 Book.java:2596 | Book{005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0} storing
+2025-12-26 12:47:54,675 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 12:47:54,757 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 12:47:55,685 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 12:47:55,686 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0.omr
+2025-12-26 12:47:55,690 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 12:47:55,724 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 12:47:55,726 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 12:47:56,198 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 12:47:56,658 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 12:47:56,866 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]        ScoreExporter.java:164  | Score 005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0 exported to C:\Users\Elliot\Downloads\Audiveris\scores\005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0.mxl
+2025-12-26 12:47:56,922 INFO [005_Bach_WTC_II_No19_A_Fuga_B1-14_page_0]                Score.java:181  | Closing {Score 1}

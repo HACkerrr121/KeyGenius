@@ -1,0 +1,64 @@
+2025-12-26 12:58:48,743 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4.jpg
+2025-12-26 12:58:48,910 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 12:58:48,911 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4.omr
+2025-12-26 12:58:48,919 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 12:58:48,927 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | LOAD
+2025-12-26 12:58:49,044 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4.jpg
+2025-12-26 12:58:49,048 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 12:58:49,175 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | BINARY
+2025-12-26 12:58:49,602 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | SCALE
+2025-12-26 12:58:49,634 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]         ScaleBuilder.java:241  | Beam  guessed height:  5 -- 0.50 of 10 interline
+2025-12-26 12:58:49,636 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]         ScaleBuilder.java:264  | Beam measured height:  6 -- 0.43 of [3..10] range at 368% of needed quorum
+2025-12-26 12:58:49,637 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]            ScaleStep.java:65   | Scale{ interline(11,12,12) line(1,1,2) beam(6)}
+2025-12-26 12:58:49,638 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | GRID
+2025-12-26 12:58:50,125 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 12:58:50,194 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]    ClustersRetriever.java:326  | Retrieved raw line clusters: 10 of sizes [5] with interline(11,12,12)
+2025-12-26 12:58:50,373 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10]
+2025-12-26 12:58:50,760 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]        SystemManager.java:779  | 1 part along 5 systems
+2025-12-26 12:58:50,762 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 12:58:50,763 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | HEADERS
+2025-12-26 12:58:51,211 INFO []      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 12:58:51,215 INFO []   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 12:58:52,249 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 12:58:52,316 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]        StemSeedsStep.java:86   | stem(1 max:2)
+2025-12-26 12:58:52,381 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | BEAMS
+2025-12-26 12:58:53,651 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 12:58:53,819 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | HEADS
+2025-12-26 12:58:56,099 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.1,R:0.5]}
+2025-12-26 12:58:56,099 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | STEMS
+2025-12-26 12:58:57,124 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 12:58:57,455 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]        ReductionStep.java:105  | Stems free length median value: 40 pixels, 3.3 interlines
+2025-12-26 12:58:57,465 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 12:58:57,466 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 12:58:57,467 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | TEXTS
+2025-12-26 12:58:57,600 WARN [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 12:58:57,601 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 12:58:57,612 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | MEASURES
+2025-12-26 12:58:57,624 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]                 Page.java:307  | 24 raw measures: [4 in system#1, 4 in system#2, 4 in system#3, 7 in system#4, 5 in system#5]
+2025-12-26 12:58:57,625 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | CHORDS
+2025-12-26 12:58:57,648 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | CURVES
+2025-12-26 12:58:58,467 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]         SlursBuilder.java:240  | Slurs: 3
+2025-12-26 12:58:58,484 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]      SegmentsBuilder.java:155  | Segments: 5
+2025-12-26 12:58:58,494 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 12:58:59,153 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | LINKS
+2025-12-26 12:58:59,200 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#6670{(0.161) staff:5 VENTIDUESIMA BASSA}
+2025-12-26 12:58:59,238 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]             KeyInter.java:1298 | Key built KeyInter#6769{(0.799) staff:10 KEY_SHARP_1 pitch:-2.2 fifths:1}
+2025-12-26 12:58:59,249 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 12:58:59,354 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]       StepMonitoring.java:98   | PAGE
+2025-12-26 12:58:59,363 WARN [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]         MeasureFixer.java:343  | System#1 No target duration for measures local IDs [1, 2, 3, 4], please check time signatures
+2025-12-26 12:58:59,364 WARN [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]         MeasureFixer.java:343  | System#2 No target duration for measures local IDs [5, 6, 7, 8], please check time signatures
+2025-12-26 12:58:59,365 WARN [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]         MeasureFixer.java:343  | System#3 No target duration for measures local IDs [9, 10, 11, 12], please check time signatures
+2025-12-26 12:58:59,366 WARN [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]         MeasureFixer.java:343  | System#4 No target duration for measures local IDs [13, 14, 15, 16, 17, 18, 19], please check time signatures
+2025-12-26 12:58:59,366 WARN [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]         MeasureFixer.java:343  | System#5 No target duration for measures local IDs [20, 21, 22, 23, 24], please check time signatures
+2025-12-26 12:58:59,373 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]                 Book.java:2596 | Book{034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4} storing
+2025-12-26 12:58:59,442 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]                 Book.java:2577 | Stored /book.xml
+2025-12-26 12:58:59,598 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 12:59:00,677 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 12:59:00,678 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4.omr
+2025-12-26 12:59:00,684 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 12:59:00,734 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]                 Book.java:2064 | End of Stub#1
+2025-12-26 12:59:00,735 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]                 Book.java:2071 | Book processed.
+2025-12-26 12:59:01,200 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 12:59:01,820 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 12:59:01,951 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]        ScoreExporter.java:164  | Score 034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4 exported to C:\Users\Elliot\Downloads\Audiveris\scores\034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4.mxl
+2025-12-26 12:59:01,994 INFO [034_Beethoven_PianoSonata_N8_Mov1_B1-134_page_4]                Score.java:181  | Closing {Score 1}

@@ -1,0 +1,74 @@
+2025-12-26 13:19:37,461 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\116_Brahms_Intermezzo_Op118-2_B8-25_page_0.jpg
+2025-12-26 13:19:37,580 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:19:37,581 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\116_Brahms_Intermezzo_Op118-2_B8-25_page_0.omr
+2025-12-26 13:19:37,586 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 13:19:37,589 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 13:19:37,698 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\116_Brahms_Intermezzo_Op118-2_B8-25_page_0.jpg
+2025-12-26 13:19:37,702 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 13:19:37,821 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 13:19:38,082 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 13:19:38,105 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  6 -- 0.50 of 12 interline
+2025-12-26 13:19:38,107 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]         ScaleBuilder.java:264  | Beam measured height:  7 -- 0.38 of [4..12] range at 268% of needed quorum
+2025-12-26 13:19:38,107 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]            ScaleStep.java:65   | Scale{ interline(13,14,14) line(1,1,4) beam(7)}
+2025-12-26 13:19:38,108 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 13:19:38,552 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 13:19:38,634 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 10 of sizes [5] with interline(13,14,14)
+2025-12-26 13:19:38,767 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10]
+2025-12-26 13:19:39,048 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]        SystemManager.java:779  | 1 part along 5 systems
+2025-12-26 13:19:39,049 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 13:19:39,050 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 13:19:39,326 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 13:19:39,330 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 13:19:40,161 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 13:19:40,205 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]        StemSeedsStep.java:86   | stem(2 max:2)
+2025-12-26 13:19:40,266 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 13:19:41,259 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 13:19:41,607 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 13:19:44,067 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:-0.1] NOTEHEAD_BLACK[L:0.1,R:0.5]}
+2025-12-26 13:19:44,068 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 13:19:44,764 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 13:19:44,923 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]        ReductionStep.java:105  | Stems free length median value: 47 pixels, 3.4 interlines
+2025-12-26 13:19:44,929 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 13:19:44,930 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 13:19:44,930 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 13:19:45,028 WARN [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 13:19:45,029 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 13:19:45,045 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 13:19:45,060 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]                 Page.java:307  | 18 raw measures: [4 in system#1, 4 in system#2, 3 in system#3, 3 in system#4, 4 in system#5]
+2025-12-26 13:19:45,061 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 13:19:45,081 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 13:19:45,767 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]         SlursBuilder.java:240  | Slurs: 61
+2025-12-26 13:19:45,819 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]      SegmentsBuilder.java:155  | Segments: 42
+2025-12-26 13:19:45,829 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 13:19:46,435 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 13:19:46,507 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 13:19:46,563 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]        MeasureRhythm.java:1045 | Measure{#4} No timeOffset for HeadChordInter#4853{(0.967/0.967) staff:1 slot#2 dur:1/8}
+2025-12-26 13:19:46,565 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]   AbstractChordInter.java:627  | Measure{#4} No timeOffset for HeadChordInter#4854{(0.969/0.969) staff:1 slot#4 dur:1/16}
+2025-12-26 13:19:46,566 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]   AbstractChordInter.java:627  | Measure{#4} No timeOffset for HeadChordInter#4856{(0.945/0.945) staff:1 slot#6 dur:1/8}
+2025-12-26 13:19:46,567 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]          StackRhythm.java:224  | S1 MeasureStack#4 no correct rhythm
+2025-12-26 13:19:46,595 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]        MeasureRhythm.java:1045 | Measure{#9} No timeOffset for HeadChordInter#4920{(0.922/0.922) staff:5 slot#6 dur:1/4}
+2025-12-26 13:19:46,596 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]        MeasureRhythm.java:1045 | Measure{#9} No timeOffset for HeadChordInter#4921{(0.955/0.955) staff:5 slot#6 dur:1/4}
+2025-12-26 13:19:46,597 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]        MeasureRhythm.java:1045 | Measure{#9} No timeOffset for RestChordInter#6030{(0.800/0.800) staff:6 slot#6 dur:1/8}
+2025-12-26 13:19:46,597 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]        MeasureRhythm.java:1045 | Measure{#9} No timeOffset for HeadChordInter#4936{(0.928/0.928) staff:6 slot#6 dur:1/4}
+2025-12-26 13:19:46,597 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]   AbstractChordInter.java:627  | Measure{#9} No timeOffset for HeadChordInter#4920{(0.922/0.922) staff:5 slot#6 dur:1/4}
+2025-12-26 13:19:46,597 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]   AbstractChordInter.java:627  | Measure{#9} No timeOffset for HeadChordInter#4921{(0.955/0.955) staff:5 slot#6 dur:1/4}
+2025-12-26 13:19:46,598 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]   AbstractChordInter.java:627  | Measure{#9} No timeOffset for RestChordInter#6030{(0.800/0.800) staff:6 slot#6 dur:1/8}
+2025-12-26 13:19:46,598 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]   AbstractChordInter.java:627  | Measure{#9} No timeOffset for HeadChordInter#4936{(0.928/0.928) staff:6 slot#6 dur:1/4}
+2025-12-26 13:19:46,598 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]                Voice.java:257  | Measure{#9} Voice{#5 excess:1/4} too long
+2025-12-26 13:19:46,599 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]                Voice.java:257  | Measure{#9} Voice{#2 excess:1/4} too long
+2025-12-26 13:19:46,599 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]          StackRhythm.java:224  | S3 MeasureStack#9 no correct rhythm
+2025-12-26 13:19:46,635 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 13:19:46,643 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]                Voice.java:257  | Measure{#9} Voice{#2 excess:1/4} too long
+2025-12-26 13:19:46,643 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]                Voice.java:257  | Measure{#9} Voice{#5 excess:1/4} too long
+2025-12-26 13:19:46,649 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]                 Book.java:2596 | Book{116_Brahms_Intermezzo_Op118-2_B8-25_page_0} storing
+2025-12-26 13:19:46,692 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:19:46,771 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 13:19:47,565 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 13:19:47,566 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\116_Brahms_Intermezzo_Op118-2_B8-25_page_0.omr
+2025-12-26 13:19:47,575 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 13:19:47,608 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 13:19:47,609 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 13:19:47,992 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 13:19:48,432 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 13:19:48,551 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]        ScoreExporter.java:164  | Score 116_Brahms_Intermezzo_Op118-2_B8-25_page_0 exported to C:\Users\Elliot\Downloads\Audiveris\scores\116_Brahms_Intermezzo_Op118-2_B8-25_page_0.mxl
+2025-12-26 13:19:48,604 INFO [116_Brahms_Intermezzo_Op118-2_B8-25_page_0]                Score.java:181  | Closing {Score 1}

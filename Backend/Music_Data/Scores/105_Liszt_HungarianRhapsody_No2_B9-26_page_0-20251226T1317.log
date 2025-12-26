@@ -1,0 +1,128 @@
+2025-12-26 13:17:04,461 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\105_Liszt_HungarianRhapsody_No2_B9-26_page_0.jpg
+2025-12-26 13:17:04,650 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:17:04,651 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\105_Liszt_HungarianRhapsody_No2_B9-26_page_0.omr
+2025-12-26 13:17:04,659 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 13:17:04,667 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 13:17:04,772 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\105_Liszt_HungarianRhapsody_No2_B9-26_page_0.jpg
+2025-12-26 13:17:04,776 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 13:17:04,892 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 13:17:05,108 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 13:17:05,130 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  5 -- 0.50 of 10 interline
+2025-12-26 13:17:05,131 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]         ScaleBuilder.java:264  | Beam measured height:  7 -- 0.57 of [3..10] range at 696% of needed quorum
+2025-12-26 13:17:05,131 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]            ScaleStep.java:65   | Scale{ interline(12,12,13) line(1,1,3) beam(7)}
+2025-12-26 13:17:05,132 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 13:17:05,518 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 13:17:05,594 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 12 of sizes [5] with interline(12,12,13)
+2025-12-26 13:17:05,760 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10] #6[11, 12]
+2025-12-26 13:17:06,003 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        SystemManager.java:779  | 1 part along 6 systems
+2025-12-26 13:17:06,004 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 13:17:06,005 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 13:17:06,367 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 13:17:06,371 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 13:17:07,514 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 13:17:07,567 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        StemSeedsStep.java:86   | stem(1 max:2)
+2025-12-26 13:17:07,636 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 13:17:08,764 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 13:17:08,939 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 13:17:10,716 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.5,R:0.4]}
+2025-12-26 13:17:10,717 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 13:17:11,458 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 13:17:11,633 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        ReductionStep.java:105  | Stems free length median value: 43 pixels, 3.6 interlines
+2025-12-26 13:17:11,638 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 13:17:11,639 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 13:17:11,640 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 13:17:11,737 WARN [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 13:17:11,738 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 13:17:11,749 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 13:17:11,764 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                 Page.java:307  | 18 raw measures: [4 in system#1, 4 in system#2, 3 in system#3, 4 in system#4, 1 in system#5, 2 in system#6]
+2025-12-26 13:17:11,765 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 13:17:11,796 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 13:17:12,476 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]         SlursBuilder.java:240  | Slurs: 32
+2025-12-26 13:17:12,531 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]      SegmentsBuilder.java:155  | Segments: 27
+2025-12-26 13:17:12,540 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 13:17:12,987 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 13:17:13,055 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 13:17:13,079 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#2} No timeOffset for HeadChordInter#5026{(0.955/0.955) staff:2 slot#2 dur:3/16}
+2025-12-26 13:17:13,080 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractChordInter.java:627  | Measure{#2} No timeOffset for HeadChordInter#5027{(0.947/0.947) staff:2 slot#3 dur:1/16}
+2025-12-26 13:17:13,081 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractChordInter.java:627  | Measure{#2} No timeOffset for HeadChordInter#5028{(0.947/0.947) staff:2 slot#4 dur:1/4}
+2025-12-26 13:17:13,083 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]          StackRhythm.java:224  | S1 MeasureStack#2 no correct rhythm
+2025-12-26 13:17:13,087 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#3} No timeOffset for RestChordInter#5867{(0.800/0.800) staff:1 slot#3 dur:1/8}
+2025-12-26 13:17:13,088 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractChordInter.java:627  | Measure{#3} No timeOffset for RestChordInter#5867{(0.800/0.800) staff:1 slot#3 dur:1/8}
+2025-12-26 13:17:13,089 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#3} Voice{#1 excess:1/8} too long
+2025-12-26 13:17:13,090 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#3} Voice{#3 excess:1/8} too long
+2025-12-26 13:17:13,090 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]          StackRhythm.java:224  | S1 MeasureStack#3 no correct rhythm
+2025-12-26 13:17:13,093 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#4} No timeOffset for HeadChordInter#5032{(0.959/0.959) staff:2 slot#2 dur:3/16}
+2025-12-26 13:17:13,094 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractChordInter.java:627  | Measure{#4} No timeOffset for HeadChordInter#5033{(0.953/0.953) staff:2 slot#5 dur:1/16}
+2025-12-26 13:17:13,095 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]          StackRhythm.java:224  | S1 MeasureStack#4 no correct rhythm
+2025-12-26 13:17:13,102 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#5} No timeOffset for HeadChordInter#5056{(0.955/0.955) staff:4 slot#2 dur:3/16}
+2025-12-26 13:17:13,103 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractChordInter.java:627  | Measure{#5} No timeOffset for HeadChordInter#5057{(0.949/0.949) staff:4 slot#3 dur:1/16}
+2025-12-26 13:17:13,104 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]          StackRhythm.java:224  | S2 MeasureStack#5 no correct rhythm
+2025-12-26 13:17:13,106 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#6} No timeOffset for HeadChordInter#5042{(0.961/0.961) staff:3 slot#4 dur:1/8}
+2025-12-26 13:17:13,107 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#6} No timeOffset for HeadChordInter#5061{(0.947/0.947) staff:4 slot#4 dur:1/4}
+2025-12-26 13:17:13,107 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractChordInter.java:627  | Measure{#6} No timeOffset for HeadChordInter#5042{(0.961/0.961) staff:3 slot#4 dur:1/8}
+2025-12-26 13:17:13,107 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractChordInter.java:627  | Measure{#6} No timeOffset for HeadChordInter#5061{(0.947/0.947) staff:4 slot#4 dur:1/4}
+2025-12-26 13:17:13,108 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#6} Voice{#1 excess:3/16} too long
+2025-12-26 13:17:13,108 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]          StackRhythm.java:224  | S2 MeasureStack#6 no correct rhythm
+2025-12-26 13:17:13,109 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#7} No timeOffset for RestChordInter#5884{(0.793/0.793) staff:3 slot#3 dur:1/8}
+2025-12-26 13:17:13,110 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractChordInter.java:627  | Measure{#7} No timeOffset for RestChordInter#5884{(0.793/0.793) staff:3 slot#3 dur:1/8}
+2025-12-26 13:17:13,110 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#7} Voice{#1 excess:1/8} too long
+2025-12-26 13:17:13,110 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#7} Voice{#3 excess:1/8} too long
+2025-12-26 13:17:13,111 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]          StackRhythm.java:224  | S2 MeasureStack#7 no correct rhythm
+2025-12-26 13:17:13,113 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#8} No timeOffset for HeadChordInter#5065{(0.966/0.966) staff:4 slot#2 dur:3/16}
+2025-12-26 13:17:13,115 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractChordInter.java:627  | Measure{#8} No timeOffset for HeadChordInter#5066{(0.946/0.946) staff:4 slot#5 dur:1/16}
+2025-12-26 13:17:13,116 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]          StackRhythm.java:224  | S2 MeasureStack#8 no correct rhythm
+2025-12-26 13:17:13,119 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#9} No timeOffset for HeadChordInter#5071{(0.944/0.944) staff:5 slot#5 dur:3/16}
+2025-12-26 13:17:13,119 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#9} No timeOffset for HeadChordInter#5072{(0.960/0.960) staff:5 slot#5 dur:1/4}
+2025-12-26 13:17:13,120 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#9} No timeOffset for HeadChordInter#5087{(0.937/0.937) slot#5 dur:1/4}
+2025-12-26 13:17:13,120 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#9} Voice{#1 excess:1/8} too long
+2025-12-26 13:17:13,120 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#9} Voice{#2 excess:5/16} too long
+2025-12-26 13:17:13,121 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]          StackRhythm.java:224  | S3 MeasureStack#9 no correct rhythm
+2025-12-26 13:17:13,122 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#10} No timeOffset for HeadChordInter#5076{(0.973/0.973) staff:5 slot#3 dur:1/4}
+2025-12-26 13:17:13,123 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#10} No timeOffset for HeadChordInter#5075{(0.952/0.952) staff:5 slot#3 dur:1/8}
+2025-12-26 13:17:13,123 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#10} No timeOffset for HeadChordInter#5090{(0.939/0.939) slot#3 dur:1/4}
+2025-12-26 13:17:13,123 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#10} No timeOffset for HeadChordInter#5091{(0.941/0.941) slot#3 dur:1/4}
+2025-12-26 13:17:13,123 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#10} Voice{#5 excess:1/8} too long
+2025-12-26 13:17:13,123 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]          StackRhythm.java:224  | S3 MeasureStack#10 no correct rhythm
+2025-12-26 13:17:13,126 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#11} No timeOffset for HeadChordInter#5092{(0.954/0.954) staff:6 slot#2 dur:3/16}
+2025-12-26 13:17:13,127 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractChordInter.java:627  | Measure{#11} No timeOffset for HeadChordInter#5093{(0.950/0.950) staff:6 slot#7 dur:1/16}
+2025-12-26 13:17:13,128 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]          StackRhythm.java:224  | S3 MeasureStack#11 no correct rhythm
+2025-12-26 13:17:13,132 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#12} No timeOffset for HeadChordInter#5115{(0.971/0.971) staff:8 slot#2 dur:3/16}
+2025-12-26 13:17:13,133 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractChordInter.java:627  | Measure{#12} No timeOffset for HeadChordInter#5116{(0.952/0.952) staff:8 slot#5 dur:1/16}
+2025-12-26 13:17:13,134 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]          StackRhythm.java:224  | S4 MeasureStack#12 no correct rhythm
+2025-12-26 13:17:13,138 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#13} No timeOffset for HeadChordInter#5118{(0.973/0.973) staff:8 slot#2 dur:3/16}
+2025-12-26 13:17:13,138 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractChordInter.java:627  | Measure{#13} No timeOffset for HeadChordInter#5119{(0.946/0.946) staff:8 slot#4 dur:1/16}
+2025-12-26 13:17:13,139 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractChordInter.java:627  | Measure{#13} No timeOffset for HeadChordInter#5119{(0.946/0.946) staff:8 slot#4 dur:1/16}
+2025-12-26 13:17:13,139 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractChordInter.java:627  | Measure{#13} No timeOffset for HeadChordInter#5119{(0.946/0.946) staff:8 slot#4 dur:1/16}
+2025-12-26 13:17:13,140 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]   AbstractChordInter.java:627  | Measure{#13} No timeOffset for HeadChordInter#5120{(0.955/0.955) staff:8 slot#6 dur:1/4}
+2025-12-26 13:17:13,140 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#13} Voice{#1 excess:1/8} too long
+2025-12-26 13:17:13,141 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]          StackRhythm.java:224  | S4 MeasureStack#13 no correct rhythm
+2025-12-26 13:17:13,164 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1277 | Measure{#16} Time inconsistency in {3/16=[HeadChordInter#5178{(0.965/0.965) staff:10 slot#20 off:3/16 dur:1/16}], 19/64=[HeadChordInter#5147{(0.961/0.961) staff:9 slot#20 off:19/64 dur:1/64}]}
+2025-12-26 13:17:13,166 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#16} No timeOffset for HeadChordInter#5166{(0.975/0.975) staff:9 slot#39 dur:1/64}
+2025-12-26 13:17:13,166 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        MeasureRhythm.java:1045 | Measure{#16} No timeOffset for RestChordInter#6032{(0.799/0.799) staff:10 slot#39 dur:1/8}
+2025-12-26 13:17:13,167 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#16} Voice{#1 excess:3/32} too long
+2025-12-26 13:17:13,167 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#16} Voice{#6 excess:1/64} too long
+2025-12-26 13:17:13,168 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]          StackRhythm.java:224  | S5 MeasureStack#16 no correct rhythm
+2025-12-26 13:17:13,172 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 13:17:13,177 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#3} Voice{#1 excess:1/8} too long
+2025-12-26 13:17:13,177 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#3} Voice{#3 excess:1/8} too long
+2025-12-26 13:17:13,178 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#6} Voice{#1 excess:3/16} too long
+2025-12-26 13:17:13,178 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#7} Voice{#1 excess:1/8} too long
+2025-12-26 13:17:13,178 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#7} Voice{#3 excess:1/8} too long
+2025-12-26 13:17:13,178 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#9} Voice{#1 excess:1/8} too long
+2025-12-26 13:17:13,179 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#9} Voice{#2 excess:5/16} too long
+2025-12-26 13:17:13,179 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#10} Voice{#5 excess:1/8} too long
+2025-12-26 13:17:13,179 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#13} Voice{#1 excess:1/8} too long
+2025-12-26 13:17:13,180 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#16} Voice{#1 excess:3/32} too long
+2025-12-26 13:17:13,180 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Voice.java:257  | Measure{#16} Voice{#6 excess:1/64} too long
+2025-12-26 13:17:13,187 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                 Book.java:2596 | Book{105_Liszt_HungarianRhapsody_No2_B9-26_page_0} storing
+2025-12-26 13:17:13,231 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:17:13,311 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 13:17:14,126 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 13:17:14,126 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\105_Liszt_HungarianRhapsody_No2_B9-26_page_0.omr
+2025-12-26 13:17:14,130 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 13:17:14,162 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 13:17:14,163 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 13:17:14,563 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 13:17:14,990 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 13:17:15,115 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]        ScoreExporter.java:164  | Score 105_Liszt_HungarianRhapsody_No2_B9-26_page_0 exported to C:\Users\Elliot\Downloads\Audiveris\scores\105_Liszt_HungarianRhapsody_No2_B9-26_page_0.mxl
+2025-12-26 13:17:15,161 INFO [105_Liszt_HungarianRhapsody_No2_B9-26_page_0]                Score.java:181  | Closing {Score 1}

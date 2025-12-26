@@ -1,0 +1,27 @@
+2025-12-26 12:52:43,475 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\023_Chopin_Nocturne_Op9-2_B0-12_page_0.jpg
+2025-12-26 12:52:43,623 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 12:52:43,624 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\023_Chopin_Nocturne_Op9-2_B0-12_page_0.omr
+2025-12-26 12:52:43,629 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 12:52:43,634 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 12:52:43,758 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\023_Chopin_Nocturne_Op9-2_B0-12_page_0.jpg
+2025-12-26 12:52:43,761 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 12:52:43,927 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 12:52:44,326 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 12:52:44,362 WARN [023_Chopin_Nocturne_Op9-2_B0-12_page_0]            SheetStub.java:412  | 023_Chopin_Nocturne_Op9-2_B0-12_page_0
+
+ With a too low interline value of 10 pixels,
+ either this sheet contains no multi-line staves,
+ or the picture resolution is too low (try 300 DPI).
+
+ This interline value is NOT RELIABLE!
+2025-12-26 12:52:44,364 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]                 Book.java:543  | Created scores: []
+2025-12-26 12:52:44,365 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]            SheetStub.java:1191 | Sheet 023_Chopin_Nocturne_Op9-2_B0-12_page_0 flagged as invalid.
+2025-12-26 12:52:44,365 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]            SheetStub.java:1410 | StepException cause detected in [LOAD, BINARY, SCALE, GRID, HEADERS, STEM_SEEDS, BEAMS, LEDGERS, HEADS, STEMS, REDUCTION, CUE_BEAMS, TEXTS, MEASURES, CHORDS, CURVES, SYMBOLS, LINKS, RHYTHMS, PAGE]
+2025-12-26 12:52:44,367 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]                 Book.java:2596 | Book{023_Chopin_Nocturne_Op9-2_B0-12_page_0} storing
+2025-12-26 12:52:44,385 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 12:52:44,470 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 12:52:44,749 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 12:52:44,750 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\023_Chopin_Nocturne_Op9-2_B0-12_page_0.omr
+2025-12-26 12:52:44,760 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 12:52:44,779 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 12:52:44,781 INFO [023_Chopin_Nocturne_Op9-2_B0-12_page_0]                 Book.java:2071 | Book processed.

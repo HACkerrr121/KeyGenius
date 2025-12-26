@@ -1,0 +1,137 @@
+2025-12-26 13:19:50,415 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\117_Brahms_Rhapsodie_Op79-2_B14-25_page_0.jpg
+2025-12-26 13:19:50,549 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:19:50,549 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\117_Brahms_Rhapsodie_Op79-2_B14-25_page_0.omr
+2025-12-26 13:19:50,554 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 13:19:50,559 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 13:19:50,687 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\117_Brahms_Rhapsodie_Op79-2_B14-25_page_0.jpg
+2025-12-26 13:19:50,689 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 13:19:50,801 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 13:19:51,011 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 13:19:51,036 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  5 -- 0.50 of 10 interline
+2025-12-26 13:19:51,037 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]         ScaleBuilder.java:264  | Beam measured height:  7 -- 0.57 of [3..10] range at 384% of needed quorum
+2025-12-26 13:19:51,038 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]            ScaleStep.java:65   | Scale{ interline(11,12,12) line(1,1,3) beam(7)}
+2025-12-26 13:19:51,038 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 13:19:51,424 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       LinesRetriever.java:1500 | Global slope: 0.00143
+2025-12-26 13:19:51,520 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 10 of sizes [5] with interline(11,12,12)
+2025-12-26 13:19:51,676 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10]
+2025-12-26 13:19:51,973 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        SystemManager.java:134  | Indentation detected for system #1
+2025-12-26 13:19:51,975 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        SystemManager.java:779  | 1 part along 5 systems
+2025-12-26 13:19:51,975 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 13:19:51,976 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 13:19:52,260 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 13:19:52,267 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 13:19:53,193 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 13:19:53,223 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        StemSeedsStep.java:86   | stem(1 max:2)
+2025-12-26 13:19:53,273 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 13:19:54,320 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 13:19:54,567 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 13:19:56,298 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.0,R:0.5]}
+2025-12-26 13:19:56,299 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 13:19:57,156 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 13:19:57,461 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        ReductionStep.java:105  | Stems free length median value: 36 pixels, 3.0 interlines
+2025-12-26 13:19:57,466 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 13:19:57,466 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 13:19:57,466 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 13:19:57,545 WARN [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 13:19:57,546 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 13:19:57,554 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 13:19:57,564 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                 Page.java:307  | 12 raw measures: [2 in system#1, 3 in system#2, 3 in system#3, 2 in system#4, 2 in system#5]
+2025-12-26 13:19:57,565 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 13:19:57,598 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 13:19:58,197 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]         SlursBuilder.java:240  | Slurs: 47
+2025-12-26 13:19:58,225 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]      SegmentsBuilder.java:155  | Segments: 41
+2025-12-26 13:19:58,234 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 13:19:58,791 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 13:19:58,894 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 13:19:58,915 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#1} Voice{#1 excess:1/8} too long
+2025-12-26 13:19:58,916 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]          StackRhythm.java:224  | S1 MeasureStack#1 no correct rhythm
+2025-12-26 13:19:58,928 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1277 | Measure{#2} Time inconsistency in {1/4=[HeadChordInter#6093{(0.944/0.944) staff:1 slot#4 off:1/4 dur:1/8}], 3/8=[HeadChordInter#6105{(0.966/0.966) staff:2 slot#4 off:3/8 dur:1/8}]}
+2025-12-26 13:19:58,929 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1277 | Measure{#2} Time inconsistency in {3/8=[HeadChordInter#6094{(0.944/0.944) staff:1 slot#5 off:3/8 dur:1/8}], 1/2=[HeadChordInter#6106{(0.972/0.972) staff:2 slot#5 off:1/2 dur:1/8}]}
+2025-12-26 13:19:58,930 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1277 | Measure{#2} Time inconsistency in {1/2=[HeadChordInter#6095{(0.946/0.946) staff:1 slot#6 off:1/2 dur:1/8}], 5/8=[HeadChordInter#6107{(0.957/0.957) staff:2 slot#6 off:5/8 dur:1/8}]}
+2025-12-26 13:19:58,933 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#2} No timeOffset for HeadChordInter#6099{(0.970/0.970) staff:1 slot#10 dur:1/8}
+2025-12-26 13:19:58,934 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#2} No timeOffset for HeadChordInter#6111{(0.966/0.966) staff:2 slot#10 dur:1/8}
+2025-12-26 13:19:58,935 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#2} Voice{#2 excess:1/8} too long
+2025-12-26 13:19:58,935 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#2} Voice{#5 excess:1/8} too long
+2025-12-26 13:19:58,936 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]          StackRhythm.java:224  | S1 MeasureStack#2 no correct rhythm
+2025-12-26 13:19:58,944 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1277 | Measure{#3} Time inconsistency in {1/4=[HeadChordInter#6116{(0.944/0.944) staff:3 slot#4 off:1/4 dur:1/8}], 3/8=[HeadChordInter#6155{(0.965/0.965) staff:4 slot#4 off:3/8 dur:1/8}]}
+2025-12-26 13:19:58,945 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1277 | Measure{#3} Time inconsistency in {3/8=[HeadChordInter#6117{(0.945/0.945) staff:3 slot#5 off:3/8 dur:1/8}], 1/2=[HeadChordInter#6156{(0.972/0.972) staff:4 slot#5 off:1/2 dur:1/8}]}
+2025-12-26 13:19:58,946 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1277 | Measure{#3} Time inconsistency in {1/2=[HeadChordInter#6118{(0.945/0.945) staff:3 slot#6 off:1/2 dur:1/8}], 5/8=[HeadChordInter#6157{(0.960/0.960) staff:4 slot#6 off:5/8 dur:1/8}]}
+2025-12-26 13:19:58,947 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#3} No timeOffset for HeadChordInter#6122{(0.972/0.972) staff:3 slot#10 dur:1/8}
+2025-12-26 13:19:58,947 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#3} No timeOffset for HeadChordInter#6161{(0.963/0.963) staff:4 slot#10 dur:1/8}
+2025-12-26 13:19:58,948 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#3} Voice{#2 excess:1/8} too long
+2025-12-26 13:19:58,948 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#3} Voice{#5 excess:1/8} too long
+2025-12-26 13:19:58,948 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]          StackRhythm.java:224  | S2 MeasureStack#3 no correct rhythm
+2025-12-26 13:19:58,953 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#4} Voice{#1 excess:3/8} too long
+2025-12-26 13:19:58,954 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#4} Voice{#3 excess:1/4} too long
+2025-12-26 13:19:58,954 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#4} Voice{#7 excess:3/8} too long
+2025-12-26 13:19:58,955 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]          StackRhythm.java:224  | S2 MeasureStack#4 no correct rhythm
+2025-12-26 13:19:58,963 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#5} No timeOffset for HeadChordInter#6148{(0.945/0.945) staff:3 slot#10 dur:1/8}
+2025-12-26 13:19:58,963 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#5} No timeOffset for HeadChordInter#6149{(0.938/0.938) staff:3 slot#10 dur:1/4}
+2025-12-26 13:19:58,965 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#5} No timeOffset for HeadChordInter#6185{(0.966/0.966) staff:4 slot#10 dur:1/8}
+2025-12-26 13:19:58,965 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#5} Voice{#5 excess:1/8} too long
+2025-12-26 13:19:58,966 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]          StackRhythm.java:224  | S2 MeasureStack#5 no correct rhythm
+2025-12-26 13:19:58,973 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#6} No timeOffset for HeadChordInter#6198{(0.949/0.949) staff:5 slot#10 dur:1/8}
+2025-12-26 13:19:58,973 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#6} No timeOffset for HeadChordInter#6199{(0.928/0.928) staff:5 slot#10 dur:1/6}
+2025-12-26 13:19:58,976 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#6} No timeOffset for HeadChordInter#6229{(0.966/0.966) staff:6 slot#10 dur:1/8}
+2025-12-26 13:19:58,977 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#6} Voice{#5 excess:1/8} too long
+2025-12-26 13:19:58,978 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]          StackRhythm.java:224  | S3 MeasureStack#6 no correct rhythm
+2025-12-26 13:19:58,986 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#7} Voice{#1 excess:1/4} too long
+2025-12-26 13:19:58,986 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#7} Voice{#3 excess:1/8} too long
+2025-12-26 13:19:58,987 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#7} Voice{#7 excess:1/4} too long
+2025-12-26 13:19:58,987 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]          StackRhythm.java:224  | S3 MeasureStack#7 no correct rhythm
+2025-12-26 13:19:58,990 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#8} No timeOffset for HeadChordInter#6217{(0.945/0.945) staff:5 slot#10 dur:1/8}
+2025-12-26 13:19:58,991 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#8} No timeOffset for HeadChordInter#6251{(0.969/0.969) staff:6 slot#10 dur:1/8}
+2025-12-26 13:19:58,992 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#8} Voice{#2 excess:1/8} too long
+2025-12-26 13:19:58,992 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]          StackRhythm.java:224  | S3 MeasureStack#8 no correct rhythm
+2025-12-26 13:19:59,002 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#9} Voice{#1 excess:1/8} too long
+2025-12-26 13:19:59,003 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#9} Voice{#5 excess:1/8} too long
+2025-12-26 13:19:59,003 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]          StackRhythm.java:224  | S4 MeasureStack#9 no correct rhythm
+2025-12-26 13:19:59,008 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#10} Voice{#1 excess:1/8} too long
+2025-12-26 13:19:59,008 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#10} Voice{#5 excess:1/8} too long
+2025-12-26 13:19:59,009 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]          StackRhythm.java:224  | S4 MeasureStack#10 no correct rhythm
+2025-12-26 13:19:59,015 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#11} No timeOffset for HeadChordInter#6327{(0.960/0.960) staff:10 slot#15 dur:1/4}
+2025-12-26 13:19:59,015 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#11} Voice{#5 excess:1/8} too long
+2025-12-26 13:19:59,016 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#11} Voice{#4 excess:1/4} too long
+2025-12-26 13:19:59,016 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]          StackRhythm.java:224  | S5 MeasureStack#11 no correct rhythm
+2025-12-26 13:19:59,019 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#12} No timeOffset for HeadChordInter#6313{(0.946/0.946) staff:9 slot#5 dur:1/4}
+2025-12-26 13:19:59,020 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]   AbstractChordInter.java:627  | Measure{#12} No timeOffset for HeadChordInter#6313{(0.946/0.946) staff:9 slot#5 dur:1/4}
+2025-12-26 13:19:59,020 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]   AbstractChordInter.java:627  | Measure{#12} No timeOffset for HeadChordInter#6314{(0.936/0.936) staff:9 slot#6 dur:1/4}
+2025-12-26 13:19:59,020 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]   AbstractChordInter.java:627  | Measure{#12} No timeOffset for HeadChordInter#6330{(0.965/0.965) slot#7 dur:1/4}
+2025-12-26 13:19:59,021 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]   AbstractChordInter.java:627  | Measure{#12} No timeOffset for HeadChordInter#6315{(0.947/0.947) staff:9 slot#8 dur:1/4}
+2025-12-26 13:19:59,021 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]   AbstractChordInter.java:627  | Measure{#12} No timeOffset for HeadChordInter#6316{(0.936/0.936) staff:9 slot#9 dur:1/4}
+2025-12-26 13:19:59,021 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#12} No timeOffset for HeadChordInter#6317{(0.953/0.953) staff:9 slot#10 dur:1/8}
+2025-12-26 13:19:59,022 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        MeasureRhythm.java:1045 | Measure{#12} No timeOffset for HeadChordInter#6331{(0.973/0.973) staff:10 slot#10 dur:1/8}
+2025-12-26 13:19:59,022 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]          StackRhythm.java:224  | S5 MeasureStack#12 no correct rhythm
+2025-12-26 13:19:59,022 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 13:19:59,031 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#1} Voice{#1 excess:1/8} too long
+2025-12-26 13:19:59,032 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#2} Voice{#2 excess:1/8} too long
+2025-12-26 13:19:59,033 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#2} Voice{#5 excess:1/8} too long
+2025-12-26 13:19:59,034 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#3} Voice{#2 excess:1/8} too long
+2025-12-26 13:19:59,034 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#3} Voice{#5 excess:1/8} too long
+2025-12-26 13:19:59,034 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#4} Voice{#1 excess:3/8} too long
+2025-12-26 13:19:59,035 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#4} Voice{#3 excess:1/4} too long
+2025-12-26 13:19:59,035 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#4} Voice{#7 excess:3/8} too long
+2025-12-26 13:19:59,035 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#5} Voice{#5 excess:1/8} too long
+2025-12-26 13:19:59,036 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#6} Voice{#5 excess:1/8} too long
+2025-12-26 13:19:59,036 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#7} Voice{#1 excess:1/4} too long
+2025-12-26 13:19:59,036 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#7} Voice{#3 excess:1/8} too long
+2025-12-26 13:19:59,036 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#7} Voice{#7 excess:1/4} too long
+2025-12-26 13:19:59,036 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#8} Voice{#2 excess:1/8} too long
+2025-12-26 13:19:59,037 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#9} Voice{#1 excess:1/8} too long
+2025-12-26 13:19:59,037 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#9} Voice{#5 excess:1/8} too long
+2025-12-26 13:19:59,037 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#10} Voice{#1 excess:1/8} too long
+2025-12-26 13:19:59,037 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#10} Voice{#5 excess:1/8} too long
+2025-12-26 13:19:59,037 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#11} Voice{#4 excess:1/4} too long
+2025-12-26 13:19:59,039 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Voice.java:257  | Measure{#11} Voice{#5 excess:1/8} too long
+2025-12-26 13:19:59,044 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                 Book.java:2596 | Book{117_Brahms_Rhapsodie_Op79-2_B14-25_page_0} storing
+2025-12-26 13:19:59,096 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:19:59,216 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 13:20:00,140 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 13:20:00,140 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\117_Brahms_Rhapsodie_Op79-2_B14-25_page_0.omr
+2025-12-26 13:20:00,144 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 13:20:00,182 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 13:20:00,183 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 13:20:00,562 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 13:20:01,028 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 13:20:01,153 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]        ScoreExporter.java:164  | Score 117_Brahms_Rhapsodie_Op79-2_B14-25_page_0 exported to C:\Users\Elliot\Downloads\Audiveris\scores\117_Brahms_Rhapsodie_Op79-2_B14-25_page_0.mxl
+2025-12-26 13:20:01,206 INFO [117_Brahms_Rhapsodie_Op79-2_B14-25_page_0]                Score.java:181  | Closing {Score 1}

@@ -1,0 +1,64 @@
+2025-12-26 13:24:39,207 INFO [139_Ravel_JeuxDEau_B38-44_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\139_Ravel_JeuxDEau_B38-44_page_0.jpg
+2025-12-26 13:24:39,340 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:24:39,340 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\139_Ravel_JeuxDEau_B38-44_page_0.omr
+2025-12-26 13:24:39,349 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 13:24:39,356 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 13:24:39,492 INFO [139_Ravel_JeuxDEau_B38-44_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\139_Ravel_JeuxDEau_B38-44_page_0.jpg
+2025-12-26 13:24:39,497 INFO [139_Ravel_JeuxDEau_B38-44_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 13:24:39,608 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 13:24:39,849 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 13:24:39,868 INFO [139_Ravel_JeuxDEau_B38-44_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  5 -- 0.50 of 10 interline
+2025-12-26 13:24:39,870 INFO [139_Ravel_JeuxDEau_B38-44_page_0]         ScaleBuilder.java:264  | Beam measured height:  7 -- 0.57 of [3..10] range at 1179% of needed quorum
+2025-12-26 13:24:39,870 INFO [139_Ravel_JeuxDEau_B38-44_page_0]            ScaleStep.java:65   | Scale{ interline(12,12,13) line(1,1,3) beam(7)}
+2025-12-26 13:24:39,871 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 13:24:40,272 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 13:24:40,338 INFO [139_Ravel_JeuxDEau_B38-44_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 8 of sizes [5] with interline(12,12,13)
+2025-12-26 13:24:40,479 INFO [139_Ravel_JeuxDEau_B38-44_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8]
+2025-12-26 13:24:40,729 INFO [139_Ravel_JeuxDEau_B38-44_page_0]        SystemManager.java:779  | 1 part along 4 systems
+2025-12-26 13:24:40,730 INFO [139_Ravel_JeuxDEau_B38-44_page_0]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 13:24:40,731 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 13:24:41,049 INFO [139_Ravel_JeuxDEau_B38-44_page_0]      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 13:24:41,052 INFO [139_Ravel_JeuxDEau_B38-44_page_0]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 13:24:41,741 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 13:24:41,787 INFO [139_Ravel_JeuxDEau_B38-44_page_0]        StemSeedsStep.java:86   | stem(2 max:2)
+2025-12-26 13:24:41,832 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 13:24:43,024 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 13:24:43,263 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 13:24:45,028 INFO [139_Ravel_JeuxDEau_B38-44_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:-0.3] NOTEHEAD_BLACK[L:-0.2,R:0.5]}
+2025-12-26 13:24:45,029 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 13:24:45,825 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 13:24:45,984 INFO [139_Ravel_JeuxDEau_B38-44_page_0]        ReductionStep.java:105  | Stems free length median value: 38 pixels, 3.2 interlines
+2025-12-26 13:24:45,992 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 13:24:45,993 INFO [139_Ravel_JeuxDEau_B38-44_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 13:24:45,993 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 13:24:46,073 WARN [139_Ravel_JeuxDEau_B38-44_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 13:24:46,075 INFO [139_Ravel_JeuxDEau_B38-44_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 13:24:46,086 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 13:24:46,099 INFO [139_Ravel_JeuxDEau_B38-44_page_0]                 Page.java:307  | 4 raw measures: [1 in system#1, 1 in system#2, 1 in system#3, 1 in system#4]
+2025-12-26 13:24:46,100 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 13:24:46,122 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 13:24:46,821 INFO [139_Ravel_JeuxDEau_B38-44_page_0]         SlursBuilder.java:240  | Slurs: 23
+2025-12-26 13:24:46,868 INFO [139_Ravel_JeuxDEau_B38-44_page_0]      SegmentsBuilder.java:155  | Segments: 13
+2025-12-26 13:24:46,886 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 13:24:47,459 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 13:24:47,600 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 13:24:47,748 INFO [139_Ravel_JeuxDEau_B38-44_page_0]        MeasureRhythm.java:1277 | Measure{#4} Time inconsistency in {11/16=[HeadChordInter#4745{(0.960/0.960) staff:8 slot#23 off:11/16 dur:1/16}], 27/32=[HeadChordInter#4724{(0.960/0.960) staff:7 slot#23 off:27/32 dur:1/32}]}
+2025-12-26 13:24:47,753 INFO [139_Ravel_JeuxDEau_B38-44_page_0]        MeasureRhythm.java:1277 | Measure{#4} Time inconsistency in {35/32=[HeadChordInter#4732{(0.962/0.962) staff:7 slot#35 off:35/32 dur:1/32}], 37/32=[HeadChordInter#4751{(0.967/0.967) staff:8 slot#35 off:37/32 dur:1/16}]}
+2025-12-26 13:24:47,755 INFO [139_Ravel_JeuxDEau_B38-44_page_0]                Voice.java:257  | Measure{#4} Voice{#1 excess:7/32} too long
+2025-12-26 13:24:47,757 INFO [139_Ravel_JeuxDEau_B38-44_page_0]                Voice.java:257  | Measure{#4} Voice{#6 excess:11/32} too long
+2025-12-26 13:24:47,758 INFO [139_Ravel_JeuxDEau_B38-44_page_0]          StackRhythm.java:224  | S4 MeasureStack#4 no correct rhythm
+2025-12-26 13:24:47,758 INFO [139_Ravel_JeuxDEau_B38-44_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 13:24:47,765 INFO [139_Ravel_JeuxDEau_B38-44_page_0]                Voice.java:257  | Measure{#4} Voice{#1 excess:7/32} too long
+2025-12-26 13:24:47,765 INFO [139_Ravel_JeuxDEau_B38-44_page_0]                Voice.java:257  | Measure{#4} Voice{#6 excess:11/32} too long
+2025-12-26 13:24:47,775 INFO [139_Ravel_JeuxDEau_B38-44_page_0]                 Book.java:2596 | Book{139_Ravel_JeuxDEau_B38-44_page_0} storing
+2025-12-26 13:24:47,825 INFO [139_Ravel_JeuxDEau_B38-44_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:24:47,910 INFO [139_Ravel_JeuxDEau_B38-44_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 13:24:48,827 INFO [139_Ravel_JeuxDEau_B38-44_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 13:24:48,828 INFO [139_Ravel_JeuxDEau_B38-44_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\139_Ravel_JeuxDEau_B38-44_page_0.omr
+2025-12-26 13:24:48,834 INFO [139_Ravel_JeuxDEau_B38-44_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 13:24:48,866 INFO [139_Ravel_JeuxDEau_B38-44_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 13:24:48,867 INFO [139_Ravel_JeuxDEau_B38-44_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 13:24:49,273 INFO [139_Ravel_JeuxDEau_B38-44_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 13:24:49,668 INFO [139_Ravel_JeuxDEau_B38-44_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 13:24:49,778 INFO [139_Ravel_JeuxDEau_B38-44_page_0]        ScoreExporter.java:164  | Score 139_Ravel_JeuxDEau_B38-44_page_0 exported to C:\Users\Elliot\Downloads\Audiveris\scores\139_Ravel_JeuxDEau_B38-44_page_0.mxl
+2025-12-26 13:24:49,825 INFO [139_Ravel_JeuxDEau_B38-44_page_0]                Score.java:181  | Closing {Score 1}

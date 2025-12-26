@@ -1,0 +1,64 @@
+2025-12-26 13:15:50,184 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\100_Grieg_PSon_Mov1_B1-36_page_0.jpg
+2025-12-26 13:15:50,300 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:15:50,301 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\100_Grieg_PSon_Mov1_B1-36_page_0.omr
+2025-12-26 13:15:50,306 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 13:15:50,312 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 13:15:50,415 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\100_Grieg_PSon_Mov1_B1-36_page_0.jpg
+2025-12-26 13:15:50,418 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 13:15:50,534 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 13:15:50,765 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 13:15:50,793 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  5 -- 0.50 of 10 interline
+2025-12-26 13:15:50,796 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]         ScaleBuilder.java:264  | Beam measured height:  6 -- 0.43 of [3..10] range at 660% of needed quorum
+2025-12-26 13:15:50,796 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]            ScaleStep.java:65   | Scale{ interline(11,12,12) line(1,1,3) beam(6)}
+2025-12-26 13:15:50,797 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 13:15:51,152 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 13:15:51,226 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 10 of sizes [5] with interline(11,12,12)
+2025-12-26 13:15:51,431 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10]
+2025-12-26 13:15:51,714 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]        SystemManager.java:779  | 1 part along 5 systems
+2025-12-26 13:15:51,715 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 13:15:51,716 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 13:15:52,113 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 13:15:52,120 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 13:15:53,041 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 13:15:53,094 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]        StemSeedsStep.java:86   | stem(2 max:3)
+2025-12-26 13:15:53,157 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 13:15:54,068 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 13:15:54,342 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 13:15:56,262 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.4,R:0.4]}
+2025-12-26 13:15:56,263 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 13:15:57,139 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 13:15:57,409 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]        ReductionStep.java:105  | Stems free length median value: 42 pixels, 3.5 interlines
+2025-12-26 13:15:57,415 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 13:15:57,415 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 13:15:57,415 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 13:15:57,498 WARN [100_Grieg_PSon_Mov1_B1-36_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 13:15:57,498 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 13:15:57,508 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 13:15:57,523 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]                 Page.java:307  | 24 raw measures: [5 in system#1, 5 in system#2, 6 in system#3, 4 in system#4, 4 in system#5]
+2025-12-26 13:15:57,523 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 13:15:57,550 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 13:15:58,260 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]         SlursBuilder.java:240  | Slurs: 26
+2025-12-26 13:15:58,300 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]      SegmentsBuilder.java:155  | Segments: 8
+2025-12-26 13:15:58,312 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 13:15:58,962 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 13:15:59,064 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 13:15:59,127 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]        MeasureRhythm.java:1045 | Measure{#8} No timeOffset for RestChordInter#7522{(0.798/0.798) staff:3 slot#6 dur:1/16}
+2025-12-26 13:15:59,128 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]   AbstractChordInter.java:627  | Measure{#8} No timeOffset for RestChordInter#7522{(0.798/0.798) staff:3 slot#6 dur:1/16}
+2025-12-26 13:15:59,130 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]        MeasureRhythm.java:1045 | Measure{#8} No timeOffset for HeadChordInter#6516{(0.548/0.548) staff:4 slot#7 dur:1/2}
+2025-12-26 13:15:59,130 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]          StackRhythm.java:224  | S2 MeasureStack#8 no correct rhythm
+2025-12-26 13:15:59,145 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]                Voice.java:257  | Measure{#15} Voice{#1 excess:1/16} too long
+2025-12-26 13:15:59,145 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]          StackRhythm.java:224  | S3 MeasureStack#15 no correct rhythm
+2025-12-26 13:15:59,162 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 13:15:59,169 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]                Voice.java:257  | Measure{#15} Voice{#1 excess:1/16} too long
+2025-12-26 13:15:59,173 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]                 Book.java:2596 | Book{100_Grieg_PSon_Mov1_B1-36_page_0} storing
+2025-12-26 13:15:59,221 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:15:59,296 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 13:16:00,068 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 13:16:00,069 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\100_Grieg_PSon_Mov1_B1-36_page_0.omr
+2025-12-26 13:16:00,073 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 13:16:00,106 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 13:16:00,109 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 13:16:00,499 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 13:16:00,870 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 13:16:01,010 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]        ScoreExporter.java:164  | Score 100_Grieg_PSon_Mov1_B1-36_page_0 exported to C:\Users\Elliot\Downloads\Audiveris\scores\100_Grieg_PSon_Mov1_B1-36_page_0.mxl
+2025-12-26 13:16:01,056 INFO [100_Grieg_PSon_Mov1_B1-36_page_0]                Score.java:181  | Closing {Score 1}

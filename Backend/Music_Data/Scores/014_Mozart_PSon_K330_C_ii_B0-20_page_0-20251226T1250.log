@@ -1,0 +1,79 @@
+2025-12-26 12:50:34,719 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\014_Mozart_PSon_K330_C_ii_B0-20_page_0.jpg
+2025-12-26 12:50:34,830 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 12:50:34,831 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\014_Mozart_PSon_K330_C_ii_B0-20_page_0.omr
+2025-12-26 12:50:34,840 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 12:50:34,845 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 12:50:34,927 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\014_Mozart_PSon_K330_C_ii_B0-20_page_0.jpg
+2025-12-26 12:50:34,931 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 12:50:35,032 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 12:50:35,345 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 12:50:35,380 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  5 -- 0.50 of 10 interline
+2025-12-26 12:50:35,382 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]         ScaleBuilder.java:264  | Beam measured height:  7 -- 0.57 of [3..10] range at 476% of needed quorum
+2025-12-26 12:50:35,383 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]            ScaleStep.java:65   | Scale{ interline(11,12,12) line(1,1,2) beam(7)}
+2025-12-26 12:50:35,384 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 12:50:35,662 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 12:50:35,718 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 10 of sizes [5] with interline(11,12,12)
+2025-12-26 12:50:35,876 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10]
+2025-12-26 12:50:36,087 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]        SystemManager.java:134  | Indentation detected for system #1
+2025-12-26 12:50:36,089 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]        SystemManager.java:779  | 1 part along 5 systems
+2025-12-26 12:50:36,091 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 12:50:36,092 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 12:50:36,392 INFO []      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 12:50:36,396 INFO []   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 12:50:37,068 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 12:50:37,100 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]        StemSeedsStep.java:86   | stem(2 max:3)
+2025-12-26 12:50:37,154 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 12:50:38,155 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 12:50:38,318 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 12:50:40,018 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:-0.5] NOTEHEAD_BLACK[L:-0.4,R:0.4]}
+2025-12-26 12:50:40,019 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 12:50:40,776 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 12:50:40,994 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]        ReductionStep.java:105  | Stems free length median value: 41 pixels, 3.4 interlines
+2025-12-26 12:50:41,002 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 12:50:41,003 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 12:50:41,004 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 12:50:41,085 WARN [014_Mozart_PSon_K330_C_ii_B0-20_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 12:50:41,085 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 12:50:41,094 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 12:50:41,107 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                 Page.java:307  | 21 raw measures: [5 in system#1, 4 in system#2, 4 in system#3, 4 in system#4, 4 in system#5]
+2025-12-26 12:50:41,108 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 12:50:41,139 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 12:50:41,738 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]         SlursBuilder.java:240  | Slurs: 5
+2025-12-26 12:50:41,744 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]      SegmentsBuilder.java:155  | Segments: 0
+2025-12-26 12:50:41,752 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 12:50:42,012 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 12:50:42,201 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 12:50:42,239 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Voice.java:257  | Measure{#3} Voice{#2 excess:1/8} too long
+2025-12-26 12:50:42,239 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]          StackRhythm.java:224  | S1 MeasureStack#3 no correct rhythm
+2025-12-26 12:50:42,250 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Voice.java:257  | Measure{#5} Voice{#5 excess:1/4} too long
+2025-12-26 12:50:42,251 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]          StackRhythm.java:224  | S1 MeasureStack#5 no correct rhythm
+2025-12-26 12:50:42,264 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Voice.java:257  | Measure{#8} Voice{#2 excess:1/8} too long
+2025-12-26 12:50:42,265 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]          StackRhythm.java:224  | S2 MeasureStack#8 no correct rhythm
+2025-12-26 12:50:42,272 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Voice.java:257  | Measure{#11} Voice{#1 excess:1/4} too long
+2025-12-26 12:50:42,273 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Voice.java:257  | Measure{#11} Voice{#7 excess:1/4} too long
+2025-12-26 12:50:42,273 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]          StackRhythm.java:224  | S3 MeasureStack#11 no correct rhythm
+2025-12-26 12:50:42,282 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Voice.java:257  | Measure{#14} Voice{#3 excess:1/8} too long
+2025-12-26 12:50:42,283 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]          StackRhythm.java:224  | S4 MeasureStack#14 no correct rhythm
+2025-12-26 12:50:42,296 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]        MeasureRhythm.java:1277 | Measure{#19} Time inconsistency in {5/8=[HeadChordInter#5547{(0.936/0.936) staff:9 slot#8 off:5/8 dur:1/8}, HeadChordInter#5566{(0.966/0.966) staff:10 slot#8 off:5/8 dur:1/8}], 21/32=[HeadChordInter#5548{(0.958/0.958) staff:9 slot#8 off:21/32 dur:3/32}]}
+2025-12-26 12:50:42,297 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Voice.java:257  | Measure{#19} Voice{#1 excess:1/16} too long
+2025-12-26 12:50:42,298 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]          StackRhythm.java:224  | S5 MeasureStack#19 no correct rhythm
+2025-12-26 12:50:42,303 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 12:50:42,308 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Voice.java:257  | Measure{#3} Voice{#2 excess:1/8} too long
+2025-12-26 12:50:42,309 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Voice.java:257  | Measure{#5} Voice{#5 excess:1/4} too long
+2025-12-26 12:50:42,309 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Voice.java:257  | Measure{#8} Voice{#2 excess:1/8} too long
+2025-12-26 12:50:42,310 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Voice.java:257  | Measure{#11} Voice{#1 excess:1/4} too long
+2025-12-26 12:50:42,310 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Voice.java:257  | Measure{#11} Voice{#7 excess:1/4} too long
+2025-12-26 12:50:42,310 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Voice.java:257  | Measure{#14} Voice{#3 excess:1/8} too long
+2025-12-26 12:50:42,310 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Voice.java:257  | Measure{#19} Voice{#1 excess:1/16} too long
+2025-12-26 12:50:42,315 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                 Book.java:2596 | Book{014_Mozart_PSon_K330_C_ii_B0-20_page_0} storing
+2025-12-26 12:50:42,354 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 12:50:42,421 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 12:50:43,153 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 12:50:43,154 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\014_Mozart_PSon_K330_C_ii_B0-20_page_0.omr
+2025-12-26 12:50:43,160 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 12:50:43,199 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 12:50:43,200 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 12:50:43,664 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 12:50:44,647 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 12:50:44,972 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]        ScoreExporter.java:164  | Score 014_Mozart_PSon_K330_C_ii_B0-20_page_0 exported to C:\Users\Elliot\Downloads\Audiveris\scores\014_Mozart_PSon_K330_C_ii_B0-20_page_0.mxl
+2025-12-26 12:50:45,045 INFO [014_Mozart_PSon_K330_C_ii_B0-20_page_0]                Score.java:181  | Closing {Score 1}

@@ -1,0 +1,68 @@
+2025-12-26 13:22:43,926 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\131_Dvorak_Humoreske_Op101-7_B25-40_page_0.jpg
+2025-12-26 13:22:44,054 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:22:44,055 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\131_Dvorak_Humoreske_Op101-7_B25-40_page_0.omr
+2025-12-26 13:22:44,061 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 13:22:44,068 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 13:22:44,153 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\131_Dvorak_Humoreske_Op101-7_B25-40_page_0.jpg
+2025-12-26 13:22:44,158 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 13:22:44,272 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 13:22:44,498 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 13:22:44,523 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  4 -- 0.50 of 9 interline
+2025-12-26 13:22:44,526 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]         ScaleBuilder.java:264  | Beam measured height:  6 -- 0.50 of [3..9] range at 550% of needed quorum
+2025-12-26 13:22:44,527 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]            ScaleStep.java:65   | Scale{ interline(11,11,11) line(1,1,2) beam(6)}
+2025-12-26 13:22:44,528 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 13:22:44,840 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 13:22:44,890 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 8 of sizes [5] with interline(11,11,11)
+2025-12-26 13:22:45,100 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8]
+2025-12-26 13:22:45,319 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]        SystemManager.java:779  | 1 part along 4 systems
+2025-12-26 13:22:45,320 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 13:22:45,321 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 13:22:45,610 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 13:22:45,614 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 13:22:46,422 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 13:22:46,456 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]        StemSeedsStep.java:86   | stem(1 max:2)
+2025-12-26 13:22:46,493 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 13:22:47,341 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 13:22:47,461 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 13:22:48,897 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.3,R:0.5]}
+2025-12-26 13:22:48,898 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 13:22:49,739 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 13:22:50,006 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]        ReductionStep.java:105  | Stems free length median value: 34 pixels, 3.1 interlines
+2025-12-26 13:22:50,015 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 13:22:50,016 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 13:22:50,016 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 13:22:50,091 WARN [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 13:22:50,092 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 13:22:50,105 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 13:22:50,115 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                 Page.java:307  | 16 raw measures: [4 in system#1, 4 in system#2, 4 in system#3, 4 in system#4]
+2025-12-26 13:22:50,115 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 13:22:50,148 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 13:22:50,657 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]         SlursBuilder.java:240  | Slurs: 18
+2025-12-26 13:22:50,675 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]      SegmentsBuilder.java:155  | Segments: 10
+2025-12-26 13:22:50,685 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 13:22:50,892 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 13:22:50,947 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 13:22:50,974 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                Voice.java:257  | Measure{#2} Voice{#1 excess:3/8} too long
+2025-12-26 13:22:50,976 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]          StackRhythm.java:224  | S1 MeasureStack#2 no correct rhythm
+2025-12-26 13:22:50,994 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                Voice.java:257  | Measure{#6} Voice{#1 excess:3/8} too long
+2025-12-26 13:22:50,995 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]          StackRhythm.java:224  | S2 MeasureStack#6 no correct rhythm
+2025-12-26 13:22:51,013 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]        MeasureRhythm.java:1045 | Measure{#10} No timeOffset for HeadChordInter#4710{(0.943/0.943) staff:5 slot#8 dur:1/4}
+2025-12-26 13:22:51,013 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]   AbstractChordInter.java:627  | Measure{#10} No timeOffset for HeadChordInter#4710{(0.943/0.943) staff:5 slot#8 dur:1/4}
+2025-12-26 13:22:51,014 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                Voice.java:257  | Measure{#10} Voice{#2 excess:1/32} too long
+2025-12-26 13:22:51,015 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]          StackRhythm.java:224  | S3 MeasureStack#10 no correct rhythm
+2025-12-26 13:22:51,039 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 13:22:51,045 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                Voice.java:257  | Measure{#2} Voice{#1 excess:3/8} too long
+2025-12-26 13:22:51,046 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                Voice.java:257  | Measure{#6} Voice{#1 excess:3/8} too long
+2025-12-26 13:22:51,047 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                Voice.java:257  | Measure{#10} Voice{#2 excess:1/32} too long
+2025-12-26 13:22:51,052 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                 Book.java:2596 | Book{131_Dvorak_Humoreske_Op101-7_B25-40_page_0} storing
+2025-12-26 13:22:51,093 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:22:51,189 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 13:22:51,933 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 13:22:51,933 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\131_Dvorak_Humoreske_Op101-7_B25-40_page_0.omr
+2025-12-26 13:22:51,936 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 13:22:51,964 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 13:22:51,966 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 13:22:52,343 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 13:22:52,772 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 13:22:52,884 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]        ScoreExporter.java:164  | Score 131_Dvorak_Humoreske_Op101-7_B25-40_page_0 exported to C:\Users\Elliot\Downloads\Audiveris\scores\131_Dvorak_Humoreske_Op101-7_B25-40_page_0.mxl
+2025-12-26 13:22:52,929 INFO [131_Dvorak_Humoreske_Op101-7_B25-40_page_0]                Score.java:181  | Closing {Score 1}

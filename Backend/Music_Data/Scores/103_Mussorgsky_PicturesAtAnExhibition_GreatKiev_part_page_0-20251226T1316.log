@@ -1,0 +1,62 @@
+2025-12-26 13:16:35,311 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0.jpg
+2025-12-26 13:16:35,419 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:16:35,420 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0.omr
+2025-12-26 13:16:35,430 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 13:16:35,433 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 13:16:35,527 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0.jpg
+2025-12-26 13:16:35,530 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 13:16:35,636 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 13:16:35,851 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 13:16:35,875 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  6 -- 0.50 of 12 interline
+2025-12-26 13:16:35,875 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]         ScaleBuilder.java:264  | Beam measured height:  8 -- 0.50 of [4..12] range at 334% of needed quorum
+2025-12-26 13:16:35,876 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]            ScaleStep.java:65   | Scale{ interline(13,14,14) line(1,1,2) beam(8)}
+2025-12-26 13:16:35,877 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 13:16:36,186 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 13:16:36,243 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 10 of sizes [5] with interline(13,14,14)
+2025-12-26 13:16:36,430 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10]
+2025-12-26 13:16:36,682 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]        SystemManager.java:779  | 1 part along 5 systems
+2025-12-26 13:16:36,683 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 13:16:36,685 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 13:16:37,022 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 13:16:37,025 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 13:16:37,701 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 13:16:37,733 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]        StemSeedsStep.java:86   | stem(2 max:2)
+2025-12-26 13:16:37,776 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 13:16:38,919 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 13:16:39,103 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 13:16:41,315 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:-0.1] NOTEHEAD_BLACK[L:-0.2,R:0.4]}
+2025-12-26 13:16:41,316 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 13:16:42,177 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 13:16:42,427 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]        ReductionStep.java:105  | Stems free length median value: 42 pixels, 3.0 interlines
+2025-12-26 13:16:42,432 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 13:16:42,433 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 13:16:42,433 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 13:16:42,525 WARN [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 13:16:42,525 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 13:16:42,533 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 13:16:42,547 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]                 Page.java:307  | 18 raw measures: [4 in system#1, 4 in system#2, 4 in system#3, 3 in system#4, 3 in system#5]
+2025-12-26 13:16:42,547 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 13:16:42,568 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 13:16:43,073 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]         SlursBuilder.java:240  | Slurs: 0
+2025-12-26 13:16:43,084 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]      SegmentsBuilder.java:155  | Segments: 7
+2025-12-26 13:16:43,091 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 13:16:43,392 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 13:16:43,443 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 13:16:43,526 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 13:16:43,533 WARN [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]         MeasureFixer.java:343  | System#1 No target duration for measures local IDs [1, 2, 3, 4], please check time signatures
+2025-12-26 13:16:43,534 WARN [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]         MeasureFixer.java:343  | System#2 No target duration for measures local IDs [5, 6, 7, 8], please check time signatures
+2025-12-26 13:16:43,535 WARN [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]         MeasureFixer.java:343  | System#3 No target duration for measures local IDs [9, 10, 11, 12], please check time signatures
+2025-12-26 13:16:43,536 WARN [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]         MeasureFixer.java:343  | System#4 No target duration for measures local IDs [13, 14, 15], please check time signatures
+2025-12-26 13:16:43,536 WARN [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]         MeasureFixer.java:343  | System#5 No target duration for measures local IDs [16, 17, 18], please check time signatures
+2025-12-26 13:16:43,541 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]                 Book.java:2596 | Book{103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0} storing
+2025-12-26 13:16:43,588 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:16:43,662 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 13:16:44,386 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 13:16:44,386 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0.omr
+2025-12-26 13:16:44,390 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 13:16:44,423 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 13:16:44,425 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 13:16:44,792 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 13:16:45,191 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 13:16:45,320 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]        ScoreExporter.java:164  | Score 103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0 exported to C:\Users\Elliot\Downloads\Audiveris\scores\103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0.mxl
+2025-12-26 13:16:45,370 INFO [103_Mussorgsky_PicturesAtAnExhibition_GreatKiev_part_page_0]                Score.java:181  | Closing {Score 1}

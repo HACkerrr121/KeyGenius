@@ -1,0 +1,67 @@
+2025-12-26 13:07:31,740 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\067_Beethoven_PSon_No14_iii_B37-57_page_0.jpg
+2025-12-26 13:07:31,952 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:07:31,953 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\067_Beethoven_PSon_No14_iii_B37-57_page_0.omr
+2025-12-26 13:07:31,963 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 13:07:31,969 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 13:07:32,126 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\067_Beethoven_PSon_No14_iii_B37-57_page_0.jpg
+2025-12-26 13:07:32,129 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 13:07:32,275 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 13:07:32,706 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 13:07:32,732 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  5 -- 0.50 of 10 interline
+2025-12-26 13:07:32,733 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]         ScaleBuilder.java:264  | Beam measured height:  6 -- 0.43 of [3..10] range at 601% of needed quorum
+2025-12-26 13:07:32,734 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]            ScaleStep.java:65   | Scale{ interline(11,12,12) line(1,1,2) beam(6)}
+2025-12-26 13:07:32,734 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 13:07:33,271 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 13:07:33,337 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 12 of sizes [5] with interline(11,12,12)
+2025-12-26 13:07:33,655 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10] #6[11, 12]
+2025-12-26 13:07:34,148 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]        SystemManager.java:134  | Indentation detected for system #1
+2025-12-26 13:07:34,150 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]        SystemManager.java:779  | 1 part along 6 systems
+2025-12-26 13:07:34,151 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 13:07:34,151 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 13:07:34,555 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 13:07:34,559 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 13:07:35,590 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 13:07:35,652 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]        StemSeedsStep.java:86   | stem(1 max:2)
+2025-12-26 13:07:35,746 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 13:07:37,208 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 13:07:37,618 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 13:07:40,740 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.2,R:0.5]}
+2025-12-26 13:07:40,742 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 13:07:42,736 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 13:07:43,271 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]        ReductionStep.java:105  | Stems free length median value: 42 pixels, 3.5 interlines
+2025-12-26 13:07:43,281 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 13:07:43,281 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 13:07:43,282 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 13:07:43,407 WARN [067_Beethoven_PSon_No14_iii_B37-57_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 13:07:43,408 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 13:07:43,421 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 13:07:43,435 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]                 Page.java:307  | 21 raw measures: [3 in system#1, 3 in system#2, 4 in system#3, 4 in system#4, 4 in system#5, 3 in system#6]
+2025-12-26 13:07:43,436 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 13:07:43,480 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 13:07:44,488 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]         SlursBuilder.java:240  | Slurs: 36
+2025-12-26 13:07:44,525 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]      SegmentsBuilder.java:155  | Segments: 4
+2025-12-26 13:07:44,532 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 13:07:45,753 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 13:07:45,933 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 13:07:46,069 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]        MeasureRhythm.java:1277 | Measure{#19} Time inconsistency in {5/24=[HeadChordInter#10868{(0.952/0.952) staff:12 slot#3 off:5/24 dur:1/12}], 1/4=[HeadChordInter#10854{(0.962/0.962) staff:11 slot#3 off:1/4 dur:1/8}]}
+2025-12-26 13:07:46,071 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]        MeasureRhythm.java:1277 | Measure{#19} Time inconsistency in {7/24=[HeadChordInter#10869{(0.965/0.965) staff:12 slot#4 off:7/24 dur:1/12}], 3/8=[HeadChordInter#10855{(0.971/0.971) staff:11 slot#4 off:3/8 dur:1/8}]}
+2025-12-26 13:07:46,075 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]                Voice.java:257  | Measure{#19} Voice{#5 excess:3/8} too long
+2025-12-26 13:07:46,076 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]                Voice.java:257  | Measure{#19} Voice{#3 excess:3/8} too long
+2025-12-26 13:07:46,079 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]          StackRhythm.java:224  | S6 MeasureStack#19 no correct rhythm
+2025-12-26 13:07:46,084 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]        MeasureRhythm.java:1277 | Measure{#20} Time inconsistency in {17/24=[HeadChordInter#10863{(0.964/0.964) staff:11 slot#7 off:17/24 dur:1/12}], 3/4=[HeadChordInter#10881{(0.958/0.958) staff:12 slot#7 off:3/4 dur:1/8}]}
+2025-12-26 13:07:46,085 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]        MeasureRhythm.java:1277 | Measure{#20} Time inconsistency in {19/24=[HeadChordInter#10864{(0.965/0.965) staff:11 slot#8 off:19/24 dur:1/12}], 7/8=[HeadChordInter#10882{(0.962/0.962) staff:12 slot#8 off:7/8 dur:1/8}]}
+2025-12-26 13:07:46,089 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 13:07:46,098 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]                Voice.java:257  | Measure{#19} Voice{#3 excess:3/8} too long
+2025-12-26 13:07:46,099 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]                Voice.java:257  | Measure{#19} Voice{#5 excess:3/8} too long
+2025-12-26 13:07:46,106 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]                 Book.java:2596 | Book{067_Beethoven_PSon_No14_iii_B37-57_page_0} storing
+2025-12-26 13:07:46,172 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:07:46,243 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 13:07:47,615 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 13:07:47,616 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\067_Beethoven_PSon_No14_iii_B37-57_page_0.omr
+2025-12-26 13:07:47,621 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 13:07:47,678 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 13:07:47,679 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 13:07:48,278 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 13:07:48,815 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 13:07:48,985 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]        ScoreExporter.java:164  | Score 067_Beethoven_PSon_No14_iii_B37-57_page_0 exported to C:\Users\Elliot\Downloads\Audiveris\scores\067_Beethoven_PSon_No14_iii_B37-57_page_0.mxl
+2025-12-26 13:07:49,040 INFO [067_Beethoven_PSon_No14_iii_B37-57_page_0]                Score.java:181  | Closing {Score 1}

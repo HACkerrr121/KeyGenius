@@ -1,0 +1,68 @@
+2025-12-26 13:17:56,721 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0.jpg
+2025-12-26 13:17:56,880 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:17:56,881 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0.omr
+2025-12-26 13:17:56,887 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 13:17:56,893 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 13:17:57,020 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0.jpg
+2025-12-26 13:17:57,024 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 13:17:57,177 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 13:17:57,528 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 13:17:57,570 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  6 -- 0.50 of 12 interline
+2025-12-26 13:17:57,573 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]         ScaleBuilder.java:264  | Beam measured height:  7 -- 0.38 of [4..12] range at 492% of needed quorum
+2025-12-26 13:17:57,573 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]            ScaleStep.java:65   | Scale{ interline(13,14,14) line(1,1,3) beam(7)}
+2025-12-26 13:17:57,576 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 13:17:57,998 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 13:17:58,053 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 8 of sizes [5] with interline(13,14,14)
+2025-12-26 13:17:58,183 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8]
+2025-12-26 13:17:58,412 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]        SystemManager.java:134  | Indentation detected for system #3
+2025-12-26 13:17:58,412 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]        SystemManager.java:723  | 2 pages found in sheet
+2025-12-26 13:17:58,413 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]        SystemManager.java:779  | Page #1: 1 part along 2 systems
+2025-12-26 13:17:58,414 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]        SystemManager.java:779  | Page #2: 1 part along 2 systems
+2025-12-26 13:17:58,416 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]                 Book.java:543  | Created scores: [{Score 1}, {Score 2}]
+2025-12-26 13:17:58,418 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 13:17:58,721 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 13:17:58,731 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 13:17:59,455 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 13:17:59,494 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]        StemSeedsStep.java:86   | stem(2 max:2)
+2025-12-26 13:17:59,548 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 13:18:00,735 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 13:18:01,010 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 13:18:03,413 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.4,R:-0.0]}
+2025-12-26 13:18:03,414 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 13:18:04,506 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 13:18:04,777 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]        ReductionStep.java:105  | Stems free length median value: 49 pixels, 3.5 interlines
+2025-12-26 13:18:04,783 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 13:18:04,787 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 13:18:04,788 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 13:18:04,920 WARN [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 13:18:04,921 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 13:18:04,933 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 13:18:04,946 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]                 Page.java:307  | 5 raw measures: [3 in system#1, 2 in system#2]
+2025-12-26 13:18:04,947 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]                 Page.java:307  | 4 raw measures: [2 in system#3, 2 in system#4]
+2025-12-26 13:18:04,947 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 13:18:04,975 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 13:18:05,598 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]         SlursBuilder.java:240  | Slurs: 17
+2025-12-26 13:18:05,647 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]      SegmentsBuilder.java:155  | Segments: 36
+2025-12-26 13:18:05,660 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 13:18:06,389 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 13:18:06,478 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 13:18:06,612 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]        MeasureRhythm.java:1045 | Measure{#3} No timeOffset for RestChordInter#7457{(0.799/0.799) staff:7 slot#2 dur:1/8}
+2025-12-26 13:18:06,615 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]          StackRhythm.java:224  | S4 MeasureStack#3 no correct rhythm
+2025-12-26 13:18:06,618 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 13:18:06,638 WARN [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]         MeasureFixer.java:343  | System#3 No target duration for measures local IDs [1, 2], please check time signatures
+2025-12-26 13:18:06,639 WARN [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]         MeasureFixer.java:343  | System#4 No target duration for measures local IDs [3, 4], please check time signatures
+2025-12-26 13:18:06,645 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]                 Book.java:2596 | Book{109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0} storing
+2025-12-26 13:18:06,693 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:18:06,780 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 13:18:07,595 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 13:18:07,595 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0.omr
+2025-12-26 13:18:07,598 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 13:18:07,647 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 13:18:07,649 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 13:18:08,035 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 13:18:08,429 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 13:18:08,547 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]        ScoreExporter.java:164  | Score 109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0.mvt1 exported to C:\Users\Elliot\Downloads\Audiveris\scores\109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0.mvt1.mxl
+2025-12-26 13:18:08,551 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 13:18:08,590 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]        ScoreExporter.java:164  | Score 109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0.mvt2 exported to C:\Users\Elliot\Downloads\Audiveris\scores\109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0.mvt2.mxl
+2025-12-26 13:18:08,637 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]                Score.java:181  | Closing {Score 1}
+2025-12-26 13:18:08,638 INFO [109_Rachmaninoff_Prelude_Op23-5_B1-9_page_0]                Score.java:181  | Closing {Score 2}

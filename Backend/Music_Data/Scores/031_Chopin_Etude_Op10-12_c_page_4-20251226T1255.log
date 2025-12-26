@@ -1,0 +1,63 @@
+2025-12-26 12:55:57,511 INFO [031_Chopin_Etude_Op10-12_c_page_4]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\031_Chopin_Etude_Op10-12_c_page_4.jpg
+2025-12-26 12:55:57,726 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 12:55:57,728 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\031_Chopin_Etude_Op10-12_c_page_4.omr
+2025-12-26 12:55:57,737 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 12:55:57,745 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | LOAD
+2025-12-26 12:55:57,885 INFO [031_Chopin_Etude_Op10-12_c_page_4]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\031_Chopin_Etude_Op10-12_c_page_4.jpg
+2025-12-26 12:55:57,887 INFO [031_Chopin_Etude_Op10-12_c_page_4]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 12:55:58,059 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | BINARY
+2025-12-26 12:55:58,411 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | SCALE
+2025-12-26 12:55:58,439 INFO [031_Chopin_Etude_Op10-12_c_page_4]         ScaleBuilder.java:241  | Beam  guessed height:  5 -- 0.50 of 10 interline
+2025-12-26 12:55:58,441 INFO [031_Chopin_Etude_Op10-12_c_page_4]         ScaleBuilder.java:264  | Beam measured height:  7 -- 0.57 of [3..10] range at 541% of needed quorum
+2025-12-26 12:55:58,442 INFO [031_Chopin_Etude_Op10-12_c_page_4]            ScaleStep.java:65   | Scale{ interline(11,12,12) line(1,1,3) beam(7)}
+2025-12-26 12:55:58,442 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | GRID
+2025-12-26 12:55:59,064 INFO [031_Chopin_Etude_Op10-12_c_page_4]       LinesRetriever.java:1500 | Global slope: -0.00109
+2025-12-26 12:55:59,152 INFO [031_Chopin_Etude_Op10-12_c_page_4]    ClustersRetriever.java:326  | Retrieved raw line clusters: 10 of sizes [5] with interline(11,12,12)
+2025-12-26 12:55:59,379 INFO [031_Chopin_Etude_Op10-12_c_page_4]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10]
+2025-12-26 12:55:59,765 INFO [031_Chopin_Etude_Op10-12_c_page_4]        SystemManager.java:779  | 1 part along 5 systems
+2025-12-26 12:55:59,767 INFO [031_Chopin_Etude_Op10-12_c_page_4]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 12:55:59,769 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | HEADERS
+2025-12-26 12:56:00,168 INFO [031_Chopin_Etude_Op10-12_c_page_4]      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 12:56:00,171 INFO [031_Chopin_Etude_Op10-12_c_page_4]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 12:56:01,308 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 12:56:01,370 INFO [031_Chopin_Etude_Op10-12_c_page_4]        StemSeedsStep.java:86   | stem(2 max:2)
+2025-12-26 12:56:01,438 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | BEAMS
+2025-12-26 12:56:03,196 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 12:56:03,558 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | HEADS
+2025-12-26 12:56:06,005 INFO [031_Chopin_Etude_Op10-12_c_page_4]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:-0.3] NOTEHEAD_BLACK[L:-0.2,R:0.5]}
+2025-12-26 12:56:06,006 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | STEMS
+2025-12-26 12:56:07,210 INFO [031_Chopin_Etude_Op10-12_c_page_4]           BeamLinker.java:1729 | Not linking shorter BeamHookInter#2114{(0.265/0.636) BEAM_HOOK}
+2025-12-26 12:56:07,450 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 12:56:07,915 INFO [031_Chopin_Etude_Op10-12_c_page_4]        ReductionStep.java:105  | Stems free length median value: 41 pixels, 3.4 interlines
+2025-12-26 12:56:07,924 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 12:56:07,925 INFO [031_Chopin_Etude_Op10-12_c_page_4]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 12:56:07,925 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | TEXTS
+2025-12-26 12:56:08,050 WARN [031_Chopin_Etude_Op10-12_c_page_4]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 12:56:08,051 INFO [031_Chopin_Etude_Op10-12_c_page_4]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 12:56:08,062 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | MEASURES
+2025-12-26 12:56:08,073 INFO [031_Chopin_Etude_Op10-12_c_page_4]                 Page.java:307  | 14 raw measures: [2 in system#1, 3 in system#2, 3 in system#3, 3 in system#4, 3 in system#5]
+2025-12-26 12:56:08,074 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | CHORDS
+2025-12-26 12:56:08,104 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | CURVES
+2025-12-26 12:56:09,186 INFO [031_Chopin_Etude_Op10-12_c_page_4]         SlursBuilder.java:240  | Slurs: 47
+2025-12-26 12:56:09,265 INFO [031_Chopin_Etude_Op10-12_c_page_4]      SegmentsBuilder.java:155  | Segments: 96
+2025-12-26 12:56:09,280 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 12:56:10,426 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | LINKS
+2025-12-26 12:56:10,698 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 12:56:10,873 INFO [031_Chopin_Etude_Op10-12_c_page_4]       StepMonitoring.java:98   | PAGE
+2025-12-26 12:56:10,883 WARN [031_Chopin_Etude_Op10-12_c_page_4]         MeasureFixer.java:343  | System#1 No target duration for measures local IDs [1, 2], please check time signatures
+2025-12-26 12:56:10,884 WARN [031_Chopin_Etude_Op10-12_c_page_4]         MeasureFixer.java:343  | System#2 No target duration for measures local IDs [3, 4, 5], please check time signatures
+2025-12-26 12:56:10,885 WARN [031_Chopin_Etude_Op10-12_c_page_4]         MeasureFixer.java:343  | System#3 No target duration for measures local IDs [6, 7, 8], please check time signatures
+2025-12-26 12:56:10,886 WARN [031_Chopin_Etude_Op10-12_c_page_4]         MeasureFixer.java:343  | System#4 No target duration for measures local IDs [9, 10, 11], please check time signatures
+2025-12-26 12:56:10,886 WARN [031_Chopin_Etude_Op10-12_c_page_4]         MeasureFixer.java:343  | System#5 No target duration for measures local IDs [12, 13, 14], please check time signatures
+2025-12-26 12:56:10,895 INFO [031_Chopin_Etude_Op10-12_c_page_4]                 Book.java:2596 | Book{031_Chopin_Etude_Op10-12_c_page_4} storing
+2025-12-26 12:56:10,961 INFO [031_Chopin_Etude_Op10-12_c_page_4]                 Book.java:2577 | Stored /book.xml
+2025-12-26 12:56:11,089 INFO [031_Chopin_Etude_Op10-12_c_page_4]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 12:56:12,680 INFO [031_Chopin_Etude_Op10-12_c_page_4]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 12:56:12,681 INFO [031_Chopin_Etude_Op10-12_c_page_4]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\031_Chopin_Etude_Op10-12_c_page_4.omr
+2025-12-26 12:56:12,688 INFO [031_Chopin_Etude_Op10-12_c_page_4]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 12:56:12,729 INFO [031_Chopin_Etude_Op10-12_c_page_4]                 Book.java:2064 | End of Stub#1
+2025-12-26 12:56:12,730 INFO [031_Chopin_Etude_Op10-12_c_page_4]                 Book.java:2071 | Book processed.
+2025-12-26 12:56:13,338 INFO [031_Chopin_Etude_Op10-12_c_page_4]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 12:56:13,960 INFO [031_Chopin_Etude_Op10-12_c_page_4]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 12:56:14,110 INFO [031_Chopin_Etude_Op10-12_c_page_4]        ScoreExporter.java:164  | Score 031_Chopin_Etude_Op10-12_c_page_4 exported to C:\Users\Elliot\Downloads\Audiveris\scores\031_Chopin_Etude_Op10-12_c_page_4.mxl
+2025-12-26 12:56:14,163 INFO [031_Chopin_Etude_Op10-12_c_page_4]                Score.java:181  | Closing {Score 1}

@@ -1,0 +1,100 @@
+2025-12-26 13:04:37,758 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]                 Book.java:560  | 1 sheet in C:\Users\Elliot\Downloads\Audiveris\scores\056_Mozart_PSon_K284_D_iii_B0-17_page_0.jpg
+2025-12-26 13:04:37,948 INFO []                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:04:37,949 INFO []                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\056_Mozart_PSon_K284_D_iii_B0-17_page_0.omr
+2025-12-26 13:04:37,954 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2025-12-26 13:04:37,964 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | LOAD
+2025-12-26 13:04:38,088 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]            SheetStub.java:1273 | Loaded image #1 1653x2339 from C:\Users\Elliot\Downloads\Audiveris\scores\056_Mozart_PSon_K284_D_iii_B0-17_page_0.jpg
+2025-12-26 13:04:38,092 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]            ImageUtil.java:124  | Converting max RGB to gray
+2025-12-26 13:04:38,268 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | BINARY
+2025-12-26 13:04:38,656 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | SCALE
+2025-12-26 13:04:38,682 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]         ScaleBuilder.java:241  | Beam  guessed height:  5 -- 0.50 of 10 interline
+2025-12-26 13:04:38,683 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]         ScaleBuilder.java:264  | Beam measured height:  7 -- 0.57 of [3..10] range at 347% of needed quorum
+2025-12-26 13:04:38,684 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]            ScaleStep.java:65   | Scale{ interline(11,12,12) line(1,1,3) beam(7)}
+2025-12-26 13:04:38,685 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | GRID
+2025-12-26 13:04:39,102 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-12-26 13:04:39,179 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]    ClustersRetriever.java:326  | Retrieved raw line clusters: 8 of sizes [5] with interline(11,12,12)
+2025-12-26 13:04:39,347 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8]
+2025-12-26 13:04:39,610 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]        SystemManager.java:134  | Indentation detected for system #1
+2025-12-26 13:04:39,611 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]        SystemManager.java:779  | 1 part along 4 systems
+2025-12-26 13:04:39,612 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]                 Book.java:543  | Created scores: [{Score 1}]
+2025-12-26 13:04:39,613 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | HEADERS
+2025-12-26 13:04:40,066 INFO []      BasicClassifier.java:286  | Classifier loaded XML norms.
+2025-12-26 13:04:40,070 INFO []   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/C:/Users/Elliot/Downloads/Audiveris/app/audiveris.jar!/res/basic-classifier.zip
+2025-12-26 13:04:41,116 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | STEM_SEEDS
+2025-12-26 13:04:41,175 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]        StemSeedsStep.java:86   | stem(2 max:3)
+2025-12-26 13:04:41,235 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | BEAMS
+2025-12-26 13:04:42,728 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | LEDGERS
+2025-12-26 13:04:42,917 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | HEADS
+2025-12-26 13:04:44,893 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:-0.1] NOTEHEAD_BLACK[L:-0.3,R:0.2]}
+2025-12-26 13:04:44,894 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | STEMS
+2025-12-26 13:04:45,714 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | REDUCTION
+2025-12-26 13:04:45,885 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]        ReductionStep.java:105  | Stems free length median value: 41 pixels, 3.4 interlines
+2025-12-26 13:04:45,890 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | CUE_BEAMS
+2025-12-26 13:04:45,891 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-12-26 13:04:45,891 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | TEXTS
+2025-12-26 13:04:45,975 WARN [056_Mozart_PSon_K284_D_iii_B0-17_page_0]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-12-26 13:04:45,976 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2025-12-26 13:04:45,986 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | MEASURES
+2025-12-26 13:04:46,002 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]                 Page.java:307  | 19 raw measures: [5 in system#1, 4 in system#2, 5 in system#3, 5 in system#4]
+2025-12-26 13:04:46,002 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | CHORDS
+2025-12-26 13:04:46,028 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | CURVES
+2025-12-26 13:04:46,799 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]         SlursBuilder.java:240  | Slurs: 39
+2025-12-26 13:04:46,819 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]      SegmentsBuilder.java:155  | Segments: 8
+2025-12-26 13:04:46,827 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | SYMBOLS
+2025-12-26 13:04:47,251 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | LINKS
+2025-12-26 13:04:47,336 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | RHYTHMS
+2025-12-26 13:04:47,428 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]        MeasureRhythm.java:1045 | Measure{#11} No timeOffset for HeadChordInter#4213{(0.561/0.561) staff:6 slot#9 dur:1/2}
+2025-12-26 13:04:47,430 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]          StackRhythm.java:224  | S3 MeasureStack#11 no correct rhythm
+2025-12-26 13:04:47,460 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]       StepMonitoring.java:98   | PAGE
+2025-12-26 13:04:47,480 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]                 Book.java:2596 | Book{056_Mozart_PSon_K284_D_iii_B0-17_page_0} storing
+2025-12-26 13:04:47,539 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]                 Book.java:2577 | Stored /book.xml
+2025-12-26 13:04:47,643 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-12-26 13:04:48,685 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2025-12-26 13:04:48,686 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]                 Book.java:2537 | Book stored as C:\Users\Elliot\Downloads\Audiveris\scores\056_Mozart_PSon_K284_D_iii_B0-17_page_0.omr
+2025-12-26 13:04:48,694 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]            SheetStub.java:1660 | Disposed sheet
+2025-12-26 13:04:48,746 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]                 Book.java:2064 | End of Stub#1
+2025-12-26 13:04:48,748 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]                 Book.java:2071 | Book processed.
+2025-12-26 13:04:49,200 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]            SheetStub.java:997  | Loaded /sheet#1/sheet#1.xml
+2025-12-26 13:04:49,762 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]      PartwiseBuilder.java:2688 | Exporting sheet(s): [#1]
+2025-12-26 13:04:49,802 WARN [056_Mozart_PSon_K284_D_iii_B0-17_page_0]      PartwiseBuilder.java:1714 | Error visiting FermataInter#4868{(0.774/0.944) staff:7 FERMATA} in {Page#1.1}
+java.lang.NullPointerException: Cannot invoke "org.audiveris.omr.sig.inter.AbstractNoteInter.getStaff()" because "this.current.note" is null
+	at org.audiveris.omr.score.PartwiseBuilder.processFermata(PartwiseBuilder.java:1700)
+	at org.audiveris.omr.score.PartwiseBuilder.processBarline(PartwiseBuilder.java:1289)
+	at org.audiveris.omr.score.PartwiseBuilder.processMeasure(PartwiseBuilder.java:2142)
+	at org.audiveris.omr.score.PartwiseBuilder.processPart(PartwiseBuilder.java:2659)
+	at org.audiveris.omr.score.PartwiseBuilder.processSystem(PartwiseBuilder.java:3159)
+	at org.audiveris.omr.score.PartwiseBuilder.processLogicalPart(PartwiseBuilder.java:1870)
+	at org.audiveris.omr.score.PartwiseBuilder.processStub(PartwiseBuilder.java:3110)
+	at org.audiveris.omr.score.PartwiseBuilder.processPartList(PartwiseBuilder.java:2691)
+	at org.audiveris.omr.score.PartwiseBuilder.processScore(PartwiseBuilder.java:2922)
+	at org.audiveris.omr.score.PartwiseBuilder.build(PartwiseBuilder.java:3478)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:122)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:163)
+	at org.audiveris.omr.sheet.Book.export(Book.java:630)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:897)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:505)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:358)
+	at org.audiveris.omr.Main.main(Main.java:260)
+	at Audiveris.main(Audiveris.java:50)
+2025-12-26 13:04:49,805 WARN [056_Mozart_PSon_K284_D_iii_B0-17_page_0]      PartwiseBuilder.java:1714 | Error visiting FermataInter#4871{(0.521/0.844) staff:8 FERMATA_BELOW} in {Page#1.1}
+java.lang.NullPointerException: Cannot invoke "org.audiveris.omr.sig.inter.AbstractNoteInter.getStaff()" because "this.current.note" is null
+	at org.audiveris.omr.score.PartwiseBuilder.processFermata(PartwiseBuilder.java:1700)
+	at org.audiveris.omr.score.PartwiseBuilder.processBarline(PartwiseBuilder.java:1301)
+	at org.audiveris.omr.score.PartwiseBuilder.processMeasure(PartwiseBuilder.java:2142)
+	at org.audiveris.omr.score.PartwiseBuilder.processPart(PartwiseBuilder.java:2659)
+	at org.audiveris.omr.score.PartwiseBuilder.processSystem(PartwiseBuilder.java:3159)
+	at org.audiveris.omr.score.PartwiseBuilder.processLogicalPart(PartwiseBuilder.java:1870)
+	at org.audiveris.omr.score.PartwiseBuilder.processStub(PartwiseBuilder.java:3110)
+	at org.audiveris.omr.score.PartwiseBuilder.processPartList(PartwiseBuilder.java:2691)
+	at org.audiveris.omr.score.PartwiseBuilder.processScore(PartwiseBuilder.java:2922)
+	at org.audiveris.omr.score.PartwiseBuilder.build(PartwiseBuilder.java:3478)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:122)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:163)
+	at org.audiveris.omr.sheet.Book.export(Book.java:630)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:897)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:505)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:358)
+	at org.audiveris.omr.Main.main(Main.java:260)
+	at Audiveris.main(Audiveris.java:50)
+2025-12-26 13:04:49,898 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]        ScoreExporter.java:164  | Score 056_Mozart_PSon_K284_D_iii_B0-17_page_0 exported to C:\Users\Elliot\Downloads\Audiveris\scores\056_Mozart_PSon_K284_D_iii_B0-17_page_0.mxl
+2025-12-26 13:04:49,942 INFO [056_Mozart_PSon_K284_D_iii_B0-17_page_0]                Score.java:181  | Closing {Score 1}

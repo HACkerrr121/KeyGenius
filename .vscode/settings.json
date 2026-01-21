@@ -8,5 +8,6 @@
       "path": "/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home",
       "default": true
     }
-  ]
+  ],
+  "python.defaultInterpreterPath": "/Users/anandkashyap/anaconda3/bin/python"
 }

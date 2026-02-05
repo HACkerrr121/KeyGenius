@@ -220,3 +220,5 @@ if __name__ == "__main__":
     print(f"\nNotes: {notes[:10]}...")
     print(f"Coords: {coords[:5]}...")
     print(f"Bboxes: {bboxes[:3]}...")
+
+# notes, coords, fingers, conf = infer("/Users/anandkashyap/Documents/GitHub/KeyGenius/Backend/Music_Data/Scores/001_Bach_Invention_No1_C_page_1.jpg", "/Users/anandkashyap/Documents/GitHub/KeyGenius/Backend/best_model_right.pth")

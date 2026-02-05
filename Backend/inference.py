@@ -13,7 +13,12 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 def load_model(checkpoint_path):
-    checkpoint = torch.load(checkpoint_path, map_location=device)
+    checkpoint = torch.load(
+    checkpoint_path,
+    map_location=device,
+    weights_only=False
+)
+
     
     model = FingeringModel(
         input_dim=5,

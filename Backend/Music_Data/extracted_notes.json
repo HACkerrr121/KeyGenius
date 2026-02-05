@@ -1,0 +1,29 @@
+{
+  "001_Bach_Invention_No1_C": {
+    "total_notes": 0,
+    "num_pages": 2,
+    "pages": [
+      "001_Bach_Invention_No1_C_page_0.jpg",
+      "001_Bach_Invention_No1_C_page_1.jpg"
+    ],
+    "notes": []
+  },
+  "002_Bach_Invention_No8_F": {
+    "total_notes": 0,
+    "num_pages": 2,
+    "pages": [
+      "002_Bach_Invention_No8_F_page_0.jpg",
+      "002_Bach_Invention_No8_F_page_1.jpg"
+    ],
+    "notes": []
+  },
+  "003_Bach_WTC_I_No23_B_Prelude": {
+    "total_notes": 0,
+    "num_pages": 2,
+    "pages": [
+      "003_Bach_WTC_I_No23_B_Prelude_page_0.jpg",
+      "003_Bach_WTC_I_No23_B_Prelude_page_1.jpg"
+    ],
+    "notes": []
+  }
+}

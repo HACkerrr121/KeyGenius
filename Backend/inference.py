@@ -3,100 +3,152 @@ KeyGenius Inference - predict fingerings from sheet music.
 Handles multiple pages.
 """
 import torch
-import torch.nn.functional as F
 import numpy as np
 from pathlib import Path
-from model import FingeringModel
+from model import FingeringTransformer
 from fast_oemer_extract import extract_from_image, extract_from_pages, extract_from_folder, NOTE_TO_MIDI
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
-def load_model(checkpoint_path):
-    checkpoint = torch.load(
-    checkpoint_path,
-    map_location=device,
-    weights_only=False
-)
-
+def load_model(checkpoint_path, hand='right'):
+    checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
     
-    model = FingeringModel(
-        input_dim=5,
-        embed_dim=128,
-        hidden_dim=256,
-        num_layers=3,
+    model = FingeringTransformer(
+        input_dim=17,
+        d_model=256,
+        nhead=8,
+        num_layers=6,
+        dim_feedforward=1024,
+        dropout=0.0,  # No dropout at inference
         num_fingers=6,
-        dropout=0.0
+        class_weights=None
     )
     
     model.load_state_dict(checkpoint['model_state_dict'])
     model.to(device)
     model.eval()
     
+    print(f"Loaded model from {checkpoint_path}")
+    print(f"  Val accuracy was: {checkpoint.get('val_acc', 'N/A')}")
+    
     return model
 
 
 def notes_to_features(notes):
-    """Convert note names to model features."""
-    features = []
-    prev_midi = None
+    """
+    Convert note names to 17-dim model features.
     
-    for note_name in notes:
-        midi = NOTE_TO_MIDI.get(note_name, 60)
+    Features:
+    0: midi_norm
+    1: duration
+    2: delta_time
+    3: interval_prev
+    4: interval_next
+    5: direction
+    6: is_chord
+    7: chord_size_norm
+    8: chord_position
+    9: pattern_scale
+    10: pattern_arpeggio
+    11: pattern_repeat
+    12-16: prev_finger one-hot (zeros at inference - we don't know yet)
+    """
+    features = []
+    midis = [NOTE_TO_MIDI.get(n, 60) for n in notes]
+    n = len(notes)
+    
+    for i, note_name in enumerate(notes):
+        midi = midis[i]
         
+        # Basic features
         midi_norm = (midi - 21) / 87.0
-        duration = 1.0
-        delta = 0.1
+        duration = 0.5  # Placeholder
+        delta_time = 0.2  # Placeholder
         
-        if prev_midi is not None:
-            interval = midi - prev_midi
-            if midi > prev_midi:
-                direction = 1.0
-            elif midi < prev_midi:
-                direction = -1.0
-            else:
-                direction = 0.0
+        # Intervals
+        interval_prev = (midi - midis[i-1]) / 24.0 if i > 0 else 0.0
+        interval_next = (midis[i+1] - midi) / 24.0 if i < n - 1 else 0.0
+        interval_prev = np.clip(interval_prev, -1, 1)
+        interval_next = np.clip(interval_next, -1, 1)
+        
+        # Direction
+        if i > 0:
+            direction = 1.0 if midi > midis[i-1] else (-1.0 if midi < midis[i-1] else 0.0)
         else:
-            interval = 0
             direction = 0.0
         
-        interval_norm = interval / 24.0
+        # Chord detection (simple: same x position = chord)
+        # At inference we don't have timing, so set to 0
+        is_chord = 0.0
+        chord_size_norm = 0.2
+        chord_position = 0.5
         
-        features.append([midi_norm, duration, delta, interval_norm, direction])
-        prev_midi = midi
+        # Pattern detection
+        if i >= 2:
+            recent = [midis[j] - midis[j-1] for j in range(max(1, i-3), i+1)]
+            steps = sum(1 for iv in recent if abs(iv) in [1, 2])
+            arps = sum(1 for iv in recent if abs(iv) in [3, 4, 5])
+            repeats = sum(1 for iv in recent if iv == 0)
+            pattern_scale = steps / len(recent)
+            pattern_arpeggio = arps / len(recent)
+            pattern_repeat = repeats / len(recent)
+        else:
+            pattern_scale = 0.0
+            pattern_arpeggio = 0.0
+            pattern_repeat = 0.0
+        
+        # Previous finger (unknown at inference, use zeros)
+        prev_finger_onehot = [0.0, 0.0, 0.0, 0.0, 0.0]
+        
+        feature_vec = [
+            midi_norm,
+            duration,
+            delta_time,
+            interval_prev,
+            interval_next,
+            direction,
+            is_chord,
+            chord_size_norm,
+            chord_position,
+            pattern_scale,
+            pattern_arpeggio,
+            pattern_repeat,
+            *prev_finger_onehot
+        ]
+        
+        features.append(feature_vec)
     
     return np.array(features, dtype=np.float32)
 
 
-def predict_batch(model, features, batch_size=200):
-    """Predict fingerings for any number of notes."""
+def predict_batch(model, features, max_seq=200):
+    """Predict fingerings using CRF Viterbi decoding."""
     n = len(features)
     all_fingers = []
-    all_conf = []
     
-    for i in range(0, n, batch_size):
-        batch = features[i:i+batch_size]
+    for i in range(0, n, max_seq):
+        batch = features[i:i+max_seq]
         seq_len = len(batch)
         
-        # Pad to batch_size
-        if seq_len < batch_size:
-            batch = np.pad(batch, ((0, batch_size - seq_len), (0, 0)), constant_values=0)
+        # Pad to max_seq
+        if seq_len < max_seq:
+            batch = np.pad(batch, ((0, max_seq - seq_len), (0, 0)), constant_values=0)
         
-        mask = np.zeros(batch_size, dtype=np.float32)
+        mask = np.zeros(max_seq, dtype=np.float32)
         mask[:seq_len] = 1.0
         
         with torch.no_grad():
             feat_t = torch.from_numpy(batch).unsqueeze(0).to(device)
             mask_t = torch.from_numpy(mask).unsqueeze(0).to(device)
+            pad_mask = (mask_t == 0)
             
-            logits = model(feat_t, mask_t)
-            probs = F.softmax(logits, dim=-1)
-            conf, preds = torch.max(probs, dim=-1)
+            # Use CRF Viterbi decoding
+            preds = model.generate(feat_t, src_key_padding_mask=pad_mask, mask=mask_t)
             
             all_fingers.extend(preds[0, :seq_len].cpu().numpy().tolist())
-            all_conf.extend(conf[0, :seq_len].cpu().numpy().tolist())
     
-    return all_fingers, all_conf
+    return all_fingers
 
 
 def infer(img_input, checkpoint_path):
@@ -111,10 +163,9 @@ def infer(img_input, checkpoint_path):
         notes: ['C4', 'D4', ...] 
         coords: [(x, y, page), ...]
         fingers: [1, 2, 3, ...]
-        confidences: [0.9, 0.85, ...]
     """
     # Extract notes
-    print("Extracting notes...")
+    print("Extracting notes from image...")
     
     if isinstance(img_input, list):
         notes, coords, bboxes = extract_from_pages(img_input)
@@ -125,7 +176,8 @@ def infer(img_input, checkpoint_path):
         coords = [(x, y, 0) for x, y in coords]
     
     if len(notes) == 0:
-        return [], [], [], []
+        print("No notes found!")
+        return [], [], []
     
     print(f"Found {len(notes)} notes")
     
@@ -137,19 +189,20 @@ def infer(img_input, checkpoint_path):
     features = notes_to_features(notes)
     
     # Predict
-    print("Predicting fingerings...")
-    fingers, confidences = predict_batch(model, features)
+    print("Predicting fingerings with CRF...")
+    fingers = predict_batch(model, features)
     
-    return notes, coords, fingers, confidences
+    return notes, coords, fingers
 
 
 if __name__ == "__main__":
     import sys
     
-    checkpoint = "checkpoints/best_model.pt"
+    checkpoint = "best_model_right.pth"
     
     if not Path(checkpoint).exists():
         print(f"ERROR: Model not found at {checkpoint}")
+        print("Train the model first with: python train.py")
         sys.exit(1)
     
     if len(sys.argv) < 2:
@@ -166,7 +219,7 @@ if __name__ == "__main__":
         img_input = sys.argv[1:]
     
     # Run
-    notes, coords, fingers, confidences = infer(img_input, checkpoint)
+    notes, coords, fingers = infer(img_input, checkpoint)
     
     print(f"\n{'='*50}")
     print(f"Results: {len(notes)} notes")
@@ -174,7 +227,7 @@ if __name__ == "__main__":
     
     for i in range(min(20, len(notes))):
         x, y, page = coords[i]
-        print(f"  {notes[i]:4s} @ ({x:4d}, {y:4d}) page {page} -> finger {fingers[i]} ({confidences[i]:.2f})")
+        print(f"  {notes[i]:4s} @ ({x:4d}, {y:4d}) page {page} -> finger {fingers[i]}")
     
     if len(notes) > 20:
         print(f"  ... and {len(notes) - 20} more")

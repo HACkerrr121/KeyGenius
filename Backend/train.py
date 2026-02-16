@@ -3,30 +3,33 @@ from torch.utils.data import DataLoader
 import numpy as np
 
 from Datasets import FingeringDataset
-from model import FingeringModel, FingeringLoss, compute_accuracy, compute_per_finger_accuracy
+from model import FingeringTransformer, compute_accuracy, compute_per_finger_accuracy
 
 # ============================================================
 # CONFIG
 # ============================================================
 DATA_DIR = "Music_Data/FingeringFiles"
-HAND = 0  # 0 = right, 1 = left
+HAND = 0
 HAND_NAME = "right" if HAND == 0 else "left"
 
 MAX_SEQ_LEN = 200
 BATCH_SIZE = 32
-LR = 5e-4
-EPOCHS = 150
-PATIENCE = 20
+LR = 3e-4
+MIN_LR = 1e-6
+EPOCHS = 10 
+PATIENCE = 30
+LR_PATIENCE = 10  # Drop LR if no improvement for this many epochs
+LR_FACTOR = 0.5   # Multiply LR by this when dropping
 
-EMBED_DIM = 128
-HIDDEN_DIM = 256
-NUM_LAYERS = 3
-NUM_HEADS = 4
-DROPOUT = 0.3
+D_MODEL = 256
+NHEAD = 8
+NUM_LAYERS = 6
+DIM_FEEDFORWARD = 1024
+DROPOUT = 0.15
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Device: {device}")
-print(f"Training: {HAND_NAME} hand")
+print(f"Training: {HAND_NAME} hand\n")
 
 # ============================================================
 # DATA
@@ -37,10 +40,10 @@ val_dataset = FingeringDataset(DATA_DIR, hand=HAND, max_seq_len=MAX_SEQ_LEN, spl
 train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=0)
 val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False, num_workers=0)
 
-print(f"Train batches: {len(train_loader)}, Val batches: {len(val_loader)}")
+print(f"\nTrain batches: {len(train_loader)}, Val batches: {len(val_loader)}")
 
 # ============================================================
-# CLASS WEIGHTS
+# COMPUTE CLASS WEIGHTS
 # ============================================================
 finger_counts = {i: 0 for i in range(6)}
 for features, fingers, mask in train_loader:
@@ -48,7 +51,7 @@ for features, fingers, mask in train_loader:
     for f in valid_fingers.tolist():
         finger_counts[f] += 1
 
-print(f"Finger counts: {finger_counts}")
+print(f"\nFinger counts: {finger_counts}")
 
 total = sum(finger_counts[i] for i in range(1, 6))
 class_weights = torch.zeros(6)
@@ -60,27 +63,38 @@ for i in range(1, 6):
 
 class_weights[3] *= 1.3
 class_weights[4] *= 1.3
+class_weights[5] *= 1.2
+
+class_weights[1:] = class_weights[1:] / class_weights[1:].mean()
 
 print(f"Class weights: {[f'{w:.2f}' for w in class_weights.tolist()]}")
 
 # ============================================================
 # MODEL
 # ============================================================
-model = FingeringModel(
-    input_dim=5,
-    embed_dim=EMBED_DIM,
-    hidden_dim=HIDDEN_DIM,
+model = FingeringTransformer(
+    input_dim=17,
+    d_model=D_MODEL,
+    nhead=NHEAD,
     num_layers=NUM_LAYERS,
-    num_fingers=6,
+    dim_feedforward=DIM_FEEDFORWARD,
     dropout=DROPOUT,
-    num_heads=NUM_HEADS
+    num_fingers=6,
+    class_weights=class_weights,
 ).to(device)
 
 print(f"Parameters: {sum(p.numel() for p in model.parameters()):,}")
 
-loss_fn = FingeringLoss(label_smoothing=0.1, class_weights=class_weights)
-optimizer = torch.optim.AdamW(model.parameters(), lr=LR, weight_decay=0.01)
-scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=EPOCHS, eta_min=1e-6)
+optimizer = torch.optim.AdamW(model.parameters(), lr=LR, weight_decay=0.01, betas=(0.9, 0.98), eps=1e-9)
+
+# ReduceLROnPlateau - drops LR when val loss stops improving
+scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+    optimizer, 
+    mode='min',
+    factor=LR_FACTOR,
+    patience=LR_PATIENCE,
+    min_lr=MIN_LR
+)
 
 # ============================================================
 # TRAINING
@@ -88,24 +102,28 @@ scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=EPOCHS, 
 def train_epoch():
     model.train()
     total_loss, total_acc, num_batches = 0, 0, 0
-    
+
     for features, fingers, mask in train_loader:
         features = features.to(device)
         fingers = fingers.to(device)
         mask = mask.to(device)
-        
+        pad_mask = (mask == 0)
+
         optimizer.zero_grad()
-        logits = model(features, mask)
-        loss = loss_fn(logits, fingers, mask)
-        
+        emissions, loss = model(features, fingers=fingers, mask=mask, src_key_padding_mask=pad_mask)
+
         loss.backward()
         torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
         optimizer.step()
-        
+
+        with torch.no_grad():
+            preds = model.generate(features, src_key_padding_mask=pad_mask, mask=mask)
+        acc = compute_accuracy(preds, fingers, mask)
+
         total_loss += loss.item()
-        total_acc += compute_accuracy(logits, fingers, mask)
+        total_acc += acc
         num_batches += 1
-    
+
     return total_loss / num_batches, total_acc / num_batches
 
 
@@ -113,64 +131,87 @@ def validate():
     model.eval()
     total_loss, total_acc, num_batches = 0, 0, 0
     all_per_finger = {i: [] for i in range(1, 6)}
-    
+
     with torch.no_grad():
         for features, fingers, mask in val_loader:
             features = features.to(device)
             fingers = fingers.to(device)
             mask = mask.to(device)
-            
-            logits = model(features, mask)
-            loss = loss_fn(logits, fingers, mask)
-            
-            total_loss += loss.item()
-            total_acc += compute_accuracy(logits, fingers, mask)
-            
-            per_finger = compute_per_finger_accuracy(logits, fingers, mask)
+            pad_mask = (mask == 0)
+
+            emissions, loss = model(features, fingers=fingers, mask=mask, src_key_padding_mask=pad_mask)
+            preds = model.generate(features, src_key_padding_mask=pad_mask, mask=mask)
+
+            acc = compute_accuracy(preds, fingers, mask)
+            per_finger = compute_per_finger_accuracy(preds, fingers, mask)
             for f in range(1, 6):
                 all_per_finger[f].append(per_finger[f])
-            
+
+            total_loss += loss.item()
+            total_acc += acc
             num_batches += 1
-    
-    avg_per_finger = {f: np.mean(all_per_finger[f]) for f in range(1, 6)}
-    return total_loss / num_batches, total_acc / num_batches, avg_per_finger
+
+    avg_pf = {f: np.mean(all_per_finger[f]) for f in range(1, 6)}
+    return total_loss / num_batches, total_acc / num_batches, avg_pf
 
 
 # ============================================================
 # MAIN
 # ============================================================
 best_val_acc = 0
+best_val_loss = float('inf')
 patience_counter = 0
 
-print("\n" + "=" * 60)
-print("Starting training...")
-print("=" * 60 + "\n")
+print("\n" + "=" * 70)
+print("Training Transformer + CRF with Focal Loss")
+print("=" * 70 + "\n")
 
 for epoch in range(EPOCHS):
     train_loss, train_acc = train_epoch()
     val_loss, val_acc, per_finger = validate()
-    scheduler.step()
     
-    pf = f"1:{per_finger[1]*100:.0f}% 2:{per_finger[2]*100:.0f}% 3:{per_finger[3]*100:.0f}% 4:{per_finger[4]*100:.0f}% 5:{per_finger[5]*100:.0f}%"
-    print(f"Epoch {epoch+1:3d} | Train: {train_acc*100:.1f}% | Val: {val_acc*100:.1f}% | {pf}")
+    # Step scheduler with val loss
+    scheduler.step(val_loss)
     
+    lr = optimizer.param_groups[0]['lr']
+    pf = " ".join([f"{f}:{per_finger[f]*100:.0f}%" for f in range(1, 6)])
+    print(f"Ep {epoch+1:3d} | TrL: {train_loss:.3f} TrA: {train_acc*100:.1f}% | "
+          f"VaL: {val_loss:.3f} VaA: {val_acc*100:.1f}% | {pf} | lr={lr:.1e}")
+
     if val_acc > best_val_acc:
         best_val_acc = val_acc
+        best_val_loss = val_loss
         patience_counter = 0
         torch.save({
             'epoch': epoch,
             'model_state_dict': model.state_dict(),
             'val_acc': val_acc,
-            'per_finger': per_finger
+            'per_finger': per_finger,
         }, f'best_model_{HAND_NAME}.pth')
-        print(f"         💾 New best! {val_acc*100:.1f}%")
+        print(f"         -> New best! {val_acc*100:.1f}%")
     else:
         patience_counter += 1
-    
+
+    # Early stopping
     if patience_counter >= PATIENCE:
-        print(f"\n⚠️ Early stopping at epoch {epoch+1}")
+        print(f"\nEarly stopping at epoch {epoch+1}")
+        break
+    
+    # Stop if LR too low
+    if lr <= MIN_LR:
+        print(f"\nLR reached minimum ({MIN_LR}), stopping.")
         break
 
-print("\n" + "=" * 60)
-print(f"✅ Done! Best: {best_val_acc*100:.1f}%")
-print("=" * 60)
+print("\n" + "=" * 70)
+print(f"Done! Best val accuracy: {best_val_acc*100:.1f}%")
+print("=" * 70)
+
+# Print learned CRF transitions
+print("\nLearned finger transitions (CRF):")
+with torch.no_grad():
+    T = model.crf.transitions[1:, 1:].cpu()
+    labels = ['Th', 'Ix', 'Md', 'Rn', 'Pk']
+    print("     " + "  ".join(f"{l:>5s}" for l in labels))
+    for i, row_label in enumerate(labels):
+        row = "  ".join(f"{T[i,j]:+.2f}" for j in range(5))
+        print(f"  {row_label}  {row}")

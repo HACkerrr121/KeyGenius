@@ -71,7 +71,7 @@ def extract_sequences(notes, hand, max_seq_len=200):
     return sequences
 
 
-def encode_sequence(seq):
+def encode_sequence(seq, training=False, prev_finger_dropout=0.2):
     """
     17 features per note:
     0: midi_norm
@@ -87,6 +87,12 @@ def encode_sequence(seq):
     10: pattern_arpeggio
     11: pattern_repeat
     12-16: prev_finger one-hot
+    
+    Args:
+        seq: list of note dicts
+        training: if True, randomly drop prev_finger to make model
+                  robust to imperfect prev_finger at inference
+        prev_finger_dropout: probability of zeroing prev_finger (only during training)
     """
     features = []
     fingers = []
@@ -166,10 +172,13 @@ def encode_sequence(seq):
             pattern_arpeggio = 0.0
             pattern_repeat = 0.0
         
-        # Previous finger one-hot
+        # Previous finger one-hot (with dropout during training)
         prev_finger_onehot = [0.0] * 5
         if prev_finger is not None and 1 <= prev_finger <= 5:
-            prev_finger_onehot[prev_finger - 1] = 1.0
+            if training and np.random.random() < prev_finger_dropout:
+                pass  # leave as zeros
+            else:
+                prev_finger_onehot[prev_finger - 1] = 1.0
         
         feature_vec = [
             midi_norm,
@@ -195,9 +204,11 @@ def encode_sequence(seq):
 
 
 class FingeringDataset(Dataset):
-    def __init__(self, data_dir, hand=0, max_seq_len=200, split='train', val_ratio=0.2):
+    def __init__(self, data_dir, hand=0, max_seq_len=200, split='train', val_ratio=0.2, prev_finger_dropout=0.2):
         self.max_seq_len = max_seq_len
         self.hand = hand
+        self.split = split
+        self.prev_finger_dropout = prev_finger_dropout
         
         finger_files = sorted(Path(data_dir).glob("*.txt"))
         print(f"Found {len(finger_files)} fingering files")
@@ -261,7 +272,11 @@ class FingeringDataset(Dataset):
     
     def __getitem__(self, idx):
         seq = self.sequences[idx]
-        features, fingers = encode_sequence(seq)
+        features, fingers = encode_sequence(
+            seq,
+            training=(self.split == 'train'),
+            prev_finger_dropout=self.prev_finger_dropout
+        )
         
         seq_len = len(features)
         if seq_len < self.max_seq_len:

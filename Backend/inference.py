@@ -1,17 +1,20 @@
 """
 KeyGenius Inference - predict fingerings from sheet music.
-Handles multiple pages.
+Uses oemer full pipeline for proper note extraction.
 """
 import torch
 import numpy as np
 from pathlib import Path
 from model import FingeringTransformer
-from fast_oemer_extract import extract_from_image, extract_from_pages, extract_from_folder, NOTE_TO_MIDI
+from fast_oemer_extract import (
+    extract_from_image, extract_from_pages, extract_from_folder,
+    extract_from_musicxml, NOTE_TO_MIDI
+)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
-def load_model(checkpoint_path, hand='right'):
+def load_model(checkpoint_path):
     checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
     
     model = FingeringTransformer(
@@ -20,51 +23,44 @@ def load_model(checkpoint_path, hand='right'):
         nhead=8,
         num_layers=6,
         dim_feedforward=1024,
-        dropout=0.0,  # No dropout at inference
+        dropout=0.0,
         num_fingers=6,
         class_weights=None
     )
     
-    model.load_state_dict(checkpoint['model_state_dict'])
+    state_dict = {k: v for k, v in checkpoint['model_state_dict'].items() if k != 'class_weights'}
+    model.load_state_dict(state_dict, strict=False)
     model.to(device)
     model.eval()
     
     print(f"Loaded model from {checkpoint_path}")
-    print(f"  Val accuracy was: {checkpoint.get('val_acc', 'N/A')}")
+    if 'val_acc' in checkpoint:
+        print(f"  Val accuracy: {checkpoint['val_acc']*100:.1f}%")
     
     return model
 
 
-def notes_to_features(notes):
+def notes_to_features(notes_data):
     """
-    Convert note names to 17-dim model features.
-    
-    Features:
-    0: midi_norm
-    1: duration
-    2: delta_time
-    3: interval_prev
-    4: interval_next
-    5: direction
-    6: is_chord
-    7: chord_size_norm
-    8: chord_position
-    9: pattern_scale
-    10: pattern_arpeggio
-    11: pattern_repeat
-    12-16: prev_finger one-hot (zeros at inference - we don't know yet)
+    Convert extracted notes to 17-dim model features.
+    Features 12-16 (prev_finger) are left as zeros initially,
+    then filled in during two-pass inference.
     """
     features = []
-    midis = [NOTE_TO_MIDI.get(n, 60) for n in notes]
-    n = len(notes)
+    n = len(notes_data)
     
-    for i, note_name in enumerate(notes):
-        midi = midis[i]
+    if n == 0:
+        return np.array([], dtype=np.float32).reshape(0, 17)
+    
+    midis = [note['midi'] for note in notes_data]
+    
+    for i, note in enumerate(notes_data):
+        midi = note['midi']
         
-        # Basic features
+        # Basic features - now from proper OMR/MusicXML data
         midi_norm = (midi - 21) / 87.0
-        duration = 0.5  # Placeholder
-        delta_time = 0.2  # Placeholder
+        duration = min(note.get('duration', 0.5), 2.0)
+        delta_time = min(note.get('delta_time', 0.2), 2.0)
         
         # Intervals
         interval_prev = (midi - midis[i-1]) / 24.0 if i > 0 else 0.0
@@ -78,11 +74,10 @@ def notes_to_features(notes):
         else:
             direction = 0.0
         
-        # Chord detection (simple: same x position = chord)
-        # At inference we don't have timing, so set to 0
-        is_chord = 0.0
-        chord_size_norm = 0.2
-        chord_position = 0.5
+        # Chord features - from proper detection
+        is_chord = 1.0 if note.get('is_chord', False) else 0.0
+        chord_size_norm = min(note.get('chord_size', 1), 5) / 5.0
+        chord_position = note.get('chord_position', 0.5)
         
         # Pattern detection
         if i >= 2:
@@ -98,7 +93,7 @@ def notes_to_features(notes):
             pattern_arpeggio = 0.0
             pattern_repeat = 0.0
         
-        # Previous finger (unknown at inference, use zeros)
+        # Previous finger - zeros for now, filled in during two-pass
         prev_finger_onehot = [0.0, 0.0, 0.0, 0.0, 0.0]
         
         feature_vec = [
@@ -123,15 +118,21 @@ def notes_to_features(notes):
 
 
 def predict_batch(model, features, max_seq=200):
-    """Predict fingerings using CRF Viterbi decoding."""
+    """
+    Two-pass prediction with prev_finger feedback.
+    
+    Pass 1: predict with prev_finger = zeros
+    Pass 2: fill in prev_finger from pass 1 predictions, re-predict
+    
+    Only 2 forward passes per chunk instead of N.
+    """
     n = len(features)
     all_fingers = []
     
     for i in range(0, n, max_seq):
-        batch = features[i:i+max_seq]
-        seq_len = len(batch)
+        batch = features[i:i+max_seq].copy()
+        seq_len = min(max_seq, n - i)
         
-        # Pad to max_seq
         if seq_len < max_seq:
             batch = np.pad(batch, ((0, max_seq - seq_len), (0, 0)), constant_values=0)
         
@@ -143,10 +144,22 @@ def predict_batch(model, features, max_seq=200):
             mask_t = torch.from_numpy(mask).unsqueeze(0).to(device)
             pad_mask = (mask_t == 0)
             
-            # Use CRF Viterbi decoding
+            # Pass 1: predict with no prev_finger info
             preds = model.generate(feat_t, src_key_padding_mask=pad_mask, mask=mask_t)
             
-            all_fingers.extend(preds[0, :seq_len].cpu().numpy().tolist())
+            # Fill in prev_finger one-hot from pass 1 predictions
+            for j in range(1, seq_len):
+                prev_f = preds[0, j-1].item()
+                onehot = [0.0] * 5
+                if 1 <= prev_f <= 5:
+                    onehot[prev_f - 1] = 1.0
+                batch[j, 12:17] = onehot
+            
+            # Pass 2: re-predict with prev_finger context
+            feat_t = torch.from_numpy(batch).unsqueeze(0).to(device)
+            preds = model.generate(feat_t, src_key_padding_mask=pad_mask, mask=mask_t)
+        
+        all_fingers.extend(preds[0, :seq_len].cpu().numpy().tolist())
     
     return all_fingers
 
@@ -156,7 +169,8 @@ def infer(img_input, checkpoint_path):
     Main inference function.
     
     Args:
-        img_input: single image path, list of paths, or folder path
+        img_input: single image path, list of paths, folder path,
+                   or .musicxml/.xml/.mxl file
         checkpoint_path: path to model checkpoint
     
     Returns:
@@ -164,33 +178,51 @@ def infer(img_input, checkpoint_path):
         coords: [(x, y, page), ...]
         fingers: [1, 2, 3, ...]
     """
-    # Extract notes
-    print("Extracting notes from image...")
+    print("Extracting notes...")
     
-    if isinstance(img_input, list):
-        notes, coords, bboxes = extract_from_pages(img_input)
+    input_path = img_input if isinstance(img_input, str) else img_input[0]
+    
+    # Support MusicXML input directly (skip oemer)
+    if isinstance(img_input, str) and input_path.endswith(('.musicxml', '.xml', '.mxl')):
+        print("  (parsing MusicXML directly)")
+        notes_data = extract_from_musicxml(img_input)
+    elif isinstance(img_input, list):
+        notes_data = extract_from_pages(img_input)
     elif Path(img_input).is_dir():
-        notes, coords, bboxes = extract_from_folder(img_input)
+        notes_data = extract_from_folder(img_input)
     else:
-        notes, coords, bboxes = extract_from_image(img_input)
-        coords = [(x, y, 0) for x, y in coords]
+        notes_data = extract_from_image(img_input)
     
-    if len(notes) == 0:
+    if len(notes_data) == 0:
         print("No notes found!")
         return [], [], []
     
-    print(f"Found {len(notes)} notes")
+    print(f"Found {len(notes_data)} notes")
     
-    # Load model
+    # Stats
+    right_count = sum(1 for n in notes_data if n['hand'] == 'RIGHT')
+    left_count = sum(1 for n in notes_data if n['hand'] == 'LEFT')
+    chord_count = sum(1 for n in notes_data if n.get('is_chord', False))
+    midis = [n['midi'] for n in notes_data]
+    print(f"  {right_count} RIGHT hand, {left_count} LEFT hand, {chord_count} in chords")
+    print(f"  Pitch range: MIDI {min(midis)}-{max(midis)}")
+    
     print("Loading model...")
     model = load_model(checkpoint_path)
     
-    # Convert to features
-    features = notes_to_features(notes)
+    print("Converting to features...")
+    features = notes_to_features(notes_data)
     
-    # Predict
-    print("Predicting fingerings with CRF...")
+    print("Predicting fingerings (two-pass)...")
     fingers = predict_batch(model, features)
+    
+    # Debug: show finger distribution
+    from collections import Counter
+    print(f"Finger distribution: {Counter(fingers)}")
+    
+    # Convert to old format for compatibility
+    notes = [n['note'] for n in notes_data]
+    coords = [(n['x'], n['y'], n.get('page', 0)) for n in notes_data]
     
     return notes, coords, fingers
 
@@ -202,23 +234,15 @@ if __name__ == "__main__":
     
     if not Path(checkpoint).exists():
         print(f"ERROR: Model not found at {checkpoint}")
-        print("Train the model first with: python train.py")
         sys.exit(1)
     
     if len(sys.argv) < 2:
         print("Usage:")
-        print("  python infer.py image.jpg")
-        print("  python infer.py page1.jpg page2.jpg page3.jpg")
-        print("  python infer.py ./folder_with_pages/")
+        print("  python inference.py image.jpg")
+        print("  python inference.py score.musicxml")
         sys.exit(1)
     
-    # Handle input
-    if len(sys.argv) == 2:
-        img_input = sys.argv[1]
-    else:
-        img_input = sys.argv[1:]
-    
-    # Run
+    img_input = sys.argv[1]
     notes, coords, fingers = infer(img_input, checkpoint)
     
     print(f"\n{'='*50}")
@@ -227,7 +251,7 @@ if __name__ == "__main__":
     
     for i in range(min(20, len(notes))):
         x, y, page = coords[i]
-        print(f"  {notes[i]:4s} @ ({x:4d}, {y:4d}) page {page} -> finger {fingers[i]}")
+        print(f"  {notes[i]:6s} @ ({x:4d}, {y:4d}) page {page} -> finger {fingers[i]}")
     
     if len(notes) > 20:
         print(f"  ... and {len(notes) - 20} more")

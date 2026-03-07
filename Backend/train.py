@@ -27,14 +27,17 @@ NUM_LAYERS = 6
 DIM_FEEDFORWARD = 1024
 DROPOUT = 0.15
 
+PREV_FINGER_DROPOUT = 0.2  # Randomly zero out prev_finger during training
+
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Device: {device}")
-print(f"Training: {HAND_NAME} hand\n")
+print(f"Training: {HAND_NAME} hand")
+print(f"Prev finger dropout: {PREV_FINGER_DROPOUT}\n")
 
 # ============================================================
 # DATA
 # ============================================================
-train_dataset = FingeringDataset(DATA_DIR, hand=HAND, max_seq_len=MAX_SEQ_LEN, split='train')
+train_dataset = FingeringDataset(DATA_DIR, hand=HAND, max_seq_len=MAX_SEQ_LEN, split='train', prev_finger_dropout=PREV_FINGER_DROPOUT)
 val_dataset = FingeringDataset(DATA_DIR, hand=HAND, max_seq_len=MAX_SEQ_LEN, split='val')
 
 train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=0)

@@ -82,6 +82,7 @@ def _build_audiveris_args(output_dir, img_path):
 
 def extract_from_image_with_coords(img_path):
     """Run Audiveris to get MusicXML, then use pre-extracted coordinates"""
+    img_path = str(Path(img_path).resolve())
     print(f"Running Audiveris to get musical data from {img_path}...")
 
     tmp_dir = tempfile.mkdtemp(prefix="audiveris_")
@@ -92,12 +93,19 @@ def extract_from_image_with_coords(img_path):
         timeout=300,
     )
 
+    # Show Audiveris output for debugging
+    if result.stdout:
+        print(result.stdout[-2000:])
+    if result.stderr:
+        print(result.stderr[-2000:])
+
     img_name = Path(img_path).stem
-    # Audiveris outputs .mxl; music21 parses it directly
     xml_path = os.path.join(tmp_dir, f"{img_name}.mxl")
 
     if not os.path.exists(xml_path):
-        raise RuntimeError(f"Audiveris failed to generate MusicXML:\n{result.stderr}")
+        files = os.listdir(tmp_dir)
+        print(f"Files in tmp_dir: {files}")
+        raise RuntimeError(f"Audiveris failed to generate MusicXML. tmp_dir contents: {files}")
     
     print(f"  MusicXML generated: {xml_path}")
     

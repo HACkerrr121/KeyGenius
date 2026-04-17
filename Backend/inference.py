@@ -6,7 +6,7 @@ import torch
 import numpy as np
 from pathlib import Path
 from model import FingeringTransformer
-from fast_oemer_extract import extract_from_musicxml, NOTE_TO_MIDI
+from fast_oemer_extract import extract_from_musicxml
 import ast
 import subprocess
 import tempfile
@@ -17,7 +17,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def load_coordinates_from_file(image_filename):
     """Load pre-extracted coordinates from coordinates.txt"""
-    coords_file = "Music_Data/coordinates.txt"
+    coords_file = Path(__file__).parent / "Music_Data" / "coordinates.txt"
     
     if not os.path.exists(coords_file):
         raise FileNotFoundError(f"coordinates.txt not found")

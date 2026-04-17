@@ -47,6 +47,9 @@ def process_image(input_path, output_path, notes, coords, fingers):
             bg = pil_to_opencv(img)
 
         img_h, img_w = bg.shape[:2]
+        print(f"Image size: {img_w}x{img_h}")
+        print(f"Numbers dir: {NUMBERS_DIR}")
+        placed = 0
 
         for i in range(len(coords)):
             finger = fingers[i]
@@ -61,11 +64,17 @@ def process_image(input_path, output_path, notes, coords, fingers):
             x = int(coords[i][0])
             y = int(coords[i][1])
 
-            # Clamp coordinates to image bounds before overlaying
             x = max(0, min(x, img_w - 1))
             y = max(0, min(y - 40, img_h - 1))
 
+            prev = bg.copy()
             bg = overlay_transparent_image(bg, overlay, x, y)
+            if placed < 3:
+                changed = not (prev == bg).all()
+                print(f"  note {i}: finger={finger} x={x} y={y} overlay_shape={overlay.shape} changed={changed}")
+            placed += 1
+
+        print(f"Attempted to place {placed} overlays")
 
         output_image = opencv_to_pil(bg)
         output_image.save(output_path)
@@ -100,6 +109,7 @@ def main():
         sys.exit(1)
     
     notes, coords, fingers = infer(input_path, str(checkpoint))
+    print(coords)
     
     if len(notes) == 0:
         print("No notes found")

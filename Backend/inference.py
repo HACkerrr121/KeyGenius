@@ -1,49 +1,45 @@
 """
 KeyGenius Inference - predict fingerings from sheet music.
-Uses pre-extracted coordinates from coordinates.txt.
+Uses Audiveris .omr file for pixel-accurate note head coordinates.
 """
 import torch
 import numpy as np
 from pathlib import Path
 from model import FingeringTransformer
 from fast_oemer_extract import extract_from_musicxml
-import ast
+import zipfile
 import subprocess
 import tempfile
 import os
+from xml.etree import ElementTree as ET
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
-def load_coordinates_from_file(image_filename):
-    """Load pre-extracted coordinates from coordinates.txt"""
-    coords_file = Path(__file__).parent / "Music_Data" / "coordinates.txt"
-    
-    if not os.path.exists(coords_file):
-        raise FileNotFoundError(f"coordinates.txt not found")
-    
-    # Read and parse the file as Python dict
-    with open(coords_file, 'r') as f:
-        content = f.read()
-    
-    # Parse as Python literal
-    coords_dict = ast.literal_eval(content)
-    
-    # Get just the filename without path
-    img_name = os.path.basename(image_filename)
-    
-    if img_name not in coords_dict:
-        raise KeyError(f"Image {img_name} not found in coordinates.txt")
-    
-    # Convert bounding boxes [x1,y1,x2,y2] to center points (x,y)
-    bboxes = coords_dict[img_name]
-    centers = []
-    for box in bboxes:
-        cx = (box[0] + box[2]) // 2
-        cy = (box[1] + box[3]) // 2
-        centers.append((cx, cy))
-    
-    return centers
+def extract_coords_from_omr(omr_path):
+    """
+    Extract pixel-accurate note head center coordinates from Audiveris .omr file.
+    The .omr is a ZIP containing sheet#1/sheet#1.xml with <head> elements and bounds.
+    Returns list of (cx, cy) sorted in reading order (top-to-bottom, left-to-right).
+    """
+    with zipfile.ZipFile(omr_path) as z:
+        xml = z.read('sheet#1/sheet#1.xml').decode()
+
+    root = ET.fromstring(xml)
+    heads = []
+    for el in root.iter('head'):
+        b = el.find('bounds')
+        if b is None:
+            continue
+        x = int(b.attrib['x'])
+        y = int(b.attrib['y'])
+        w = int(b.attrib['w'])
+        h = int(b.attrib['h'])
+        heads.append((x + w // 2, y + h // 2))
+
+    # Sort in reading order: row band then x
+    heads.sort(key=lambda p: (p[1] // 150, p[0]))
+    return heads
 
 
 def _find_audiveris_cmd():
@@ -112,21 +108,20 @@ def extract_from_image_with_coords(img_path):
     # Get musical data from MusicXML
     notes_data = extract_from_musicxml(xml_path)
     
-    # Load pre-extracted coordinates
+    # Load pixel-accurate coordinates from Audiveris .omr
+    omr_path = os.path.join(tmp_dir, f"{img_name}.omr")
     try:
-        coords = load_coordinates_from_file(img_path)
-        print(f"  Loaded {len(coords)} coordinates from coordinates.txt")
-        
-        # Match coordinates to notes (assume same order)
+        coords = extract_coords_from_omr(omr_path)
+        print(f"  Loaded {len(coords)} coordinates from .omr")
+
         for i in range(min(len(coords), len(notes_data))):
             notes_data[i]['x'], notes_data[i]['y'] = coords[i]
             notes_data[i]['has_coord'] = True
         if len(coords) < len(notes_data):
             print(f"  WARNING: Only {len(coords)} coordinates for {len(notes_data)} notes")
-    
+
     except Exception as e:
-        print(f"  WARNING: Could not load coordinates: {e}")
-        print(f"  Using default coordinates")
+        print(f"  WARNING: Could not load .omr coordinates: {e}")
     
     return notes_data
 

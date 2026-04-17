@@ -38,30 +38,39 @@ def overlay_transparent_image(background_img, overlay_img_rgba, x_offset, y_offs
     return background_img
 
 
+NUMBERS_DIR = Path(__file__).parent / "numbers"
+
+
 def process_image(input_path, output_path, notes, coords, fingers):
     try:
         with Image.open(input_path) as img:
             bg = pil_to_opencv(img)
-        
+
+        img_h, img_w = bg.shape[:2]
+
         for i in range(len(coords)):
             finger = fingers[i]
             if finger < 1 or finger > 5:
                 continue
-                
-            overlay = cv2.imread(f"./numbers/{finger}_small.png", cv2.IMREAD_UNCHANGED)
+
+            overlay = cv2.imread(str(NUMBERS_DIR / f"{finger}_small.png"), cv2.IMREAD_UNCHANGED)
             if overlay is None:
-                print(f"Number image not found: ./numbers/{finger}_small.png", file=sys.stderr)
+                print(f"Number image not found: {NUMBERS_DIR}/{finger}_small.png", file=sys.stderr)
                 continue
-            
-            x = coords[i][0]
-            y = max(0, coords[i][1] - 40)
-            
+
+            x = int(coords[i][0])
+            y = int(coords[i][1])
+
+            # Clamp coordinates to image bounds before overlaying
+            x = max(0, min(x, img_w - 1))
+            y = max(0, min(y - 40, img_h - 1))
+
             bg = overlay_transparent_image(bg, overlay, x, y)
 
         output_image = opencv_to_pil(bg)
         output_image.save(output_path)
         print(f"Saved to {output_path}")
-        
+
     except Exception as exc:
         print(str(exc), file=sys.stderr)
         sys.exit(1)

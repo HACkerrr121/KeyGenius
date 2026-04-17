@@ -32,41 +32,57 @@ for octave in range(0, 9):
             NOTE_TO_MIDI[f"{flat_map[note]}{octave}"] = midi_num
 
 
-def run_oemer(img_path, output_dir=None):
+AUDIVERIS_JAVA = "/Applications/Audiveris.app/Contents/runtime/Contents/Home/bin/java"
+AUDIVERIS_CP = "/Applications/Audiveris.app/Contents/app/*"
+
+
+def run_audiveris(img_path, output_dir=None):
     """
-    Run oemer's full pipeline on an image.
-    Returns path to the generated MusicXML file.
+    Run Audiveris on an image and return path to the generated MusicXML file.
+    Audiveris outputs a .mxl (compressed MusicXML) file named after the input stem.
     """
     img_path = str(Path(img_path).resolve())
-    
+
     if output_dir is None:
-        output_dir = tempfile.mkdtemp(prefix="oemer_")
-    
-    # oemer outputs to current directory, so we cd there
-    original_dir = os.getcwd()
-    os.chdir(output_dir)
-    
-    try:
-        result = subprocess.run(
-            ["oemer", img_path],
-            capture_output=True,
-            text=True,
-            timeout=300  # 5 min timeout
-        )
-        
-        if result.returncode != 0:
-            print(f"oemer stderr: {result.stderr}")
-            raise RuntimeError(f"oemer failed with code {result.returncode}")
-        
-        # Find the output MusicXML file
-        xml_files = list(Path(output_dir).glob("*.musicxml")) + list(Path(output_dir).glob("*.xml"))
-        if not xml_files:
-            raise FileNotFoundError(f"No MusicXML output found in {output_dir}")
-        
-        return str(xml_files[0])
-    
-    finally:
-        os.chdir(original_dir)
+        output_dir = tempfile.mkdtemp(prefix="audiveris_")
+
+    result = subprocess.run(
+        [
+            AUDIVERIS_JAVA,
+            "--enable-native-access=ALL-UNNAMED",
+            "-cp", AUDIVERIS_CP,
+            "Audiveris",
+            "-batch", "-transcribe", "-export",
+            "-output", output_dir,
+            img_path,
+        ],
+        capture_output=True,
+        text=True,
+        timeout=300,  # 5 min timeout
+    )
+
+    if result.returncode != 0:
+        print(f"Audiveris stderr: {result.stderr}")
+        raise RuntimeError(f"Audiveris failed with code {result.returncode}")
+
+    # Audiveris outputs {stem}.mxl; music21 can parse .mxl directly
+    stem = Path(img_path).stem
+    mxl_path = Path(output_dir) / f"{stem}.mxl"
+    if mxl_path.exists():
+        return str(mxl_path)
+
+    # Fallback: search for any mxl/musicxml/xml in output dir
+    for pattern in ("*.mxl", "*.musicxml", "*.xml"):
+        matches = list(Path(output_dir).glob(pattern))
+        if matches:
+            return str(matches[0])
+
+    raise FileNotFoundError(f"No MusicXML output found in {output_dir}")
+
+
+# Keep old name as alias for backward compatibility
+def run_oemer(img_path, output_dir=None):
+    return run_audiveris(img_path, output_dir)
 
 
 def parse_musicxml(xml_path):

@@ -54,9 +54,10 @@ class CRFLayer(nn.Module):
         self.start_transitions = nn.Parameter(torch.randn(num_tags))
         self.end_transitions = nn.Parameter(torch.randn(num_tags))
 
-        nn.init.uniform_(self.transitions, -0.1, 0.1)
-        nn.init.uniform_(self.start_transitions, -0.1, 0.1)
-        nn.init.uniform_(self.end_transitions, -0.1, 0.1)
+        # FIXED: Larger initialization range so CRF can learn strong preferences
+        nn.init.uniform_(self.transitions, -0.5, 0.5)
+        nn.init.uniform_(self.start_transitions, -0.5, 0.5)
+        nn.init.uniform_(self.end_transitions, -0.5, 0.5)
 
     def forward(self, emissions, tags, mask):
         gold_score = self._score_sentence(emissions, tags, mask)
@@ -229,12 +230,14 @@ class FingeringTransformer(nn.Module):
         emissions = self.get_emissions(note_features, src_key_padding_mask)
         
         if fingers is not None and mask is not None:
-            # Combined loss: CRF + Focal
+            # FIXED: Weight CRF 3x more to learn finger transitions
+            # CRF learns sequential patterns (1→2→3 flows)
+            # Focal handles hard examples (rare fingers)
             crf_loss = self.crf(emissions, fingers, mask)
             focal_loss = self.focal_loss(emissions, fingers, mask)
             
-            # Weight focal loss higher to fight class imbalance
-            total_loss = crf_loss + 0.5 * focal_loss
+            # CRF weighted heavily to learn natural finger flow
+            total_loss = 3.0 * crf_loss + focal_loss
             return emissions, total_loss
         
         return emissions

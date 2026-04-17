@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "cwd": "${fileDirname}",
+      "justMyCode": true
+    },
+    {
+      "name": "Python: Backend (coordinate_finder)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/Backend/coordinate_finder.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/Backend",
+      "justMyCode": true
+    }
+  ]
+}

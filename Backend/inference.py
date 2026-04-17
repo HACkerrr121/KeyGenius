@@ -1,17 +1,107 @@
 """
 KeyGenius Inference - predict fingerings from sheet music.
-Uses oemer full pipeline for proper note extraction.
+Uses pre-extracted coordinates from coordinates.txt.
 """
 import torch
 import numpy as np
 from pathlib import Path
 from model import FingeringTransformer
-from fast_oemer_extract import (
-    extract_from_image, extract_from_pages, extract_from_folder,
-    extract_from_musicxml, NOTE_TO_MIDI
-)
+from fast_oemer_extract import extract_from_musicxml, NOTE_TO_MIDI
+import ast
+import subprocess
+import tempfile
+import os
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+
+def load_coordinates_from_file(image_filename):
+    """Load pre-extracted coordinates from coordinates.txt"""
+    coords_file = "Music_Data/coordinates.txt"
+    
+    if not os.path.exists(coords_file):
+        raise FileNotFoundError(f"coordinates.txt not found")
+    
+    # Read and parse the file as Python dict
+    with open(coords_file, 'r') as f:
+        content = f.read()
+    
+    # Parse as Python literal
+    coords_dict = ast.literal_eval(content)
+    
+    # Get just the filename without path
+    img_name = os.path.basename(image_filename)
+    
+    if img_name not in coords_dict:
+        raise KeyError(f"Image {img_name} not found in coordinates.txt")
+    
+    # Convert bounding boxes [x1,y1,x2,y2] to center points (x,y)
+    bboxes = coords_dict[img_name]
+    centers = []
+    for box in bboxes:
+        cx = (box[0] + box[2]) // 2
+        cy = (box[1] + box[3]) // 2
+        centers.append((cx, cy))
+    
+    return centers
+
+
+AUDIVERIS_JAVA = "/Applications/Audiveris.app/Contents/runtime/Contents/Home/bin/java"
+AUDIVERIS_CP = "/Applications/Audiveris.app/Contents/app/*"
+
+
+def extract_from_image_with_coords(img_path):
+    """Run Audiveris to get MusicXML, then use pre-extracted coordinates"""
+    print(f"Running Audiveris to get musical data from {img_path}...")
+
+    tmp_dir = tempfile.mkdtemp(prefix="audiveris_")
+    result = subprocess.run(
+        [
+            AUDIVERIS_JAVA,
+            "--enable-native-access=ALL-UNNAMED",
+            "-cp", AUDIVERIS_CP,
+            "Audiveris",
+            "-batch", "-transcribe", "-export",
+            "-output", tmp_dir,
+            img_path,
+        ],
+        capture_output=True,
+        text=True,
+        timeout=300,
+    )
+
+    img_name = Path(img_path).stem
+    # Audiveris outputs .mxl; music21 parses it directly
+    xml_path = os.path.join(tmp_dir, f"{img_name}.mxl")
+
+    if not os.path.exists(xml_path):
+        raise RuntimeError(f"Audiveris failed to generate MusicXML:\n{result.stderr}")
+    
+    print(f"  MusicXML generated: {xml_path}")
+    
+    # Get musical data from MusicXML
+    notes_data = extract_from_musicxml(xml_path)
+    
+    # Load pre-extracted coordinates
+    try:
+        coords = load_coordinates_from_file(img_path)
+        print(f"  Loaded {len(coords)} coordinates from coordinates.txt")
+        
+        # Match coordinates to notes (assume same order)
+        if len(coords) >= len(notes_data):
+            for i, note in enumerate(notes_data):
+                note['x'], note['y'] = coords[i]
+        else:
+            print(f"  WARNING: Only {len(coords)} coordinates for {len(notes_data)} notes")
+            # Use what we have
+            for i in range(len(coords)):
+                notes_data[i]['x'], notes_data[i]['y'] = coords[i]
+    
+    except Exception as e:
+        print(f"  WARNING: Could not load coordinates: {e}")
+        print(f"  Using default coordinates")
+    
+    return notes_data
 
 
 def load_model(checkpoint_path):
@@ -41,11 +131,7 @@ def load_model(checkpoint_path):
 
 
 def notes_to_features(notes_data):
-    """
-    Convert extracted notes to 17-dim model features.
-    Features 12-16 (prev_finger) are left as zeros initially,
-    then filled in during two-pass inference.
-    """
+    """Convert extracted notes to 17-dim model features"""
     features = []
     n = len(notes_data)
     
@@ -57,29 +143,24 @@ def notes_to_features(notes_data):
     for i, note in enumerate(notes_data):
         midi = note['midi']
         
-        # Basic features - now from proper OMR/MusicXML data
         midi_norm = (midi - 21) / 87.0
         duration = min(note.get('duration', 0.5), 2.0)
         delta_time = min(note.get('delta_time', 0.2), 2.0)
         
-        # Intervals
         interval_prev = (midi - midis[i-1]) / 24.0 if i > 0 else 0.0
         interval_next = (midis[i+1] - midi) / 24.0 if i < n - 1 else 0.0
         interval_prev = np.clip(interval_prev, -1, 1)
         interval_next = np.clip(interval_next, -1, 1)
         
-        # Direction
         if i > 0:
             direction = 1.0 if midi > midis[i-1] else (-1.0 if midi < midis[i-1] else 0.0)
         else:
             direction = 0.0
         
-        # Chord features - from proper detection
         is_chord = 1.0 if note.get('is_chord', False) else 0.0
         chord_size_norm = min(note.get('chord_size', 1), 5) / 5.0
         chord_position = note.get('chord_position', 0.5)
         
-        # Pattern detection
         if i >= 2:
             recent = [midis[j] - midis[j-1] for j in range(max(1, i-3), i+1)]
             steps = sum(1 for iv in recent if abs(iv) in [1, 2])
@@ -93,22 +174,13 @@ def notes_to_features(notes_data):
             pattern_arpeggio = 0.0
             pattern_repeat = 0.0
         
-        # Previous finger - zeros for now, filled in during two-pass
         prev_finger_onehot = [0.0, 0.0, 0.0, 0.0, 0.0]
         
         feature_vec = [
-            midi_norm,
-            duration,
-            delta_time,
-            interval_prev,
-            interval_next,
-            direction,
-            is_chord,
-            chord_size_norm,
-            chord_position,
-            pattern_scale,
-            pattern_arpeggio,
-            pattern_repeat,
+            midi_norm, duration, delta_time,
+            interval_prev, interval_next, direction,
+            is_chord, chord_size_norm, chord_position,
+            pattern_scale, pattern_arpeggio, pattern_repeat,
             *prev_finger_onehot
         ]
         
@@ -118,14 +190,7 @@ def notes_to_features(notes_data):
 
 
 def predict_batch(model, features, max_seq=200):
-    """
-    Two-pass prediction with prev_finger feedback.
-    
-    Pass 1: predict with prev_finger = zeros
-    Pass 2: fill in prev_finger from pass 1 predictions, re-predict
-    
-    Only 2 forward passes per chunk instead of N.
-    """
+    """Two-pass prediction with prev_finger feedback"""
     n = len(features)
     all_fingers = []
     
@@ -144,10 +209,8 @@ def predict_batch(model, features, max_seq=200):
             mask_t = torch.from_numpy(mask).unsqueeze(0).to(device)
             pad_mask = (mask_t == 0)
             
-            # Pass 1: predict with no prev_finger info
             preds = model.generate(feat_t, src_key_padding_mask=pad_mask, mask=mask_t)
             
-            # Fill in prev_finger one-hot from pass 1 predictions
             for j in range(1, seq_len):
                 prev_f = preds[0, j-1].item()
                 onehot = [0.0] * 5
@@ -155,7 +218,6 @@ def predict_batch(model, features, max_seq=200):
                     onehot[prev_f - 1] = 1.0
                 batch[j, 12:17] = onehot
             
-            # Pass 2: re-predict with prev_finger context
             feat_t = torch.from_numpy(batch).unsqueeze(0).to(device)
             preds = model.generate(feat_t, src_key_padding_mask=pad_mask, mask=mask_t)
         
@@ -165,33 +227,11 @@ def predict_batch(model, features, max_seq=200):
 
 
 def infer(img_input, checkpoint_path):
-    """
-    Main inference function.
-    
-    Args:
-        img_input: single image path, list of paths, folder path,
-                   or .musicxml/.xml/.mxl file
-        checkpoint_path: path to model checkpoint
-    
-    Returns:
-        notes: ['C4', 'D4', ...] 
-        coords: [(x, y, page), ...]
-        fingers: [1, 2, 3, ...]
-    """
+    """Main inference function"""
     print("Extracting notes...")
     
-    input_path = img_input if isinstance(img_input, str) else img_input[0]
-    
-    # Support MusicXML input directly (skip oemer)
-    if isinstance(img_input, str) and input_path.endswith(('.musicxml', '.xml', '.mxl')):
-        print("  (parsing MusicXML directly)")
-        notes_data = extract_from_musicxml(img_input)
-    elif isinstance(img_input, list):
-        notes_data = extract_from_pages(img_input)
-    elif Path(img_input).is_dir():
-        notes_data = extract_from_folder(img_input)
-    else:
-        notes_data = extract_from_image(img_input)
+    # Use pre-extracted coordinates
+    notes_data = extract_from_image_with_coords(img_input)
     
     if len(notes_data) == 0:
         print("No notes found!")
@@ -199,7 +239,6 @@ def infer(img_input, checkpoint_path):
     
     print(f"Found {len(notes_data)} notes")
     
-    # Stats
     right_count = sum(1 for n in notes_data if n['hand'] == 'RIGHT')
     left_count = sum(1 for n in notes_data if n['hand'] == 'LEFT')
     chord_count = sum(1 for n in notes_data if n.get('is_chord', False))
@@ -216,11 +255,9 @@ def infer(img_input, checkpoint_path):
     print("Predicting fingerings (two-pass)...")
     fingers = predict_batch(model, features)
     
-    # Debug: show finger distribution
     from collections import Counter
     print(f"Finger distribution: {Counter(fingers)}")
     
-    # Convert to old format for compatibility
     notes = [n['note'] for n in notes_data]
     coords = [(n['x'], n['y'], n.get('page', 0)) for n in notes_data]
     
@@ -237,9 +274,7 @@ if __name__ == "__main__":
         sys.exit(1)
     
     if len(sys.argv) < 2:
-        print("Usage:")
-        print("  python inference.py image.jpg")
-        print("  python inference.py score.musicxml")
+        print("Usage: python inference.py image.jpg")
         sys.exit(1)
     
     img_input = sys.argv[1]

@@ -83,10 +83,14 @@ def main():
     
     input_path = sys.argv[1]
     output_path = sys.argv[2]
-    
+
     # Add Backend to path
     backend_path = Path(__file__).parent.parent.parent / "Backend"
     sys.path.insert(0, str(backend_path))
+
+    # Resolve input path: if relative and not found locally, try Backend dir
+    if not Path(input_path).is_absolute() and not Path(input_path).exists():
+        input_path = str(backend_path / input_path)
     
     from inference import infer
     

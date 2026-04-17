@@ -118,14 +118,11 @@ def extract_from_image_with_coords(img_path):
         print(f"  Loaded {len(coords)} coordinates from coordinates.txt")
         
         # Match coordinates to notes (assume same order)
-        if len(coords) >= len(notes_data):
-            for i, note in enumerate(notes_data):
-                note['x'], note['y'] = coords[i]
-        else:
+        for i in range(min(len(coords), len(notes_data))):
+            notes_data[i]['x'], notes_data[i]['y'] = coords[i]
+            notes_data[i]['has_coord'] = True
+        if len(coords) < len(notes_data):
             print(f"  WARNING: Only {len(coords)} coordinates for {len(notes_data)} notes")
-            # Use what we have
-            for i in range(len(coords)):
-                notes_data[i]['x'], notes_data[i]['y'] = coords[i]
     
     except Exception as e:
         print(f"  WARNING: Could not load coordinates: {e}")
@@ -288,10 +285,16 @@ def infer(img_input, checkpoint_path):
     from collections import Counter
     print(f"Finger distribution: {Counter(fingers)}")
     
+    # Only return notes with real pixel coordinates
+    valid = [(n, f) for n, f in zip(notes_data, fingers) if n.get('has_coord', False)]
+    if valid:
+        notes_data, fingers = zip(*valid)
+        print(f"  {len(notes_data)} notes with real coordinates")
+
     notes = [n['note'] for n in notes_data]
     coords = [(n['x'], n['y'], n.get('page', 0)) for n in notes_data]
-    
-    return notes, coords, fingers
+
+    return notes, coords, list(fingers)
 
 
 if __name__ == "__main__":

@@ -13,15 +13,21 @@ def opencv_to_pil(cv_image):
     return Image.fromarray(cv2.cvtColor(cv_image, cv2.COLOR_BGR2RGB))
 
 
-def overlay_transparent_image(background_img, overlay_img_rgba, x_offset, y_offset):
+def overlay_transparent_image(background_img, overlay_img_rgba, x_center, y_offset):
     bg_h, bg_w = background_img.shape[:2]
 
     scale = bg_w / 1080 * 0.3
     h, w = overlay_img_rgba.shape[:2]
     new_w, new_h = int(w * scale), int(h * scale)
+    if new_w < 1 or new_h < 1:
+        return background_img
     overlay = cv2.resize(overlay_img_rgba, (new_w, new_h))
 
-    if x_offset + new_w > bg_w or y_offset + new_h > bg_h:
+    # Center the number on x_center
+    x_offset = x_center - new_w // 2
+    x_offset = max(0, x_offset)
+
+    if x_offset + new_w > bg_w or y_offset + new_h > bg_h or y_offset < 0:
         return background_img
 
     b, g, r, a = cv2.split(overlay)

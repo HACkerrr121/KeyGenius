@@ -15,7 +15,6 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import subprocess
 import tempfile
 import shutil
-import numpy as np
 from pathlib import Path
 from collections import defaultdict
 
@@ -32,8 +31,31 @@ for octave in range(0, 9):
             NOTE_TO_MIDI[f"{flat_map[note]}{octave}"] = midi_num
 
 
-AUDIVERIS_JAVA = "/Applications/Audiveris.app/Contents/runtime/Contents/Home/bin/java"
-AUDIVERIS_CP = "/Applications/Audiveris.app/Contents/app/*"
+def _find_audiveris_cmd():
+    env = os.environ.get("AUDIVERIS_CMD")
+    if env:
+        return env
+    linux = os.path.expanduser("~/audiveris/audiveris/bin/Audiveris")
+    if os.path.exists(linux):
+        return linux
+    mac_java = "/Applications/Audiveris.app/Contents/runtime/Contents/Home/bin/java"
+    if os.path.exists(mac_java):
+        return mac_java
+    raise RuntimeError("Audiveris not found. Set AUDIVERIS_CMD env var.")
+
+_AUDIVERIS_CMD = _find_audiveris_cmd()
+_MAC_JAVA = "/Applications/Audiveris.app/Contents/runtime/Contents/Home/bin/java"
+_MAC_CP = "/Applications/Audiveris.app/Contents/app/*"
+
+def _build_audiveris_args(output_dir, img_path):
+    if _AUDIVERIS_CMD == _MAC_JAVA:
+        return [
+            _MAC_JAVA, "--enable-native-access=ALL-UNNAMED",
+            "-cp", _MAC_CP, "Audiveris",
+            "-batch", "-transcribe", "-export",
+            "-output", output_dir, img_path,
+        ]
+    return [_AUDIVERIS_CMD, "-batch", "-transcribe", "-export", "-output", output_dir, img_path]
 
 
 def run_audiveris(img_path, output_dir=None):
@@ -47,18 +69,10 @@ def run_audiveris(img_path, output_dir=None):
         output_dir = tempfile.mkdtemp(prefix="audiveris_")
 
     result = subprocess.run(
-        [
-            AUDIVERIS_JAVA,
-            "--enable-native-access=ALL-UNNAMED",
-            "-cp", AUDIVERIS_CP,
-            "Audiveris",
-            "-batch", "-transcribe", "-export",
-            "-output", output_dir,
-            img_path,
-        ],
+        _build_audiveris_args(output_dir, img_path),
         capture_output=True,
         text=True,
-        timeout=300,  # 5 min timeout
+        timeout=300,
     )
 
     if result.returncode != 0:

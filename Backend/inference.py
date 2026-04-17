@@ -46,8 +46,38 @@ def load_coordinates_from_file(image_filename):
     return centers
 
 
-AUDIVERIS_JAVA = "/Applications/Audiveris.app/Contents/runtime/Contents/Home/bin/java"
-AUDIVERIS_CP = "/Applications/Audiveris.app/Contents/app/*"
+def _find_audiveris_cmd():
+    # Allow override via env var
+    env = os.environ.get("AUDIVERIS_CMD")
+    if env:
+        return env
+    # Linux wrapper script (Jetson)
+    linux = os.path.expanduser("~/audiveris/audiveris/bin/Audiveris")
+    if os.path.exists(linux):
+        return linux
+    # Mac app bundle via bundled Java
+    mac_java = "/Applications/Audiveris.app/Contents/runtime/Contents/Home/bin/java"
+    if os.path.exists(mac_java):
+        return mac_java  # handled specially below
+    raise RuntimeError("Audiveris not found. Set AUDIVERIS_CMD env var.")
+
+_AUDIVERIS_CMD = _find_audiveris_cmd()
+_MAC_JAVA = "/Applications/Audiveris.app/Contents/runtime/Contents/Home/bin/java"
+_MAC_CP = "/Applications/Audiveris.app/Contents/app/*"
+
+def _build_audiveris_args(output_dir, img_path):
+    if _AUDIVERIS_CMD == _MAC_JAVA:
+        return [
+            _MAC_JAVA, "--enable-native-access=ALL-UNNAMED",
+            "-cp", _MAC_CP, "Audiveris",
+            "-batch", "-transcribe", "-export",
+            "-output", output_dir, img_path,
+        ]
+    return [
+        _AUDIVERIS_CMD,
+        "-batch", "-transcribe", "-export",
+        "-output", output_dir, img_path,
+    ]
 
 
 def extract_from_image_with_coords(img_path):
@@ -56,15 +86,7 @@ def extract_from_image_with_coords(img_path):
 
     tmp_dir = tempfile.mkdtemp(prefix="audiveris_")
     result = subprocess.run(
-        [
-            AUDIVERIS_JAVA,
-            "--enable-native-access=ALL-UNNAMED",
-            "-cp", AUDIVERIS_CP,
-            "Audiveris",
-            "-batch", "-transcribe", "-export",
-            "-output", tmp_dir,
-            img_path,
-        ],
+        _build_audiveris_args(tmp_dir, img_path),
         capture_output=True,
         text=True,
         timeout=300,

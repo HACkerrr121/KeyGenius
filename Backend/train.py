@@ -16,9 +16,9 @@ MAX_SEQ_LEN = 200
 BATCH_SIZE = 32
 LR = 3e-4
 MIN_LR = 1e-6
-EPOCHS = 10 
-PATIENCE = 30
-LR_PATIENCE = 10  # Drop LR if no improvement for this many epochs
+EPOCHS = 60
+PATIENCE = 15
+LR_PATIENCE = 8   # Drop LR if no improvement for this many epochs
 LR_FACTOR = 0.5   # Multiply LR by this when dropping
 
 D_MODEL = 256
@@ -27,17 +27,14 @@ NUM_LAYERS = 6
 DIM_FEEDFORWARD = 1024
 DROPOUT = 0.15
 
-PREV_FINGER_DROPOUT = 0.2  # Randomly zero out prev_finger during training
-
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Device: {device}")
-print(f"Training: {HAND_NAME} hand")
-print(f"Prev finger dropout: {PREV_FINGER_DROPOUT}\n")
+print(f"Training: {HAND_NAME} hand\n")
 
 # ============================================================
 # DATA
 # ============================================================
-train_dataset = FingeringDataset(DATA_DIR, hand=HAND, max_seq_len=MAX_SEQ_LEN, split='train', prev_finger_dropout=PREV_FINGER_DROPOUT)
+train_dataset = FingeringDataset(DATA_DIR, hand=HAND, max_seq_len=MAX_SEQ_LEN, split='train')
 val_dataset = FingeringDataset(DATA_DIR, hand=HAND, max_seq_len=MAX_SEQ_LEN, split='val')
 
 train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=0)
@@ -76,7 +73,7 @@ print(f"Class weights: {[f'{w:.2f}' for w in class_weights.tolist()]}")
 # MODEL
 # ============================================================
 model = FingeringTransformer(
-    input_dim=17,
+    input_dim=12,
     d_model=D_MODEL,
     nhead=NHEAD,
     num_layers=NUM_LAYERS,
@@ -113,7 +110,7 @@ def train_epoch():
         pad_mask = (mask == 0)
 
         optimizer.zero_grad()
-        emissions, loss = model(features, fingers=fingers, mask=mask, src_key_padding_mask=pad_mask)
+        _, loss = model(features, fingers=fingers, mask=mask, src_key_padding_mask=pad_mask)
 
         loss.backward()
         torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
@@ -142,7 +139,7 @@ def validate():
             mask = mask.to(device)
             pad_mask = (mask == 0)
 
-            emissions, loss = model(features, fingers=fingers, mask=mask, src_key_padding_mask=pad_mask)
+            _, loss = model(features, fingers=fingers, mask=mask, src_key_padding_mask=pad_mask)
             preds = model.generate(features, src_key_padding_mask=pad_mask, mask=mask)
 
             acc = compute_accuracy(preds, fingers, mask)

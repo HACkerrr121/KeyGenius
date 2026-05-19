@@ -130,7 +130,7 @@ def load_model(checkpoint_path):
     checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
     
     model = FingeringTransformer(
-        input_dim=17,
+        input_dim=12,
         d_model=256,
         nhead=8,
         num_layers=6,
@@ -153,36 +153,36 @@ def load_model(checkpoint_path):
 
 
 def notes_to_features(notes_data):
-    """Convert extracted notes to 17-dim model features"""
+    """Convert extracted notes to 12-dim model features."""
     features = []
     n = len(notes_data)
-    
+
     if n == 0:
-        return np.array([], dtype=np.float32).reshape(0, 17)
-    
+        return np.array([], dtype=np.float32).reshape(0, 12)
+
     midis = [note['midi'] for note in notes_data]
-    
+
     for i, note in enumerate(notes_data):
         midi = note['midi']
-        
+
         midi_norm = (midi - 21) / 87.0
         duration = min(note.get('duration', 0.5), 2.0)
         delta_time = min(note.get('delta_time', 0.2), 2.0)
-        
+
         interval_prev = (midi - midis[i-1]) / 24.0 if i > 0 else 0.0
         interval_next = (midis[i+1] - midi) / 24.0 if i < n - 1 else 0.0
         interval_prev = np.clip(interval_prev, -1, 1)
         interval_next = np.clip(interval_next, -1, 1)
-        
+
         if i > 0:
             direction = 1.0 if midi > midis[i-1] else (-1.0 if midi < midis[i-1] else 0.0)
         else:
             direction = 0.0
-        
+
         is_chord = 1.0 if note.get('is_chord', False) else 0.0
         chord_size_norm = min(note.get('chord_size', 1), 5) / 5.0
         chord_position = note.get('chord_position', 0.5)
-        
+
         if i >= 2:
             recent = [midis[j] - midis[j-1] for j in range(max(1, i-3), i+1)]
             steps = sum(1 for iv in recent if abs(iv) in [1, 2])
@@ -195,56 +195,39 @@ def notes_to_features(notes_data):
             pattern_scale = 0.0
             pattern_arpeggio = 0.0
             pattern_repeat = 0.0
-        
-        prev_finger_onehot = [0.0, 0.0, 0.0, 0.0, 0.0]
-        
-        feature_vec = [
+
+        features.append([
             midi_norm, duration, delta_time,
             interval_prev, interval_next, direction,
             is_chord, chord_size_norm, chord_position,
             pattern_scale, pattern_arpeggio, pattern_repeat,
-            *prev_finger_onehot
-        ]
-        
-        features.append(feature_vec)
-    
+        ])
+
     return np.array(features, dtype=np.float32)
 
 
 def predict_batch(model, features, max_seq=200):
-    """Two-pass prediction with prev_finger feedback"""
     n = len(features)
     all_fingers = []
-    
+
     for i in range(0, n, max_seq):
         batch = features[i:i+max_seq].copy()
         seq_len = min(max_seq, n - i)
-        
+
         if seq_len < max_seq:
             batch = np.pad(batch, ((0, max_seq - seq_len), (0, 0)), constant_values=0)
-        
+
         mask = np.zeros(max_seq, dtype=np.float32)
         mask[:seq_len] = 1.0
-        
+
         with torch.no_grad():
             feat_t = torch.from_numpy(batch).unsqueeze(0).to(device)
             mask_t = torch.from_numpy(mask).unsqueeze(0).to(device)
             pad_mask = (mask_t == 0)
-            
             preds = model.generate(feat_t, src_key_padding_mask=pad_mask, mask=mask_t)
-            
-            for j in range(1, seq_len):
-                prev_f = preds[0, j-1].item()
-                onehot = [0.0] * 5
-                if 1 <= prev_f <= 5:
-                    onehot[prev_f - 1] = 1.0
-                batch[j, 12:17] = onehot
-            
-            feat_t = torch.from_numpy(batch).unsqueeze(0).to(device)
-            preds = model.generate(feat_t, src_key_padding_mask=pad_mask, mask=mask_t)
-        
+
         all_fingers.extend(preds[0, :seq_len].cpu().numpy().tolist())
-    
+
     return all_fingers
 
 

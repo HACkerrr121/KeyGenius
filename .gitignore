@@ -1,0 +1,10 @@
+
+files/venv/
+venv/
+__pycache__/
+*.pyc
+*.onnx
+*.dylib
+*.pt
+files/data/PIG/*
+files/checkpoints/

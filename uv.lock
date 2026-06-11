@@ -2,6 +2,17 @@ version = 1
 revision = 3
 requires-python = ">=3.10"
 
+[manifest]
+members = [
+    "files",
+    "keygenius",
+]
+
+[[package]]
+name = "files"
+version = "0.1.0"
+source = { virtual = "files" }
+
 [[package]]
 name = "keygenius"
 version = "0.1.0"

@@ -1,0 +1,5 @@
+# Image -> MusicXML engines. Install ONLY if you need raw-image input.
+# Recommended to install into a SEPARATE venv from the core if it conflicts.
+#   pip install -r requirements-omr.txt
+homr>=0.6.0
+oemer>=0.1.7

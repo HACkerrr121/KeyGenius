@@ -47,14 +47,19 @@ def load_model(ckpt_path: str, device: str) -> KeyGenius:
 def predict_hand(model, seq, device):
     """seq: ordered list[MNote] for one hand.
 
-    Returns (fingers 1..5, confidence in [0,1]) per note.
+    Returns (fingers 1..5, confidence in [0,1]) per note, using physical
+    chord constraints in the decode.
     """
     cont, pc, hand = build_features(seq)
     cont = torch.from_numpy(cont).unsqueeze(0).to(device)
     pc = torch.from_numpy(pc).unsqueeze(0).to(device)
     hand = torch.from_numpy(hand).unsqueeze(0).to(device)
     mask = torch.ones(1, len(seq), dtype=torch.bool, device=device)
-    path, conf = model.predict_with_confidence(cont, pc, hand, mask)
+    midis = [n.midi for n in seq]
+    onsets = [n.onset for n in seq]
+    hand_id = seq[0].hand if seq else 0
+    path, conf = model.predict_constrained(cont, pc, hand, mask,
+                                           midis, onsets, hand_id)
     return [c + 1 for c in path], conf
 
 

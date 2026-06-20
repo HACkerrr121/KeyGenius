@@ -18,7 +18,7 @@ MIDI_MIN, MIDI_MAX = 21, 108   # A0..C8, the 88-key range
 @dataclass
 class FeatureConfig:
     # number of continuous (float) features per note. MUST match features.py.
-    n_continuous: int = 8
+    n_continuous: int = 14
     pitch_class_emb: int = 8
     hand_emb: int = 4
 
@@ -59,8 +59,8 @@ class TrainConfig:
 
 @dataclass
 class Paths:
-    pig_root: str = "../Backend/Music_Data/FingeringFiles"
-    fingering_glob: str = "*_fingering*.txt"
+    pig_root: str = "data/PIG"          # where you unzip the PIG dataset
+    fingering_glob: str = "**/*_fingering*.txt"
     checkpoint_dir: str = "checkpoints"
     best_ckpt: str = "checkpoints/keygenius_best.pt"
 

@@ -110,6 +110,24 @@ class KeyGenius(nn.Module):
         m = mask.float()
         return (loss * m).sum() / m.sum().clamp(min=1.0)
 
+    def pretrain_loss(self, batch):
+        """Masked focal loss for PARTIALLY-labeled data (ThumbSet).
+
+        Labels are finger-1, so unlabeled notes are -1. We train the encoder /
+        emission head only on the notes that have a real 1..5 label; unlabeled
+        notes still pass through (providing context) but contribute no loss.
+        The CRF transitions are left for PIG fine-tuning on complete labels.
+        """
+        cfg = CFG.train
+        em = self.emissions(batch["cont"], batch["pc"], batch["hand"], batch["mask"])
+        labels = batch["labels"]
+        labeled = (labels >= 0) & batch["mask"]            # [B,T] bool
+        if labeled.sum() == 0:
+            return em.sum() * 0.0, {"focal": 0.0, "labeled": 0}
+        safe_labels = labels.clamp(min=0)                  # avoid -1 in gather
+        focal = self._focal(em, safe_labels, labeled, cfg.focal_gamma)
+        return focal, {"focal": focal.item(), "labeled": int(labeled.sum().item())}
+
     @torch.no_grad()
     def predict(self, cont, pc, hand, mask):
         em = self.emissions(cont, pc, hand, mask)
@@ -125,6 +143,21 @@ class KeyGenius(nn.Module):
         assert cont.size(0) == 1, "predict_with_confidence expects batch size 1"
         em = self.emissions(cont, pc, hand, mask)         # [1, T, K]
         path = self.crf.decode(em, mask)[0]               # list[int]
+        marg = self.crf.marginals(em[0])                  # [T, K]
+        conf = [float(marg[i, path[i]]) for i in range(len(path))]
+        return path, conf
+
+    @torch.no_grad()
+    def predict_constrained(self, cont, pc, hand, mask, midis, onsets, hand_id):
+        """Single-sequence decode with physical chord constraints + confidence.
+
+        midis/onsets: per-note lists (sequence order); hand_id: 0=RH, 1=LH.
+        Confidence is still the (unconstrained) CRF posterior, so it honestly
+        reflects how sure the model was even where a constraint overrode it.
+        """
+        assert cont.size(0) == 1, "predict_constrained expects batch size 1"
+        em = self.emissions(cont, pc, hand, mask)         # [1, T, K]
+        path = self.crf.decode_constrained(em[0], midis, onsets, hand_id)
         marg = self.crf.marginals(em[0])                  # [T, K]
         conf = [float(marg[i, path[i]]) for i in range(len(path))]
         return path, conf

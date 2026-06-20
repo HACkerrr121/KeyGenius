@@ -87,6 +87,64 @@ class CRF(nn.Module):
                 self.trans + (emissions[t + 1] + beta[t + 1]).unsqueeze(0), dim=1)
         return (alpha + beta - log_Z).exp()           # [T, K]
 
+    # ---- constrained decode (single sequence) -------------------------------
+    @torch.no_grad()
+    def decode_constrained(self, emissions, midis, onsets, hand,
+                           chord_eps: float = 1e-3, big: float = 1e4):
+        """Viterbi for ONE per-hand sequence with PHYSICAL chord constraints.
+
+        emissions : [T, K]   (no batch)
+        midis     : list[int]  MIDI pitch per note (sequence order)
+        onsets    : list[float] onset time per note
+        hand      : 0 = right, 1 = left
+
+        Notes sharing an onset form a CHORD. Within a chord (notes are ordered
+        low->high pitch), a single hand physically must:
+          * use a DIFFERENT finger for each note, and
+          * order fingers monotonically with pitch
+            - right hand: higher pitch -> higher finger number
+            - left  hand: higher pitch -> lower  finger number (thumb on top)
+
+        These are near-certain physical facts, so we forbid violations with a
+        large penalty. Melodic (different-onset) transitions are left to the
+        learned CRF, so confident/correct passages are untouched. This cleans
+        up exactly the low-confidence chord guesses without retraining.
+        """
+        T, K = emissions.shape
+        dev = emissions.device
+        idx = torch.arange(K, device=dev)
+        prev_i = idx.unsqueeze(1)      # [K,1]
+        curr_i = idx.unsqueeze(0)      # [1,K]
+
+        def chord_penalty(t):
+            same_onset = abs(onsets[t] - onsets[t - 1]) < chord_eps
+            if not same_onset:
+                return torch.zeros(K, K, device=dev)
+            if hand == 0:              # RH: curr finger must be strictly higher
+                bad = curr_i <= prev_i
+            else:                      # LH: curr finger must be strictly lower
+                bad = curr_i >= prev_i
+            return torch.where(bad, torch.full((K, K), -big, device=dev),
+                               torch.zeros(K, K, device=dev))
+
+        score = self.start + emissions[0]          # [K]
+        history = []
+        for t in range(1, T):
+            pen = chord_penalty(t)                 # [K_prev, K_curr]
+            broadcast = score.unsqueeze(1) + self.trans + pen   # [K_prev,K_curr]
+            best_score, best_prev = broadcast.max(dim=0)        # [K_curr]
+            score = best_score + emissions[t]
+            history.append(best_prev)
+
+        score = score + self.end
+        last = int(score.argmax().item())
+        path = [last]
+        for t in range(T - 2, -1, -1):
+            last = int(history[t][last].item())
+            path.append(last)
+        path.reverse()
+        return path
+
     # ---- decode -------------------------------------------------------------
     @torch.no_grad()
     def decode(self, emissions, mask):

@@ -54,24 +54,54 @@ def lr_lambda(epoch):
 
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--init", default="",
+                    help="checkpoint to initialize from (e.g. pretrained.pt) "
+                         "for fine-tuning")
+    ap.add_argument("--lr", type=float, default=None,
+                    help="override learning rate (use a lower one when "
+                         "fine-tuning, e.g. 1e-4)")
+    ap.add_argument("--epochs", type=int, default=None)
+    args = ap.parse_args()
+
     torch.manual_seed(CFG.train.seed)
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"device: {device}")
 
+    lr = args.lr if args.lr is not None else CFG.train.lr
+    epochs = args.epochs if args.epochs is not None else CFG.train.epochs
+
     train_loader, val_loader = make_loaders()
     model = KeyGenius().to(device)
+
+    if args.init:
+        state = torch.load(args.init, map_location=device)
+        model.load_state_dict(state["model"])
+        print(f"initialized from {args.init} "
+              f"(pretrain match {state.get('match_rate', 0)*100:.1f}%) "
+              f"-> fine-tuning at lr {lr}")
+
     n_params = sum(p.numel() for p in model.parameters())
     print(f"model params: {n_params/1e6:.2f}M")
 
-    opt = torch.optim.AdamW(model.parameters(), lr=CFG.train.lr,
+    opt = torch.optim.AdamW(model.parameters(), lr=lr,
                             weight_decay=CFG.train.weight_decay)
-    sched = torch.optim.lr_scheduler.LambdaLR(opt, lr_lambda)
+
+    def lr_lambda_local(epoch):
+        warm = CFG.train.warmup_epochs
+        if epoch < warm:
+            return (epoch + 1) / warm
+        progress = (epoch - warm) / max(1, epochs - warm)
+        return 0.5 * (1 + math.cos(math.pi * progress))
+
+    sched = torch.optim.lr_scheduler.LambdaLR(opt, lr_lambda_local)
 
     os.makedirs(CFG.paths.checkpoint_dir, exist_ok=True)
     best = 0.0
     stale = 0
 
-    for epoch in range(CFG.train.epochs):
+    for epoch in range(epochs):
         model.train()
         running = {"loss": 0.0, "crf": 0.0, "focal": 0.0}
         for batch in train_loader:

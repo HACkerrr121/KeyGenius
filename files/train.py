@@ -63,7 +63,20 @@ def main():
                     help="override learning rate (use a lower one when "
                          "fine-tuning, e.g. 1e-4)")
     ap.add_argument("--epochs", type=int, default=None)
+    ap.add_argument("--out", default=None,
+                    help="where to save the best checkpoint "
+                         "(default: config best_ckpt). Use distinct names to "
+                         "compare runs, e.g. checkpoints/pig_only.pt")
+    ap.add_argument("--ergo", type=float, default=None,
+                    help="ergonomic loss weight (0=off). Try 0.3-1.0 to teach "
+                         "the model to avoid cramped/lazy fingerings.")
     args = ap.parse_args()
+
+    if args.ergo is not None:
+        CFG.train.ergonomic_weight = args.ergo
+        print(f"ergonomic loss weight: {args.ergo}")
+
+    out_path = args.out if args.out is not None else CFG.paths.best_ckpt
 
     torch.manual_seed(CFG.train.seed)
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -131,8 +144,8 @@ def main():
             stale = 0
             torch.save({"model": model.state_dict(),
                         "match_rate": best, "epoch": epoch},
-                       CFG.paths.best_ckpt)
-            print(f"  -> saved best ({best*100:.2f}%) to {CFG.paths.best_ckpt}")
+                       out_path)
+            print(f"  -> saved best ({best*100:.2f}%) to {out_path}")
         else:
             stale += 1
             if stale >= CFG.train.early_stop_patience:

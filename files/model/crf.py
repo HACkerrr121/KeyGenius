@@ -90,49 +90,111 @@ class CRF(nn.Module):
     # ---- constrained decode (single sequence) -------------------------------
     @torch.no_grad()
     def decode_constrained(self, emissions, midis, onsets, hand,
-                           chord_eps: float = 1e-3, big: float = 1e4):
-        """Viterbi for ONE per-hand sequence with PHYSICAL chord constraints.
+                           chord_eps: float = 1e-3, big: float = 1e4,
+                           w_repeat: float = 2.5, w_cramp: float = 1.5,
+                           w_thumb_black: float = 1.0):
+        """Viterbi for ONE per-hand sequence with physical constraints.
 
-        emissions : [T, K]   (no batch)
-        midis     : list[int]  MIDI pitch per note (sequence order)
-        onsets    : list[float] onset time per note
+        HARD chord constraints (same-onset notes), plus SOFT melodic nudges
+        that encode real ergonomics. Soft penalties are small and the model
+        can override them when confident — they only break ties on the
+        low-confidence notes where the model was guessing.
+
+        emissions : [T, K]      midis : list[int]    onsets : list[float]
         hand      : 0 = right, 1 = left
 
-        Notes sharing an onset form a CHORD. Within a chord (notes are ordered
-        low->high pitch), a single hand physically must:
-          * use a DIFFERENT finger for each note, and
-          * order fingers monotonically with pitch
-            - right hand: higher pitch -> higher finger number
-            - left  hand: higher pitch -> lower  finger number (thumb on top)
+        Hard (chord, same onset; notes ordered low->high pitch):
+          * distinct finger per note, and fingers ordered with pitch
+            (RH higher pitch -> higher finger; LH -> lower).
 
-        These are near-certain physical facts, so we forbid violations with a
-        large penalty. Melodic (different-onset) transitions are left to the
-        learned CRF, so confident/correct passages are untouched. This cleans
-        up exactly the low-confidence chord guesses without retraining.
+        Soft (consecutive MELODIC notes, different onset):
+          * w_repeat : discourage reusing the SAME finger across a small step
+            when the notes differ (the "lazy 4-4 where 4-5 is better" case).
+          * w_cramp  : discourage cramped finger pairs for the interval
+            (e.g. 3-4 across a third when a wider spread is natural).
+          * w_thumb_black: mild discouragement of thumb (finger 1) landing on
+            a black key in stepwise motion (ergonomically awkward, not forbidden).
+
+        Set any weight to 0.0 to disable that nudge. All are soft, so confident
+        correct choices survive; they mainly clean up the dubious notes.
         """
         T, K = emissions.shape
         dev = emissions.device
         idx = torch.arange(K, device=dev)
-        prev_i = idx.unsqueeze(1)      # [K,1]
-        curr_i = idx.unsqueeze(0)      # [1,K]
+        prev_i = idx.unsqueeze(1)      # [K,1]  previous finger label (0..4)
+        curr_i = idx.unsqueeze(0)      # [1,K]  current finger label
+        zeros = torch.zeros(K, K, device=dev)
+        BLACK = {1, 3, 6, 8, 10}
 
-        def chord_penalty(t):
+        # finger spans (label i = finger i+1): comfortable max semitone reach
+        # between adjacent fingers, used to flag cramped pairs on an interval.
+        # rough, soft guidance only.
+        finger_dist = (curr_i - prev_i).abs().float()   # how many fingers apart
+
+        def penalty(t):
             same_onset = abs(onsets[t] - onsets[t - 1]) < chord_eps
-            if not same_onset:
-                return torch.zeros(K, K, device=dev)
-            if hand == 0:              # RH: curr finger must be strictly higher
-                bad = curr_i <= prev_i
-            else:                      # LH: curr finger must be strictly lower
-                bad = curr_i >= prev_i
-            return torch.where(bad, torch.full((K, K), -big, device=dev),
-                               torch.zeros(K, K, device=dev))
+            interval = abs(midis[t] - midis[t - 1])
+
+            if same_onset:
+                # ---- HARD chord constraints ----
+                if hand == 0:
+                    bad = curr_i <= prev_i
+                else:
+                    bad = curr_i >= prev_i
+                return torch.where(bad, torch.full((K, K), -big, device=dev), zeros)
+
+            # ---- SOFT melodic nudges (different onset) ----
+            pen = zeros.clone()
+
+            # SYMMETRIC ergonomic penalty: a hand's finger spread should roughly
+            # match how far the notes move. We map the pitch interval to an
+            # "ideal" finger gap, then penalize by how far the chosen finger gap
+            # deviates from it -- in EITHER direction. This single rule covers:
+            #   * lazy repeat  (notes move, fingers don't)  -> gap too small
+            #   * awkward jump (notes barely move, fingers leap, e.g. 4->1) -> gap too big
+            #   * cramped pair (wide interval, adjacent fingers, e.g. 3-4 on a 3rd) -> gap too small
+            if w_cramp > 0:
+                # ideal finger gap for an interval (semitones):
+                #   unison/step (0-2): ~0-1 fingers apart
+                #   third (3-4):       ~1-2
+                #   fourth/fifth (5-7):~2-3
+                #   sixth+ (8+):       ~3-4
+                if interval <= 2:
+                    ideal = 0.5
+                elif interval <= 4:
+                    ideal = 1.5
+                elif interval <= 7:
+                    ideal = 2.5
+                else:
+                    ideal = 3.5
+                # deviation of chosen finger gap from ideal, penalized smoothly
+                deviation = (finger_dist - ideal).abs()
+                # penalize deviations beyond a small slack (0.5 finger), softly.
+                # smaller slack so subtle cramped pairs (3-4 on a third) get nudged.
+                excess = torch.clamp(deviation - 0.5, min=0.0)
+                pen = pen - excess * w_cramp
+
+            # extra nudge specifically against reusing the SAME finger when the
+            # notes actually move (the clearest "lazy" case), on top of the above
+            if w_repeat > 0 and interval != 0 and interval <= 4:
+                same_finger = (curr_i == prev_i)
+                pen = pen - same_finger.float() * w_repeat
+
+            # thumb on a black key during stepwise motion: mildly awkward
+            if w_thumb_black > 0 and interval <= 2:
+                curr_black = (midis[t] % 12) in BLACK
+                if curr_black:
+                    thumb = (curr_i == 0).float()      # label 0 = finger 1 = thumb
+                    pen = pen - thumb * w_thumb_black
+
+            return pen
 
         score = self.start + emissions[0]          # [K]
         history = []
         for t in range(1, T):
-            pen = chord_penalty(t)                 # [K_prev, K_curr]
-            broadcast = score.unsqueeze(1) + self.trans + pen   # [K_prev,K_curr]
-            best_score, best_prev = broadcast.max(dim=0)        # [K_curr]
+            pen = penalty(t)                        # [K_prev, K_curr]
+            broadcast = score.unsqueeze(1) + self.trans + pen
+            best_score, best_prev = broadcast.max(dim=0)
             score = best_score + emissions[t]
             history.append(best_prev)
 

@@ -99,7 +99,49 @@ class KeyGenius(nn.Module):
         crf_nll = self.crf(em, batch["labels"], batch["mask"])
         focal = self._focal(em, batch["labels"], batch["mask"], cfg.focal_gamma)
         total = cfg.crf_weight * crf_nll + cfg.focal_weight * focal
-        return total, {"crf": crf_nll.item(), "focal": focal.item()}
+        parts = {"crf": crf_nll.item(), "focal": focal.item(), "ergo": 0.0}
+        w = getattr(cfg, "ergonomic_weight", 0.0)
+        if w > 0:
+            ergo = self.ergonomic_loss(em, batch["cont"], batch["mask"])
+            total = total + w * ergo
+            parts["ergo"] = ergo.item()
+        return total, parts
+
+    def ergonomic_loss(self, em, cont, mask):
+        """Soft, differentiable penalty teaching the model that a hand's finger
+        spread should match how far consecutive MELODIC notes move.
+
+        Reads the pitch interval (already encoded as feature 10 = |semitones to
+        prev|/12) and the chord flag (feature 6 = shares onset with prev). For
+        each consecutive melodic pair, it compares the model's EXPECTED finger
+        gap to an ideal gap for that interval, and penalizes the mismatch in
+        either direction. This is the training-time version of the decode
+        constraints: it bakes the ergonomics into the weights, so it also
+        affects confident notes (unlike the soft decode nudges).
+
+        Applied only to melodic (non-chord) consecutive real notes.
+        """
+        p = F.softmax(em, dim=-1)                          # [B,T,K]
+        K = em.size(-1)
+        fidx = torch.arange(K, device=em.device).float()
+        efinger = (p * fidx).sum(-1)                       # [B,T] expected finger
+
+        semi = cont[:, :, 10] * 12.0                       # interval to prev (semitones)
+        chord_prev = cont[:, :, 6]                         # 1 if same onset as prev
+
+        # ideal finger gap grows with interval (same mapping as decode)
+        ideal = torch.where(semi <= 2, torch.full_like(semi, 0.5),
+                 torch.where(semi <= 4, torch.full_like(semi, 1.5),
+                 torch.where(semi <= 7, torch.full_like(semi, 2.5),
+                                        torch.full_like(semi, 3.5))))
+
+        gap = (efinger[:, 1:] - efinger[:, :-1]).abs()     # [B,T-1] predicted gap
+        dev = (gap - ideal[:, 1:]).abs()
+        excess = (dev - 0.5).clamp(min=0.0)                # small slack
+
+        valid = mask[:, 1:] & mask[:, :-1] & (chord_prev[:, 1:] < 0.5)
+        excess = excess * valid.float()
+        return excess.sum() / valid.float().sum().clamp(min=1.0)
 
     @staticmethod
     def _focal(em, labels, mask, gamma):

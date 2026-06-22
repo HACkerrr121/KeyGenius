@@ -51,6 +51,9 @@ class TrainConfig:
     crf_weight: float = 3.0
     focal_weight: float = 1.0
     focal_gamma: float = 2.0
+    # soft ergonomic regularizer (finger spread should match pitch interval).
+    # 0.0 = off (default). Try 0.3-1.0 to bake ergonomics into the weights.
+    ergonomic_weight: float = 0.0
     grad_clip: float = 1.0
     # pitch transposition augmentation range (semitones), inclusive
     transpose_range: tuple = (-6, 6)
